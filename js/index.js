@@ -3,7 +3,6 @@ var DEFAULT_QUOTE = {
   author: "Alex"
 };
 
-var pissedOffCounter = 0;
 var bubble = null;
 var bubbleTimer = null;
 var currentQuote = DEFAULT_QUOTE;
