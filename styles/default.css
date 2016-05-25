@@ -100,3 +100,8 @@ p.speech:after {
 	border: 15px solid;
 	border-color: #fff #fff transparent transparent;
 }
+
+.author {
+	display: block;
+	text-align: right;
+}
