@@ -6,8 +6,6 @@ var currentQuote = DEFAULT_QUOTE
 
 $(document).ready(function() {
   $('#me').on('click', function(event) {
-    event.preventDefault()
-
     site.showBubble()
   })
 
@@ -41,5 +39,5 @@ site.hideBubble = function() {
 
 site.activatePromotion = function() {
   currentQuote =
-    'Check out my new CV Builder Tool: <a href="https://cv.alexfriesen.net/">cv.alexfriesen.de</a>'
+    'Check out my new CV Builder Tool: <a target="_blank" href="https://cv.alexfriesen.net/">cv.alexfriesen.de</a>'
 }
