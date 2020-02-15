@@ -3,105 +3,47 @@
 	padding: 0;
 }
 
-body, html {
-	background-color: #026383;
+body,
+html {
+	--backgroundColor: #4c7f7f;
+	--mainColor: #111720;
+
+	background-color: var(--backgroundColor);
 	font-family: Verdana, Arial;
-	color: #fff;
-	position: absolute;
+	color: var(--mainColor);
+
+	height: 100%;
+}
+
+#bg {
+	position: fixed;
 	height: 100%;
 	width: 100%;
 }
 
-.header {
-	position: absolute;
-	top: 12%;
-	width: 100%;
-	text-align: center;
-	margin: auto;
+#app {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: space-evenly;
+
+	min-height: 100%;
+}
+
+header {
 	font-size: 2em;
-}
-
-.shine {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	background: url(../images/red_shine.png) center center no-repeat;
-	height: 1024px;
-	width: 1024px;
-	margin-left: -512px;
-	margin-top: -512px;
-	-webkit-animation: spin-left 40s infinite linear;
-	-moz-animation: spin-left 40s infinite linear;
-	-ms-animation: spin-left 40s infinite linear;
-	-o-animation: spin-left 40s infinite linear;
-	animation: spin-left 40s infinite linear;
-}
-
-.container {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-  overflow: hidden;
+	margin: 40px;
 }
 
 .me {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -120px;
-	margin-top: -150px;
-	cursor: pointer;
-	-webkit-transition: all 1s ease-in-out;
-	-moz-transition: all 1s ease-in-out;
-	-ms-transition: all 1s ease-in-out;
-	-o-transition: all 1s ease-in-out;
-	transition: all 1s ease-in-out;
+	display: flex;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 8px solid var(--mainColor);
 }
 
-footer, .footer {
-	position: absolute;
-	bottom: 8%;
-	width: 100%;
-	text-align: center;
-	margin: auto;
-}
-
-p.speech {
-	color: #333;
-	position: absolute;
-	bottom: 100%;
-	text-align: center;
-	background-color: #fff;
-	border: 8px solid #333;
-	-webkit-border-radius: 40px;
-	-moz-border-radius: 40px;
-	border-radius: 40px;
-	padding: 10px;
-}
-
-p.speech:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 30px;
-	bottom: -50px;
-	border: 25px solid;
-	border-color: #333 #333 transparent transparent;
-}
-
-p.speech:after {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 42px;
-	bottom: -30px;
-	border: 15px solid;
-	border-color: #fff #fff transparent transparent;
-}
-
-.author {
-	display: block;
-	text-align: right;
+footer {
+	margin: 40px;
 }

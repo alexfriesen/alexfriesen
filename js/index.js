@@ -1,43 +1,8 @@
-var DEFAULT_QUOTE = 'Ohai, nice to see you'
+const DEFAULT_QUOTE = 'Ohai, nice to see you'
 
-var bubble = null
-var bubbleTimer = null
-var currentQuote = DEFAULT_QUOTE
+const app = new Vue({
+  el: '#app',
+  created() {
 
-$(document).ready(function() {
-  $('#me').on('click', function(event) {
-    site.showBubble()
-  })
-
-  setTimeout(function() {
-    site.showBubble()
-  }, 500)
-})
-
-var site = site || {}
-site.showBubble = function() {
-  site.hideBubble()
-
-  bubble = $('<p class="speech">' + currentQuote + '</p>')
-  $('#me').append(bubble)
-
-  bubbleTimer = setTimeout(function() {
-    try {
-      site.hideBubble()
-    } catch (e) {}
-  }, 5000)
-
-  site.activatePromotion()
-}
-
-site.hideBubble = function() {
-  clearTimeout(bubbleTimer)
-  if (bubble) {
-    $(bubble).remove()
   }
-}
-
-site.activatePromotion = function() {
-  currentQuote =
-    'Check out my new CV Builder Tool: <a target="_blank" href="https://cv.alexfriesen.net/">cv.alexfriesen.de</a>'
-}
+})
