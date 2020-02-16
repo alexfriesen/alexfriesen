@@ -33,8 +33,9 @@ html {
 }
 
 header {
-	font-size: 2em;
 	margin: 40px;
+	font-size: 1rem;
+	text-align: center;
 }
 
 .me {
@@ -46,4 +47,5 @@ header {
 
 footer {
 	margin: 40px;
+	text-align: center;
 }
