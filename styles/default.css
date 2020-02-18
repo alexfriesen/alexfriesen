@@ -9,7 +9,7 @@ html {
 	--mainColor: #111720;
 
 	background-color: var(--backgroundColor);
-	font-family: Verdana, Arial;
+	font-family: Consolas, 'Courier New', monospace;
 	color: var(--mainColor);
 
 	height: 100%;
