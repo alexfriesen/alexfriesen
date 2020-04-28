@@ -1,51 +1,82 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body,
 html {
-	--backgroundColor: #4c7f7f;
-	--mainColor: #111720;
+  --mainColor: #111720;
+  --highlightColor: #ccb280;
+  --backgroundColor: #4c7f7f;
 
-	background-color: var(--backgroundColor);
-	font-family: Consolas, 'Courier New', monospace;
-	color: var(--mainColor);
+  font-family: Consolas, "Courier New", monospace;
+  background-color: var(--backgroundColor);
+  color: var(--mainColor);
 
-	height: 100%;
+  height: 100%;
 }
 
 #bg {
-	position: fixed;
-	height: 100%;
-	width: 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 #app {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	flex: 1 1 auto;
-	align-items: center;
-	justify-content: space-evenly;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: space-evenly;
 
-	min-height: 100%;
+  min-height: 100%;
 }
 
 header {
-	margin: 40px;
-	font-size: 1rem;
-	text-align: center;
+  margin: 2rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .me {
-	display: flex;
-	border-radius: 50%;
-	overflow: hidden;
-	border: 8px solid var(--mainColor);
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid var(--mainColor);
 }
 
 footer {
-	margin: 40px;
-	text-align: center;
+	margin: 2rem;
+	margin-bottom: 3rem;
+  text-align: center;
+}
+
+.actions {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.actions button {
+  border: none;
+  border-radius: 1em;
+  padding: 1rem 2rem;
+  font-size: 2em;
+  cursor: pointer;
+
+  color: var(--highlightColor);
+  background-color: var(--backgroundColor);
+
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+}
+
+@media only screen and (max-width: 768px) {
+  .actions button {
+    padding: 1rem;
+  }
+  .actions button span {
+    display: none;
+  }
 }

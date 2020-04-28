@@ -19,6 +19,7 @@
 
 	<!-- le styles -->
 	<link href="styles/default.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" type="text/css">
 	<link href="favicon.ico" rel="shortcut icon">
 
 	<!-- le Scripts -->
@@ -38,6 +39,15 @@
 		<div class="me">
 			<img src="images/sqare300.jpg" alt="me">
 		</div>
+
+		<section class="actions">
+			<button @click="contact">
+				<i class="fa fa-envelope"></i>
+				<span>
+					Contact me
+				</span>
+			</button>
+		</section>
 
 		<footer clas="footer">
 			<p>&copy; 2020 - Alexander Friesen</p>
