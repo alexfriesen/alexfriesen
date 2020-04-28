@@ -47,22 +47,23 @@ header {
 }
 
 footer {
-	margin: 2rem;
-	margin-bottom: 3rem;
+  margin: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
 .actions {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 .actions button {
   border: none;
-  border-radius: 1em;
+  border-radius: 3rem;
   padding: 1rem 2rem;
   font-size: 2em;
+  line-height: 1em;
   cursor: pointer;
 
   color: var(--highlightColor);
