@@ -18,19 +18,23 @@
 	<meta property="og:image" content="http://alexfriesen.net/images/sqare300.jpg">
 
 	<!-- le styles -->
-	<link href="styles/default.css" media="screen" rel="stylesheet" type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" type="text/css">
-	<link href="favicon.ico" rel="shortcut icon">
+	<!-- <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script> -->
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/dist/shoelace/shoelace.css">
+	<script type="module"
+		src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/dist/shoelace/shoelace.esm.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
 
-	<!-- le Scripts -->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<link href="styles/default.css" media="screen" rel="stylesheet" type="text/css">
+
+	<link href="favicon.ico" rel="shortcut icon">
 
 </head>
 
-<body>
+<body class="sl-theme-dark">
 	<canvas id="bg"></canvas>
 
-	<div id="app">
+	<main id="app">
 
 		<header>
 			<h1>Alex Friesen</h1>
@@ -41,18 +45,24 @@
 		</div>
 
 		<section class="actions">
-			<button @click="contact">
-				<i class="fa fa-envelope"></i>
-				<span>
-					Contact me
-				</span>
-			</button>
+			<sl-button id="contact" type="primary" size="large" pill>
+				<sl-icon slot="prefix" name="envelope"></sl-icon>
+				Contact me
+			</sl-button>
 		</section>
 
 		<footer clas="footer">
 			<p>&copy; 2020 - Alexander Friesen</p>
 		</footer>
 
+		<!-- <zero-md src="./test.md"></zero-md> -->
+	</main>
+
+	<div class="toast-wrapper">
+		<sl-alert id="greet" duration="3000">
+			<sl-icon name="info-circle" slot="icon"></sl-icon>
+			Hi there!
+		</sl-alert>
 	</div>
 
 	<script src="js/index.js"></script>

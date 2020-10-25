@@ -1,19 +1,34 @@
-* {
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sl-font-sans);
+  font-size: var(--sl-font-size-medium);
+  font-weight: var(--sl-font-weight-normal);
+  letter-spacing: var(--sl-letter-spacing-normal);
+  color: var(--sl-color-gray-25);
+  line-height: var(--sl-line-height-normal);
+
+  height: 100%;
   margin: 0;
-  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body,
 html {
-  --mainColor: #111720;
-  --highlightColor: #ccb280;
-  --backgroundColor: #4c7f7f;
-
-  font-family: Consolas, "Courier New", monospace;
-  background-color: var(--backgroundColor);
-  color: var(--mainColor);
-
   height: 100%;
+  margin: 0;
+}
+
+:root {
+  --sl-color-primary-hue: 180;
+  --sl-color-primary-saturation: 20%;
 }
 
 #bg {
@@ -26,24 +41,19 @@ html {
   position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 0 0 100%;
   align-items: center;
   justify-content: space-evenly;
 
   min-height: 100%;
 }
 
-header {
-  margin: 2rem;
-  font-size: 1rem;
-  text-align: center;
-}
-
 .me {
   display: flex;
   border-radius: 50%;
   overflow: hidden;
-  border: 8px solid var(--mainColor);
+  border: 8px solid var(--sl-color-primary-50);
+  box-shadow: var(--sl-focus-ring-box-shadow);
 }
 
 footer {
@@ -58,26 +68,8 @@ footer {
   right: 1rem;
 }
 
-.actions button {
-  border: none;
-  border-radius: 3rem;
-  padding: 1rem 2rem;
-  font-size: 2em;
-  line-height: 1em;
-  cursor: pointer;
-
-  color: var(--highlightColor);
-  background-color: var(--backgroundColor);
-
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
-}
-
-@media only screen and (max-width: 768px) {
-  .actions button {
-    padding: 1rem;
-  }
-  .actions button span {
-    display: none;
-  }
+.toast-wrapper {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
 }
