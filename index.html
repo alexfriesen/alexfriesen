@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<head>
+<head lang="en">
 	<meta charset="utf-8">
 	<title>
 		Alex Friesen - Homepage
@@ -17,7 +17,6 @@
 	<meta property="og:title" content="Alexander Friesen">
 	<meta property="og:image" content="http://alexfriesen.net/images/sqare300.jpg">
 
-	<!-- le styles -->
 	<!-- <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script> -->
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/dist/shoelace/shoelace.css">
@@ -34,15 +33,107 @@
 <body class="sl-theme-dark">
 	<canvas id="bg"></canvas>
 
-	<main id="app">
-
+	<main>
 		<header>
 			<h1>Alex Friesen</h1>
-		</header>
 
-		<div class="me">
-			<img src="images/sqare300.jpg" alt="me">
+			<div class="nav">
+				<sl-button href="/#">Home</sl-button>
+				<sl-button href="/#projects">Projects</sl-button>
+				<sl-button href="/#blog">Blog</sl-button>
+			</div>
+		</header>
+		<div class="content">
+			<section attr-content-name="home">
+
+				<div class="about">
+					<sl-avatar class="me" image="images/sqare300.jpg" alt="me"></sl-avatar>
+					<p>
+						Hi there! 👋<br>
+						I'm Alex a Software Developer specializing in web technologies.
+					</p>
+				</div>
+
+				<div class="links">
+					<p>You can follow me on:</p>
+
+					<sl-button href="https://github.com/alexfriesen/" target="_blank">
+						<sl-icon src="/images/github.svg"></sl-icon>
+						Github
+					</sl-button>
+
+					<sl-button href="https://twitter.com/alexfreezor/" target="_blank">
+						<sl-icon src="/images/twitter.svg">
+						</sl-icon>
+						Twitter
+					</sl-button>
+				</div>
+
+			</section>
+			<section attr-content-name="projects" class="grid">
+
+				<div class="grid">
+					<!-- <sl-card>
+						<img slot="image" src="https://moshpit.app/assets/icons/logo.svg" alt="Moshpit logo">
+
+						<h3>Moshpit WIP</h3>
+						<p>A plattfom for everyone passionate about concerts</p>
+
+						<div slot="footer">
+							<sl-button type="primary" pill href="https://www.moshpit.app" target="_blank">More Info</sl-button>
+						</div>
+					</sl-card> -->
+
+					<sl-card>
+						<img slot="image" src="/images/cv.png" alt="CV Builder preview">
+
+						<h3>CV Builder</h3>
+						<p>A simple CV-Builder made with Angular</p>
+
+						<div slot="footer">
+							<sl-button type="primary" pill href="http://cv.alexfriesen.net/" target="_blank">Take a look
+							</sl-button>
+						</div>
+					</sl-card>
+				</div>
+
+			</section>
+
+			<section attr-content-name="blog">
+
+				<div class="grid">
+
+					<sl-card>
+						<img slot="image"
+							src="https://manticoreprod.azureedge.net/screenshots/e933477adb104dde805e61c1e313fad0_0_1zZB5IHaEDWpug6HDuha6u_F05A65A64F46D0FD5D5A799C74560B3B3955348F.jpg"
+							alt="Mutiny - Core Game">
+						<h3>Mutiny - Core Game</h3>
+						<p>Recently I played around with Core and made a small Capture the Flag Map.</p>
+
+						<div slot="footer">
+							<time datetime="2008-02-14 20:00">11.11.2020</time>
+							<sl-button pill href="https://www.coregames.com/games/e93347/mutiny" target="_blank">Take a
+								look</sl-button>
+						</div>
+					</sl-card>
+
+					<sl-card>
+						<h3>Hello World</h3>
+						<p>Hi guys! In this blog I will be posting my Coding Adventures, stay tuned for more!</p>
+
+						<div slot="footer">
+							<time datetime="2008-02-14 20:00">11.11.2020</time>
+						</div>
+					</sl-card>
+				</div>
+
+			</section>
+
 		</div>
+
+		<footer clas="footer">
+			<p>&copy; 2020 - Alexander Friesen</p>
+		</footer>
 
 		<section class="actions">
 			<sl-button id="contact" type="primary" size="large" pill>
@@ -50,10 +141,6 @@
 				Contact me
 			</sl-button>
 		</section>
-
-		<footer clas="footer">
-			<p>&copy; 2020 - Alexander Friesen</p>
-		</footer>
 
 		<!-- <zero-md src="./test.md"></zero-md> -->
 	</main>
@@ -65,8 +152,8 @@
 		</sl-alert>
 	</div>
 
-	<script src="js/index.js"></script>
-	<script type="module" src="js/webgl.js"></script>
+	<script type="module" src="js/index.js"></script>
+	<!-- <script type="module" src="js/webgl.js"></script> -->
 
 </body>
 

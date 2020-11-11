@@ -1,9 +1,9 @@
 import { Vector2, Vector3, WebGLRenderer, Scene, PerspectiveCamera, Clock } from "https://cdn.jsdelivr.net/npm/three@0.113.2/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/controls/OrbitControls.js"
-import { EffectComposer } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/EffectComposer.js"
-import { ShaderPass } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/ShaderPass.js"
-import { RenderPass } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/RenderPass.js"
-import { CopyShader } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/shaders/CopyShader.js"
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/controls/OrbitControls.js";
+import { EffectComposer } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/EffectComposer.js";
+import { ShaderPass } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/ShaderPass.js";
+import { RenderPass } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/RenderPass.js";
+import { CopyShader } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/shaders/CopyShader.js";
 
 const VERTEX = `
     varying vec2 vUv;
@@ -20,8 +20,8 @@ const FRAGMENT = `
     void mainImage(out vec4 fragColor, in vec2 fragCoord)
     {
         vec3 res = iResolution;
-        // vec3 crimsonRed = vec3(0.73725490196, 0.0, 0.17647058823);
-        vec3 crimsonRed = vec3(.5, 0.2, 0.0);
+        // vec3 accent = vec3(0.73725490196, 0.0, 0.17647058823);
+        vec3 accent = vec3(.5, 0.2, 0.0);
     
         vec2 uv = (2.0 * fragCoord - iResolution.xy) / min(res.x, res.y);
         
@@ -29,7 +29,7 @@ const FRAGMENT = `
         
         float r = 20.0 * smoothstep(0.0, 0.1, sin(atan(uv.y, uv.x) * 16.0 - iTime * 0.9));
 
-        col += crimsonRed * smoothstep(r, r + 0.01, length(uv));
+        col += accent * smoothstep(r, r + 0.01, length(uv));
         
         fragColor = vec4(col, 1.0);
     }
@@ -85,7 +85,7 @@ const resize = (width, height) => {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
-    composer.setSize(width, height)
+    composer.setSize(width, height);
 
     renderer.setSize(width, height);
 };
@@ -104,7 +104,7 @@ const render = () => {
     const ellapsed = clock.getElapsedTime();
     shader.uniforms.iResolution.value.set(canvas.width, canvas.height, 1);
     shader.uniforms.iTime.value = ellapsed;
-    composer.render()
+    composer.render();
 
     requestAnimationFrame(render);
 };

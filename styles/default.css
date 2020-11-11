@@ -1,3 +1,14 @@
+:root {
+  --sl-color-primary-hue: 180;
+  --sl-color-primary-saturation: 20%;
+}
+
+sl-card::part(base) {
+  background-color: var(--sl-color-gray-10);
+  --border-color: var(--sl-color-gray-20);
+}
+/* theming end */
+
 html {
   box-sizing: border-box;
 }
@@ -7,8 +18,8 @@ body {
   font-size: var(--sl-font-size-medium);
   font-weight: var(--sl-font-weight-normal);
   letter-spacing: var(--sl-letter-spacing-normal);
-  color: var(--sl-color-gray-25);
   line-height: var(--sl-line-height-normal);
+  color: var(--sl-color-white);
 
   height: 100%;
   margin: 0;
@@ -26,40 +37,82 @@ html {
   margin: 0;
 }
 
-:root {
-  --sl-color-primary-hue: 180;
-  --sl-color-primary-saturation: 20%;
-}
-
 #bg {
   position: fixed;
   height: 100%;
   width: 100%;
 }
 
-#app {
+main {
   position: relative;
+
   display: flex;
   flex-direction: column;
-  flex: 0 0 100%;
-  align-items: center;
-  justify-content: space-evenly;
+  flex: 1 1 100%;
+  justify-content: space-between;
 
+  margin: 0 auto;
+
+  max-width: 40rem;
   min-height: 100%;
+
+  background: var(--sl-color-gray-10);
 }
 
-.me {
+header {
   display: flex;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 8px solid var(--sl-color-primary-50);
-  box-shadow: var(--sl-focus-ring-box-shadow);
+
+  padding: 0 2rem;
+  gap: 1rem;
+
+  align-items: center;
+  justify-content: space-between;
 }
 
 footer {
-  margin: 2rem;
-  margin-bottom: 3rem;
+  font-size: var(--sl-font-size-small);
+  color: var(--sl-color-gray-50);
+
+  margin: 1rem;
   text-align: center;
+}
+
+h1 {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-font-size-xx-large);
+}
+
+.content {
+  padding: 2rem;
+}
+
+.about {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.me {
+  --size: 200px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: auto;
+  width: 100%;
+  max-width: 1096px;
+}
+
+sl-card time {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-font-size-small);
+  color: var(--sl-color-gray-50);
+}
+sl-card [slot="footer"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .actions {
@@ -72,4 +125,14 @@ footer {
   position: fixed;
   top: 1rem;
   right: 1rem;
+}
+
+@media only screen and (max-width: 360px) {
+  header {
+    flex-direction: column;
+  }
+
+  .about {
+    flex-direction: column;
+  }
 }
