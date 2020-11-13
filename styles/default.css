@@ -62,7 +62,7 @@ main {
 header {
   display: flex;
 
-  padding: 0 2rem;
+  margin: 1rem 2rem;
   gap: 1rem;
 
   align-items: center;
@@ -80,6 +80,7 @@ footer {
 h1 {
   font-family: var(--sl-font-mono);
   font-size: var(--sl-font-size-xx-large);
+  margin: 0;
 }
 
 .content {
@@ -127,9 +128,13 @@ sl-card [slot="footer"] {
   right: 1rem;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 570px) {
   header {
     flex-direction: column;
+  }
+
+  footer {
+    margin-bottom: 3rem;
   }
 
   .about {
