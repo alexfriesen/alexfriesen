@@ -100,9 +100,6 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin: auto;
-  width: 100%;
-  max-width: 1096px;
 }
 
 sl-card time {
@@ -128,13 +125,22 @@ sl-card [slot="footer"] {
   right: 1rem;
 }
 
+/* 
+workaround for webcomponents::slotted() selectors are very limited (https://github.com/WICG/webcomponents/issues/331).
+nested elements are not supported atm. 
+*/
+picture > img {
+  display: block;
+  width: 100%;
+}
+
 @media only screen and (max-width: 570px) {
   header {
     flex-direction: column;
   }
 
   footer {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 
   .about {
