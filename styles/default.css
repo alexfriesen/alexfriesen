@@ -11,6 +11,7 @@ sl-card::part(base) {
 
 html {
   box-sizing: border-box;
+  background-color: var(--sl-color-gray-20);
 }
 
 body {

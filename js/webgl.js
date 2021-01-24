@@ -1,9 +1,9 @@
-import { Vector2, Vector3, WebGLRenderer, Scene, PerspectiveCamera, Clock } from "https://cdn.jsdelivr.net/npm/three@0.113.2/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/controls/OrbitControls.js";
-import { EffectComposer } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/EffectComposer.js";
-import { ShaderPass } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/ShaderPass.js";
-import { RenderPass } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/postprocessing/RenderPass.js";
-import { CopyShader } from "https://cdn.jsdelivr.net/npm/three@0.113.2/examples/jsm/shaders/CopyShader.js";
+import { Vector2, Vector3, WebGLRenderer, Scene, OrthographicCamera, Clock } from "https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.module.js";
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/controls/OrbitControls.js";
+import { EffectComposer } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/postprocessing/EffectComposer.js";
+import { ShaderPass } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/postprocessing/ShaderPass.js";
+import { RenderPass } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/postprocessing/RenderPass.js";
+import { CopyShader } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/shaders/CopyShader.js";
 
 const VERTEX = `
     varying vec2 vUv;
@@ -54,8 +54,9 @@ renderer.setClearColor(0x000000);
 
 const clock = new Clock();
 const scene = new Scene();
+const frustumSize = 500;
 
-const camera = new PerspectiveCamera(FOV, ASPECT, NEAR, FAR);
+const camera = new OrthographicCamera(frustumSize * ASPECT / -2, frustumSize * ASPECT / 2, frustumSize / 2, frustumSize / -2, 1, 1000);
 camera.position.set(-2, 2, 2);
 camera.target = new Vector3(0, 0, 0);
 

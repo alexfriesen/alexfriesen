@@ -16,8 +16,6 @@ function locationHashChanged(event) {
     item.style.display = 'none';
   });
   document.querySelector(`section[attr-content-name='${destination}']`).style.display = 'block';
-  // console.log(destination);
-  // content.show(destination);
 }
 
 window.onhashchange = locationHashChanged;
@@ -27,11 +25,25 @@ contactButton.addEventListener('click', event => {
   window.location.href = "mailto:info@alexfriesen.net";
 });
 
+function hasSufficientInternetConnection() {
+  if (!navigator.onLine) {
+    return false;
+  }
+
+  if (["slow-2g", "2g"].includes(navigator?.connection?.effectiveType)) {
+    return false;
+  }
+
+  return true;
+}
+
 function bootstrap() {
   locationHashChanged();
 
-  // lazy load background animation
-  import('./webgl.js');
+  if (hasSufficientInternetConnection()) {
+    // lazy load background animation
+    import('./webgl.js');
+  }
 }
 
 // const greet = document.querySelector('#greet');
