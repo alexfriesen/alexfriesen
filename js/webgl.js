@@ -1,9 +1,7 @@
 import { Vector2, Vector3, WebGLRenderer, Scene, OrthographicCamera, Clock } from "https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/controls/OrbitControls.js";
 import { EffectComposer } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/postprocessing/EffectComposer.js";
 import { ShaderPass } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/postprocessing/ShaderPass.js";
 import { RenderPass } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/postprocessing/RenderPass.js";
-import { CopyShader } from "https://cdn.jsdelivr.net/npm/three@0.124.0/examples/jsm/shaders/CopyShader.js";
 
 const VERTEX = `
     varying vec2 vUv;
@@ -60,8 +58,6 @@ const camera = new OrthographicCamera(frustumSize * ASPECT / -2, frustumSize * A
 camera.position.set(-2, 2, 2);
 camera.target = new Vector3(0, 0, 0);
 
-const controls = new OrbitControls(camera, canvas);
-
 scene.add(camera);
 
 const resolution = new Vector2(width, height);
@@ -99,8 +95,6 @@ const render = () => {
         width = tmpWidth;
         resize(width, height);
     }
-
-    controls.update();
 
     const ellapsed = clock.getElapsedTime();
     shader.uniforms.iResolution.value.set(canvas.width, canvas.height, 1);

@@ -22,7 +22,7 @@
 		href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.24/dist/shoelace/shoelace.css">
 	<script type="module"
 		src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.24/dist/shoelace/shoelace.esm.js"></script>
-	<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+	<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script> -->
 
 	<link href="styles/default.css" media="screen" rel="stylesheet" type="text/css">
 
@@ -85,7 +85,7 @@
 
 					<sl-card>
 						<!-- <img slot="image" src="/images/cv.png" alt="CV Builder preview"> -->
-						<picture slot="image">
+						<picture slot="image" loading="lazy">
 							<source type="image/avif" srcset="/images/cv.avif">
 							<img src="/images/cv.png" alt="CV Builder preview">
 						</picture>
@@ -107,7 +107,7 @@
 				<div class="grid">
 
 					<sl-card>
-						<img slot="image"
+						<img slot="image" loading="lazy"
 							src="https://manticoreprod.azureedge.net/screenshots/e933477adb104dde805e61c1e313fad0_0_1zZB5IHaEDWpug6HDuha6u_F05A65A64F46D0FD5D5A799C74560B3B3955348F.jpg"
 							alt="Mutiny - Core Game">
 						<h3>Mutiny - Core Game</h3>
@@ -155,7 +155,7 @@
 		</sl-alert>
 	</div>
 
-	<script type="module" src="js/index.js"></script>
+	<script defer type="module" src="js/index.js"></script>
 	<!-- <script type="module" src="js/webgl.js"></script> -->
 
 </body>
