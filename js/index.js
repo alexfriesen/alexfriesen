@@ -42,7 +42,7 @@ function bootstrap() {
 
   if (hasSufficientInternetConnection()) {
     // lazy load background animation
-    import('./webgl.js');
+    import('./cool-animation.js');
   }
 }
 

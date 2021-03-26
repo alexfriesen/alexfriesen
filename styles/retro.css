@@ -1,0 +1,46 @@
+header {
+  position: relative;
+  margin-top: 10em;
+  justify-content: center;
+}
+
+h1 {
+  z-index: 50;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 5.2em;
+  
+  letter-spacing: -7px;
+  transform: rotate(-10deg) skew(-20deg);
+  animation: glow 2.5s linear infinite;
+
+  color: transparent;
+  text-stroke: 2px #bc1974;
+  -webkit-text-stroke: 2px #bc1974;
+}
+
+.triangle {
+  z-index: 0;
+  position: absolute;
+  margin: auto;
+  left: 40px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 250px solid transparent;
+  border-bottom: 200px solid rgba(12, 6, 42, 0.5);
+  transform: rotate(15deg);
+}
+
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 6px #CF33D9) drop-shadow(0 0 6px #CF33D9);
+  }
+  50% {
+    filter: drop-shadow(0 0 1px #CF33D9) drop-shadow(0 0 1px #CF33D9);
+  }
+  100% {
+    filter: drop-shadow(0 0 6px #CF33D9) drop-shadow(0 0 6px #CF33D9);
+  }
+}
