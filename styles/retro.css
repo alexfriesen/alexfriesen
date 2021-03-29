@@ -1,3 +1,8 @@
+html,
+body {
+  overflow: hidden;
+}
+
 header {
   position: relative;
   margin-top: 10em;
@@ -8,7 +13,7 @@ h1 {
   z-index: 50;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 5.2em;
-  
+
   letter-spacing: -7px;
   transform: rotate(-10deg) skew(-20deg);
   animation: glow 2.5s linear infinite;
@@ -26,21 +31,33 @@ h1 {
   right: 0;
   width: 0;
   height: 0;
-  border-left: 200px solid transparent;
-  border-right: 250px solid transparent;
-  border-bottom: 200px solid rgba(12, 6, 42, 0.5);
-  transform: rotate(15deg);
+  border-left: 170px solid transparent;
+  border-right: 170px solid transparent;
+  border-bottom: 150px solid rgba(12, 6, 42, 0.5);
+  transform: rotate(15deg) translate(-20px, -10px);
 }
 
+#audio-toggle {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 0 6px #CF33D9) drop-shadow(0 0 6px #CF33D9);
+    filter: drop-shadow(0 0 6px #cf33d9) drop-shadow(0 0 6px #cf33d9);
   }
   50% {
-    filter: drop-shadow(0 0 1px #CF33D9) drop-shadow(0 0 1px #CF33D9);
+    filter: drop-shadow(0 0 1px #cf33d9) drop-shadow(0 0 1px #cf33d9);
   }
   100% {
-    filter: drop-shadow(0 0 6px #CF33D9) drop-shadow(0 0 6px #CF33D9);
+    filter: drop-shadow(0 0 6px #cf33d9) drop-shadow(0 0 6px #cf33d9);
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  header {
+    margin-top: 2em;
   }
 }

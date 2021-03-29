@@ -102,7 +102,7 @@ function createSkydome() {
 }
 
 function createGround() {
-    const geometry = new PlaneGeometry(1000, 1000, 100, 100);
+    const geometry = new PlaneGeometry(FAR, FAR, 100, 100);
     const material = new MeshBasicMaterial({ color: groundColor });
     material.side = DoubleSide;
     const mesh = new Mesh(geometry, material);
@@ -126,14 +126,13 @@ function createStars() {
     const geometry = new BufferGeometry();
 
     const vertices = [];
-    const radius = 12;
     const vertex = new Vector3();
 
-    for (let i = 0; i < 4000; i++) {
+    for (let i = 0; i < 2000; i++) {
         vertex.x = Math.random() * 2 - 1;
         vertex.y = Math.random() * 2 - 1;
         vertex.z = Math.random() * 2 - 1;
-        vertex.multiplyScalar(radius);
+        vertex.multiplyScalar(3);
 
         vertices.push(vertex.x, vertex.y, vertex.z);
     }
@@ -147,7 +146,7 @@ function createStars() {
         0x555555,
         0x333333,
         0x3a3a3a,
-        0x1a1a1a
+        // 0x1a1a1a
     ].reduce((materials, color) => {
         materials.push(
             new PointsMaterial({
@@ -164,16 +163,18 @@ function createStars() {
         return materials;
     }, []);
 
+    const materialCount = starsMaterials.length;
+
     const stars = []
     for (let i = 10; i < 20; i++) {
         const points = new Points(
             geometry,
-            starsMaterials[i % 8]
+            starsMaterials[i % materialCount]
         );
 
-        points.rotation.x = Math.random() * 6;
-        points.rotation.y = Math.random() * 6;
-        points.rotation.z = Math.random() * 6;
+        points.rotation.x = Math.random() * 2;
+        points.rotation.y = Math.random() * 2;
+        points.rotation.z = Math.random() * 2;
         points.scale.setScalar(i * 10);
 
         points.matrixAutoUpdate = false;
@@ -193,7 +194,6 @@ scene.fog = new Fog(pink, 1, FAR / 2);
 
 scene.add(createSkydome());
 
-// scene.add(createGround());
 scene.add(createSunset());
 
 createStars().map(star => scene.add(star));
@@ -269,7 +269,7 @@ const resize = (width, height) => {
     composer.setSize(width, height);
 };
 
-const render = () => {
+const render = function () {
     const tmpHeight = document.body.clientHeight;
     const tmpWidth = document.body.clientWidth;
     if (tmpHeight !== height || tmpWidth !== width) {
@@ -278,15 +278,9 @@ const render = () => {
         resize(width, height);
     }
 
-    const delta = clock.getDelta();
-
-    // const gridPositionZ = grid.position.z
-    // if (gridPositionZ > gridSegmentSize) {
-    //     grid.position.z = gridPositionZ - gridSegmentSize;
-    // } else {
-    //     grid.position.z += delta * 60;
-    // }
+    // const delta = clock.getDelta();
     // const ellapsed = clock.getElapsedTime();
+
     // shader.uniforms.iTime.value = ellapsed;
     // terrain.update();
     // terrainChunks.forEach(item => item.update());
