@@ -27,7 +27,7 @@ import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.126.0/exam
 import { GlitchPass } from 'https://cdn.jsdelivr.net/npm/three@0.126.0/examples/jsm/postprocessing/GlitchPass.js';
 import { FilmPass } from 'https://cdn.jsdelivr.net/npm/three@0.126.0/examples/jsm/postprocessing/FilmPass.js';
 
-import { Terrain } from './terrain.js'
+import { Terrain, TerrainChunk } from './terrain.js'
 
 // const pink = 0xe52379;
 const pink = 0xbc1974;
@@ -204,35 +204,14 @@ camera.target = new Vector3(0, 0, 20);
 
 scene.add(camera);
 
-// const terrainChunks = [
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-//     new Terrain(),
-// ].map((terrain, index) => {
-//     const x = ((index % 3) - 1) * terrain.size;
-//     const z = parseInt(index / 3) * terrain.size;
-
-//     terrain.offsetX = x;
-//     terrain.offsetZ = -z;
-//     terrain.mesh.position.set(x, 0, -z);
-
-//     scene.add(terrain.mesh);
-//     return terrain;
-// })
 const terrain = new Terrain(FAR);
-terrain.addTo(scene)
+for (let index = 0; index < 2; index++) {
+    const chunk = new TerrainChunk(FAR, new Vector3(0, 0, -(FAR * index)));
+
+    terrain.addChunk(chunk);
+}
+
+terrain.addTo(scene);
 
 const renderer = new WebGLRenderer({ antialias: true, canvas });
 renderer.setPixelRatio(window.devicePixelRatio || 1);
@@ -241,12 +220,12 @@ renderer.toneMappingExposure = Math.pow(1, 4.0);
 
 const renderPass = new RenderPass(scene, camera);
 
-const bloomPass = new UnrealBloomPass(new Vector2(window.innerWidth, window.innerHeight), 1.5, 0, 0.8);
-bloomPass.threshold = 0;
-bloomPass.strength = 1.5;
-bloomPass.radius = 0.8;
+// const bloomPass = new UnrealBloomPass(new Vector2(window.innerWidth, window.innerHeight), 1.5, 0, 0.8);
+// bloomPass.threshold = 0;
+// bloomPass.strength = 1.5;
+// bloomPass.radius = 0.8;
 
-const glitchPass = new GlitchPass();
+// const glitchPass = new GlitchPass();
 
 const effectFilm = new FilmPass(
     0.2, // noise intensity
@@ -280,11 +259,7 @@ const render = function () {
 
     // const delta = clock.getDelta();
     // const ellapsed = clock.getElapsedTime();
-
-    // shader.uniforms.iTime.value = ellapsed;
-    // terrain.update();
-    // terrainChunks.forEach(item => item.update());
-    terrain.update();
+    terrain.update(0.5);
 
     composer.render();
     // renderer.render(scene, camera);

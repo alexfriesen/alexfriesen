@@ -1,5 +1,6 @@
 import {
     BufferAttribute,
+    Vector3,
     Color,
     Mesh,
     MeshPhongMaterial,
@@ -10,15 +11,51 @@ import SimplexNoise from 'https://cdn.jsdelivr.net/npm/simplex-noise-esm@2.5.0-e
 const seed = Date.now();
 
 export class Terrain {
-    constructor(size = 50, height = 3, smoothing = 2.5, segments) {
+
+    chunks = new Set();
+
+    constructor(chunksize = 50) {
+        this.chunksize = chunksize;
+    }
+
+    addChunk(chunk) {
+        this.chunks.add(chunk);
+    }
+
+    addTo(scene) {
+        for (const chunk of this.chunks) {
+            console.log(chunk.offset.z);
+            chunk.mesh.position.z = chunk.offset.z;
+
+            scene.add(chunk.mesh);
+        }
+    }
+
+    update(speed) {
+        for (const chunk of this.chunks) {
+            chunk.update(speed);
+            if (chunk.mesh.position.z > this.chunksize) {
+                const skip = this.chunksize * 2;
+                chunk.updateOffset(new Vector3(0, 0, -skip));
+
+                chunk.mesh.position.z -= skip;
+            }
+        }
+    }
+
+}
+
+export class TerrainChunk {
+
+    height = 3;
+    smoothing = 10 + Math.pow(this.height, 2.5);
+
+    constructor(size = 50, offset = new Vector3()) {
         this.size = size;
-        this.height = height;
-        this.segments = (segments || size / 2);
-        this.smoothing = 10 + Math.pow(this.height, smoothing);
+        this.segments = size / 2;
+        this.offset = offset;
         this.simplex = new SimplexNoise(seed);
 
-        this.offsetX = 0;
-        this.offsetZ = 0;
 
         this.geometry = new PlaneGeometry(
             this.size,
@@ -26,7 +63,8 @@ export class Terrain {
             this.segments,
             this.segments
         );
-        this.setHeight();
+        this.setGeometryHeight();
+
         this.material = new MeshPhongMaterial({
             color: new Color(0.225, 0.593, 0.162),
             flatShading: true,
@@ -36,31 +74,31 @@ export class Terrain {
         this.mesh = new Mesh(this.geometry, this.material);
     }
 
-    setHeight() {
+    setGeometryHeight() {
         const vertices = this.geometry.getAttribute('position').array;
 
         for (let i = 2; i < vertices.length; i += 3) {
-            const x = vertices[i - 2];
+            const x = vertices[i - 2] + this.offset.x;
             const y = vertices[i - 1];
-
             vertices[i] = -y;
+            const z = vertices[i] + this.offset.z;
 
-            if (this.findRoad(x, y)) {
+            if (this.findRoad({ x, y, z })) {
                 vertices[i - 1] = 0;
                 continue; // skip noise
             }
-            
-            vertices[i - 1] = this.simplex.noise2D(x / this.smoothing, y / this.smoothing) * this.height;
+
+            vertices[i - 1] = this.simplex.noise2D(x / this.smoothing, z / this.smoothing) * this.height;
         }
 
         this.geometry.setAttribute('position', new BufferAttribute(vertices, 3));
         this.geometry.computeVertexNormals();
     }
 
-    findRoad(x, y, z) {
+    findRoad(position) {
         const roadMin = -15;
         const roadMax = 15;
-        if (x > roadMin && x < roadMax) {
+        if (position.x > roadMin && position.x < roadMax) {
             return true;
         }
     }
@@ -69,16 +107,25 @@ export class Terrain {
         scene.add(this.mesh);
     }
 
-    update() {
-        this.offsetZ -= 0.5;
+    update(speed) {
+        this.mesh.position.z = this.mesh.position.z + speed;
+    }
+
+    updateOffset(offset) {
+        this.offset.add(offset);
+
+        this.updateGeometry();
+    }
+
+    updateGeometry() {
         const vertices = this.geometry.getAttribute('position').array;
 
         for (let i = 2; i < vertices.length; i += 3) {
-            const x = vertices[i - 2] + this.offsetX;
+            const x = vertices[i - 2] + this.offset.x;
             const y = vertices[i - 1];
-            const z = vertices[i] + this.offsetZ;
+            const z = vertices[i] + this.offset.z;
 
-            if (this.findRoad(x, y, z)) {
+            if (this.findRoad({ x, y, z })) {
                 continue; // skip noise
             }
 
