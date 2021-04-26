@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "copy:cname": "cp ./CNAME ./dist/CNAME",
     "serve": "vite preview"
   },
   "repository": {
