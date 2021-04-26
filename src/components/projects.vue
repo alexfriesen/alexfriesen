@@ -1,5 +1,5 @@
 <template>
-  <Content class="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <Content class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <article
       v-for="item in projects"
       :key="item.title"
@@ -29,7 +29,9 @@
       </header>
 
       <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-        <div></div>
+        <div class="flex flex-wrap gap-1">
+          <Tag v-for="tag in item.tags" :key="tag">{{ tag }}</Tag>
+        </div>
         <LinkButton target="_blank" :href="item.url">
           <span>Open</span>
           <ExternalLinkIcon class="inline w-6 h-6" />
@@ -43,6 +45,7 @@
 import { defineComponent } from "vue";
 
 import Content from "./content.vue";
+import Tag from "./tag.vue";
 import LinkButton from "./link-button.vue";
 // @ts-ignore
 import { ExternalLinkIcon } from "@heroicons/vue/outline";
@@ -53,18 +56,21 @@ const projects = [
     text: "😎🌄🌠",
     url: "https://github.com/alexfriesen/retro",
     img: "https://raw.githubusercontent.com/alexfriesen/retro/main/preview.gif",
+    tags: ["three.js", "web component"],
   },
   {
     title: "CV Builder",
     text: "A simple CV-Builder made with Angular",
     url: "http://cv.alexfriesen.net/",
-    img: "http://alexfriesen.net/images/cv.png",
+    img: "/images/cv.png",
+    tags: ["angular", "print layout"],
   },
 ];
 
 export default defineComponent({
   name: "Projects",
   components: {
+    Tag,
     Content,
     LinkButton,
     ExternalLinkIcon,

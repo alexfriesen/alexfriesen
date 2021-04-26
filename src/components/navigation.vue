@@ -26,12 +26,14 @@
                 :key="item.name"
                 :to="item.href"
                 :class="[
-                  item.current
+                  item.href === currentRoute.path
                     ? 'bg-gray-900 text-white'
                     : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                   'px-3 py-2 rounded-md text-sm font-medium',
                 ]"
-                :aria-current="item.current ? 'page' : undefined"
+                :aria-current="
+                  item.href === currentRoute.path ? 'page' : undefined
+                "
               >
                 {{ item.name }}
               </router-link>
@@ -48,12 +50,12 @@
           :key="item.name"
           :to="item.href"
           :class="[
-            item.current
+            item.href === currentRoute.path
               ? 'bg-gray-900 text-white'
               : 'text-gray-300 hover:bg-gray-700 hover:text-white',
             'block px-3 py-2 rounded-md text-base font-medium',
           ]"
-          :aria-current="item.current ? 'page' : undefined"
+          :aria-current="item.href === currentRoute.path ? 'page' : undefined"
         >
           {{ item.name }}
         </router-link>
@@ -63,7 +65,8 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from "vue";
+import { ref, defineComponent, computed } from "vue";
+import { useRouter } from "vue-router";
 import {
   Disclosure,
   DisclosureButton,
@@ -77,9 +80,9 @@ import {
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 
 const navigation = [
-  { name: "Home", href: "/", current: false },
-  { name: "Projects", href: "/projects", current: false },
-  { name: "blog", href: "/blog", current: false },
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/projects" },
+  { name: "blog", href: "/blog" },
 ];
 
 export default defineComponent({
@@ -96,9 +99,13 @@ export default defineComponent({
     XIcon,
   },
   setup() {
+    const currentRoute = computed(() => {
+      return useRouter().currentRoute.value;
+    });
     const open = ref(false);
 
     return {
+      currentRoute,
       navigation,
       open,
     };
