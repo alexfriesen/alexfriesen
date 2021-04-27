@@ -1,9 +1,12 @@
 <template>
-  <retro-scene class="h-96 w-full"></retro-scene>
-  <div class="retro-gradient">
+  <retro-scene v-if="!motionReduced" class="h-96 w-full"></retro-scene>
+  <div :class="!motionReduced ? 'retro-gradient' : ''">
     <Content class="relative">
       <figure
-        class="flex flex-col md:flex-row -mt-24 rounded-xl p-8 items-center justify-center shadow bg-gray-800"
+        :class="[
+          !motionReduced ? '-mt-24' : '',
+          'flex flex-col md:flex-row rounded-xl p-8 items-center justify-center shadow bg-gray-800',
+        ]"
       >
         <img
           class="w-32 h-32 md:w-48 md:h-auto rounded-full"
@@ -52,19 +55,28 @@
 .retro-gradient {
   background-image: linear-gradient(
     to bottom,
-    #11072d 0%,
-    #11072d 10%,
+    var(--pink-dark) 0%,
+    var(--pink-dark) 5%,
     #374151 100%
   );
 }
 </style>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 import GithubIcon from "../assets/github.svg?component";
 import TwitterIcon from "../assets/twitter.svg?component";
 import Content from "./content.vue";
+
+// get reduced motion media query
+const motionMediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const motionReduced = ref(motionMediaQuery.matches);
+
+// listen for media query changes
+motionMediaQuery.addEventListener("change", (event) => {
+  motionReduced.value = event.matches;
+});
 
 export default defineComponent({
   name: "Home",
@@ -72,6 +84,11 @@ export default defineComponent({
     GithubIcon,
     TwitterIcon,
     Content,
+  },
+  setup() {
+    return {
+      motionReduced,
+    };
   },
 });
 </script>

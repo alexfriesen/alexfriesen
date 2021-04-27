@@ -6,7 +6,7 @@
     <router-view />
   </main>
   <footer>
-    <Content>
+    <Content class="text-center">
       &copy; 2021 - Alexander Friesen
     </Content>
   </footer>

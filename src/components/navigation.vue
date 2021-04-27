@@ -82,7 +82,7 @@ import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
-  { name: "blog", href: "/blog" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export default defineComponent({
