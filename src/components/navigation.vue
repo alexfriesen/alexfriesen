@@ -19,10 +19,28 @@
             <!--<img class="h-8 w-auto" src="./assets/logo.png" alt="Logo" />-->
             <h1 class="text-white">Alexander Friesen</h1>
           </div>
-          <div class="hidden sm:block sm:ml-6">
-            <div class="flex space-x-4">
+          <div class="hidden sm:flex sm:ml-6 flex-1 justify-between gap-4">
+            <div class="flex gap-4">
               <router-link
-                v-for="item in navigation"
+                v-for="item in siteNavigation"
+                :key="item.name"
+                :to="item.href"
+                :class="[
+                  item.href === currentRoute.path
+                    ? 'bg-gray-900 text-white'
+                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                  'px-3 py-2 rounded-md text-sm font-medium',
+                ]"
+                :aria-current="
+                  item.href === currentRoute.path ? 'page' : undefined
+                "
+              >
+                {{ item.name }}
+              </router-link>
+            </div>
+            <div class="flex gap-4">
+              <router-link
+                v-for="item in specialNavigation"
                 :key="item.name"
                 :to="item.href"
                 :class="[
@@ -46,7 +64,21 @@
     <DisclosurePanel class="sm:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <router-link
-          v-for="item in navigation"
+          v-for="item in siteNavigation"
+          :key="item.name"
+          :to="item.href"
+          :class="[
+            item.href === currentRoute.path
+              ? 'bg-gray-900 text-white'
+              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+            'block px-3 py-2 rounded-md text-base font-medium',
+          ]"
+          :aria-current="item.href === currentRoute.path ? 'page' : undefined"
+        >
+          {{ item.name }}
+        </router-link>
+        <router-link
+          v-for="item in specialNavigation"
           :key="item.name"
           :to="item.href"
           :class="[
@@ -79,11 +111,13 @@ import {
 // @ts-ignore // bug: https://github.com/tailwindlabs/heroicons/issues/252
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 
-const navigation = [
+const siteNavigation = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
   { name: "Blog", href: "/blog" },
 ];
+
+const specialNavigation = [{ name: "Contact", href: "/contact" }];
 
 export default defineComponent({
   name: "Navigation",
@@ -106,7 +140,8 @@ export default defineComponent({
 
     return {
       currentRoute,
-      navigation,
+      siteNavigation,
+      specialNavigation,
       open,
     };
   },

@@ -15,14 +15,14 @@
       </a>
 
       <header class="leading-tight p-2 md:p-4">
-        <h1 class="font-bold text-xl mb-2">
+        <h3 class="font-bold text-xl mb-2">
           <a
             class="no-underline hover:underline text-grey-darker"
             :href="item.url"
           >
             {{ item.title }}
           </a>
-        </h1>
+        </h3>
         <p class="text-gray-300 text-base">
           {{ item.text }}
         </p>
