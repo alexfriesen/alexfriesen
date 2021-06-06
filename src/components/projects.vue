@@ -55,7 +55,7 @@ const projects = [
     title: "retro-scene",
     text: "😎🌄🌠",
     url: "https://github.com/alexfriesen/retro",
-    img: "https://raw.githubusercontent.com/alexfriesen/retro/main/preview.gif",
+    img: "https://raw.githubusercontent.com/alexfriesen/retro/main/public/preview.gif",
     tags: ["three.js", "web component"],
   },
   {
