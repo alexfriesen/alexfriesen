@@ -3,7 +3,14 @@
     <article
       v-for="item in projects"
       :key="item.title"
-      class="flex flex-col justify-between overflow-hidden rounded-lg bg-gray-800 shadow-lg"
+      class="
+        flex flex-col
+        justify-between
+        overflow-hidden
+        rounded-lg
+        bg-gray-800
+        shadow-lg
+      "
     >
       <a :href="item.url">
         <img
@@ -11,7 +18,7 @@
           loading="lazy"
           :alt="item.title"
           :src="item.img"
-        />
+        >
       </a>
 
       <header class="leading-tight p-2 md:p-4">
@@ -30,9 +37,17 @@
 
       <footer class="flex items-center justify-between leading-none p-2 md:p-4">
         <div class="flex flex-wrap gap-1">
-          <Tag v-for="tag in item.tags" :key="tag">{{ tag }}</Tag>
+          <Tag
+            v-for="tag in item.tags"
+            :key="tag"
+          >
+            {{ tag }}
+          </Tag>
         </div>
-        <LinkButton target="_blank" :href="item.url">
+        <LinkButton
+          target="_blank"
+          :href="item.url"
+        >
           <span>Open</span>
           <ExternalLinkIcon class="inline w-6 h-6" />
         </LinkButton>
@@ -47,6 +62,7 @@ import { defineComponent } from "vue";
 import Content from "./content.vue";
 import Tag from "./tag.vue";
 import LinkButton from "./link-button.vue";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { ExternalLinkIcon } from "@heroicons/vue/outline";
 
@@ -80,6 +96,5 @@ export default defineComponent({
       projects,
     };
   },
-  setup: () => {},
 });
 </script>

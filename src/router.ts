@@ -1,4 +1,4 @@
-import { createWebHashHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter, RouteRecordRaw } from "vue-router";
 
 import Home from "./components/home.vue";
 import Blog from "./components/blog.vue";
@@ -7,7 +7,7 @@ import Contact from "./components/contact.vue";
 import NotFound from "./components/not-found.vue";
 
 const history = createWebHashHistory();
-const routes = [
+const routes: RouteRecordRaw[] = [
     { path: "/", component: Home },
     { path: "/blog", component: Blog },
     { path: "/projects", component: Projects },

@@ -1,5 +1,8 @@
 <template>
-  <retro-scene v-if="!motionReduced" class="h-96 w-full"></retro-scene>
+  <retro-scene
+    v-if="!motionReduced"
+    class="h-96 w-full"
+  />
   <div :class="!motionReduced ? 'retro-gradient' : ''">
     <Content class="relative">
       <figure
@@ -14,19 +17,37 @@
           height="300"
           src="../assets/square300.jpg"
           alt="Me"
-        />
+        >
         <div class="pt-6 md:px-8 text-center md:text-left space-y-4">
           <figcaption class="font-medium">
             <!-- <p class="text-cyan-600">Alexander Friesen</p> -->
             <p class="text-gray-300">
-              Hi there! 👋<br />
+              Hi there! 👋<br>
               I'm Alex a Software Developer specializing in web technologies.
             </p>
             <div class="py-2">
-              <p class="text-gray-400">You can follow me on:</p>
+              <p class="text-gray-400">
+                You can follow me on:
+              </p>
               <div class="font-normal flex justify-evenly p-4">
                 <a
-                  class="inline-flex gap-1 items-center justify-evenly px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-300 bg-gray-200 hover:bg-gray-700 text-gray-800 hover:text-gray-200"
+                  class="
+                    inline-flex
+                    gap-1
+                    items-center
+                    justify-evenly
+                    px-5
+                    py-3
+                    border border-transparent
+                    text-base
+                    font-medium
+                    rounded-md
+                    text-gray-300
+                    bg-gray-200
+                    hover:bg-gray-700
+                    text-gray-800
+                    hover:text-gray-200
+                  "
                   href="https://github.com/alexfriesen/"
                   target="_blank"
                 >
@@ -35,7 +56,23 @@
                 </a>
 
                 <a
-                  class="inline-flex gap-1 items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-300 bg-gray-200 hover:bg-gray-700 text-gray-800 hover:text-gray-200"
+                  class="
+                    inline-flex
+                    gap-1
+                    items-center
+                    justify-center
+                    px-5
+                    py-3
+                    border border-transparent
+                    text-base
+                    font-medium
+                    rounded-md
+                    text-gray-300
+                    bg-gray-200
+                    hover:bg-gray-700
+                    text-gray-800
+                    hover:text-gray-200
+                  "
                   href="https://twitter.com/alexfreezor/"
                   target="_blank"
                 >
@@ -50,17 +87,6 @@
     </Content>
   </div>
 </template>
-
-<style scoped>
-.retro-gradient {
-  background-image: linear-gradient(
-    to bottom,
-    var(--pink-dark) 0%,
-    var(--pink-dark) 5%,
-    #374151 100%
-  );
-}
-</style>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
@@ -92,3 +118,14 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.retro-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    var(--pink-dark) 0%,
+    var(--pink-dark) 5%,
+    #374151 100%
+  );
+}
+</style>

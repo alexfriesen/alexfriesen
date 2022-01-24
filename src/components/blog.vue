@@ -5,14 +5,17 @@
       :key="item.title"
       class="flex flex-col justify-between overflow-hidden rounded-lg bg-gray-800 shadow-lg"
     >
-      <a v-if="item.img" :href="item.url || undefined">
+      <a
+        v-if="item.img"
+        :href="item.url || undefined"
+      >
         <img
           v-if="item.img"
           class="block h-auto w-full object-cover"
           loading="lazy"
           :alt="item.title"
           :src="item.img"
-        />
+        >
       </a>
 
       <header class="leading-tight p-2 md:p-4">
@@ -25,10 +28,17 @@
       </header>
 
       <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-        <time class="text-gray-500" :datetime="item.date">
+        <time
+          class="text-gray-500"
+          :datetime="item.date"
+        >
           {{ new Date(item.date).toLocaleDateString() }}
         </time>
-        <LinkButton v-if="item.url" target="_blank" :href="item.url">
+        <LinkButton
+          v-if="item.url"
+          target="_blank"
+          :href="item.url"
+        >
           <span>Open</span>
           <ExternalLinkIcon class="inline w-6 h-6" />
         </LinkButton>
@@ -42,6 +52,7 @@ import { defineComponent } from "vue";
 
 import Content from "./content.vue";
 import LinkButton from "./link-button.vue";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { ExternalLinkIcon } from "@heroicons/vue/outline";
 

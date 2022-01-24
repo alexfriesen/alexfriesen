@@ -1,5 +1,9 @@
 <template>
-  <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+  <Disclosure
+    v-slot="{ open }"
+    as="nav"
+    class="bg-gray-800"
+  >
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -8,8 +12,16 @@
             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
           >
             <span class="sr-only">Open main menu</span>
-            <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-            <XIcon v-else class="block h-6 w-6" aria-hidden="true" />
+            <MenuIcon
+              v-if="!open"
+              class="block h-6 w-6"
+              aria-hidden="true"
+            />
+            <XIcon
+              v-else
+              class="block h-6 w-6"
+              aria-hidden="true"
+            />
           </DisclosureButton>
         </div>
         <div
@@ -17,7 +29,9 @@
         >
           <div class="flex-shrink-0 flex items-center">
             <!--<img class="h-8 w-auto" src="./assets/logo.png" alt="Logo" />-->
-            <h1 class="text-white">Alexander Friesen</h1>
+            <h1 class="text-white">
+              Alexander Friesen
+            </h1>
           </div>
           <div class="hidden sm:flex sm:ml-6 flex-1 justify-between gap-4">
             <div class="flex gap-4">
@@ -103,11 +117,12 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
+  // Menu,
+  // MenuButton,
+  // MenuItem,
+  // MenuItems,
 } from "@headlessui/vue";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore // bug: https://github.com/tailwindlabs/heroicons/issues/252
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 
@@ -125,10 +140,10 @@ export default defineComponent({
     Disclosure,
     DisclosureButton,
     DisclosurePanel,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
+    // Menu,
+    // MenuButton,
+    // MenuItem,
+    // MenuItems,
     MenuIcon,
     XIcon,
   },

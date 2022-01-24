@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
+    "lint": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "copy:cname": "cp ./CNAME ./dist/CNAME",
     "serve": "vite preview"
   },
@@ -28,16 +29,21 @@
     "@tailwindcss/typography": "^0.5.0",
     "@types/node": "^16.10.3",
     "@types/svgo": "^2.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
     "@vitejs/plugin-vue": "^2.0.0",
     "@vue/compiler-sfc": "^3.2.2",
+    "@vue/eslint-config-typescript": "^10.0.0",
     "autoprefixer": "^10.4.1",
+    "eslint": "^8.7.0",
+    "eslint-plugin-vue": "^8.3.0",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.11",
     "tailwindcss-cli": "^0.1.2",
     "typescript": "^4.3.5",
     "vite": "^2.5.0",
     "vite-svg-loader": "^3.0.0",
-    "vue-tsc": "^0.30.2"
+    "vue-tsc": "^0.31.1"
   },
   "dependencies": {
     "vue": "^3.2.2",
