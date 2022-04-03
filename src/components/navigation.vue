@@ -117,13 +117,7 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  // Menu,
-  // MenuButton,
-  // MenuItem,
-  // MenuItems,
 } from "@headlessui/vue";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore // bug: https://github.com/tailwindlabs/heroicons/issues/252
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 
 const siteNavigation = [
@@ -135,7 +129,6 @@ const siteNavigation = [
 const specialNavigation = [{ name: "Contact", href: "/contact" }];
 
 export default defineComponent({
-  name: "Navigation",
   components: {
     Disclosure,
     DisclosureButton,

@@ -62,8 +62,6 @@ import { defineComponent } from "vue";
 import Content from "./content.vue";
 import Tag from "./tag.vue";
 import LinkButton from "./link-button.vue";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { ExternalLinkIcon } from "@heroicons/vue/outline";
 
 const projects = [
@@ -84,7 +82,6 @@ const projects = [
 ];
 
 export default defineComponent({
-  name: "Projects",
   components: {
     Tag,
     Content,

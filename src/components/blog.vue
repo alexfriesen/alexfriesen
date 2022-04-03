@@ -52,8 +52,6 @@ import { defineComponent } from "vue";
 
 import Content from "./content.vue";
 import LinkButton from "./link-button.vue";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { ExternalLinkIcon } from "@heroicons/vue/outline";
 
 const items = [

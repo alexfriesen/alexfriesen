@@ -9,8 +9,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { ExclamationIcon } from "@heroicons/vue/outline";
 
 import Content from "./content.vue";
