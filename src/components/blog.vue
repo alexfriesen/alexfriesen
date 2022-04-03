@@ -83,7 +83,7 @@ const items = [
 ];
 
 export default defineComponent({
-  name: "Blog",
+  name: "AppBlog",
   components: {
     Content,
     LinkButton,

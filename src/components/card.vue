@@ -49,6 +49,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Card",
+  name: "AppCard",
 });
 </script>

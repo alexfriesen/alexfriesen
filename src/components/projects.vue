@@ -82,6 +82,7 @@ const projects = [
 ];
 
 export default defineComponent({
+  name: "AppProjects",
   components: {
     Tag,
     Content,

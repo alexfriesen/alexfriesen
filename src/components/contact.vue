@@ -86,7 +86,7 @@ function sendMessage(email: string, message: string) {
 }
 
 export default defineComponent({
-  name: "Contact",
+  name: "AppContact",
   components: {
     Content,
     CheckCircleIcon,

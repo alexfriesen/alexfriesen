@@ -105,7 +105,7 @@ motionMediaQuery.addEventListener("change", (event) => {
 });
 
 export default defineComponent({
-  name: "Home",
+  name: "AppHome",
   components: {
     GithubIcon,
     TwitterIcon,

@@ -7,7 +7,7 @@
   </main>
   <footer>
     <Content class="text-center">
-      &copy; 2021 - Alexander Friesen
+      &copy; 2022 - Alexander Friesen
     </Content>
   </footer>
 </template>
