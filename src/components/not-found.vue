@@ -1,9 +1,9 @@
 <template>
   <Content class="flex flex-col items-center">
     <ExclamationIcon class="block h-32 w-32" />
-    <h3 class="text-5xl">
+    <h2 class="text-5xl">
       NOT FOUND
-    </h3>
+    </h2>
   </Content>
 </template>
 

@@ -19,9 +19,9 @@
       </a>
 
       <header class="leading-tight p-2 md:p-4">
-        <h3 class="text-grey-darker font-bold text-xl mb-2">
+        <h2 class="text-grey-darker font-bold text-xl mb-2">
           {{ item.title }}
-        </h3>
+        </h2>
         <p class="text-gray-300 text-base">
           {{ item.short }}
         </p>

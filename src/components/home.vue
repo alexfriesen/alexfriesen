@@ -1,8 +1,5 @@
 <template>
-  <retro-scene
-    v-if="!motionReduced"
-    class="h-96 w-full"
-  />
+  <retro-scene v-if="!motionReduced" class="h-96 w-full" />
   <div :class="!motionReduced ? 'retro-gradient' : ''">
     <Content class="relative">
       <figure
@@ -17,18 +14,16 @@
           height="300"
           src="../assets/square300.jpg"
           alt="Me"
-        >
+        />
         <div class="pt-6 md:px-8 text-center md:text-left space-y-4">
           <figcaption class="font-medium">
             <!-- <p class="text-cyan-600">Alexander Friesen</p> -->
             <p class="text-gray-300">
-              Hi there! 👋<br>
+              Hi there! 👋<br />
               I'm Alex a Software Developer specializing in web technologies.
             </p>
             <div class="py-2">
-              <p class="text-gray-400">
-                You can follow me on:
-              </p>
+              <p class="text-gray-400">You can follow me on:</p>
               <div class="font-normal flex justify-evenly p-4">
                 <a
                   class="
@@ -95,6 +90,19 @@ import GithubIcon from "../assets/github.svg?component";
 import TwitterIcon from "../assets/twitter.svg?component";
 import Content from "./content.vue";
 
+const loadScript = () => {
+  if (document.getElementById("retro-script")) return;
+
+  const script = document.createElement("script");
+
+  script.setAttribute("id", "retro-script");
+  script.setAttribute("type", "module");
+  script.setAttribute("defer", "true");
+  script.setAttribute("src", "https://alexfriesen.github.io/retro/index.js");
+
+  document.head.appendChild(script);
+};
+
 // get reduced motion media query
 const motionMediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const motionReduced = ref(motionMediaQuery.matches);
@@ -115,6 +123,14 @@ export default defineComponent({
     return {
       motionReduced,
     };
+  },
+  watch: {
+    motionReduced: {
+      immediate: true,
+      handler(value) {
+        if (!value) loadScript();
+      },
+    },
   },
 });
 </script>
