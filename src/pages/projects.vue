@@ -56,13 +56,11 @@
   </Content>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import Content from "./content.vue";
-import Tag from "./tag.vue";
-import LinkButton from "./link-button.vue";
+<script setup lang="ts">
 import { ExternalLinkIcon } from "@heroicons/vue/outline";
+import Content from "../components/content.vue";
+import Tag from "../components/tag.vue";
+import LinkButton from "../components/link-button.vue";
 
 const projects = [
   {
@@ -80,19 +78,4 @@ const projects = [
     tags: ["angular", "print layout"],
   },
 ];
-
-export default defineComponent({
-  name: "AppProjects",
-  components: {
-    Tag,
-    Content,
-    LinkButton,
-    ExternalLinkIcon,
-  },
-  data() {
-    return {
-      projects,
-    };
-  },
-});
 </script>

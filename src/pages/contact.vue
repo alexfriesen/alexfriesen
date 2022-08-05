@@ -134,11 +134,11 @@
   </Content>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 import { CheckCircleIcon, ExclamationCircleIcon } from "@heroicons/vue/outline";
 
-import Content from "./content.vue";
+import Content from "../components/content.vue";
 
 const contactmeHost = "https://contactme-fplu4j3puq-ey.a.run.app";
 
@@ -152,42 +152,27 @@ function sendMessage(email: string, message: string) {
   });
 }
 
-export default defineComponent({
-  name: "AppContact",
-  components: {
-    Content,
-    CheckCircleIcon,
-    ExclamationCircleIcon,
-  },
+const email = ref("");
+const message = ref("");
+const isSubmitted = ref(false);
+const pending = ref(false);
+const error = ref(false);
+const success = ref(false);
 
-  data() {
-    return {
-      email: "",
-      message: "",
-      isSubmitted: false,
-      pending: false,
-      error: false,
-      success: false,
-    };
-  },
+function handleSubmit() {
+  isSubmitted.value = true;
+  pending.value = true;
 
-  methods: {
-    handleSubmit() {
-      this.isSubmitted = true;
-      this.pending = true;
-
-      sendMessage(this.email, this.message)
-        .then(() => {
-          this.success = true;
-        })
-        .catch(() => {
-          this.error = true;
-          this.isSubmitted = false;
-        })
-        .finally(() => {
-          this.pending = false;
-        });
-    },
-  },
-});
+  sendMessage(email.value, message.value)
+    .then(() => {
+      success.value = true;
+    })
+    .catch(() => {
+      error.value = true;
+      isSubmitted.value = false;
+    })
+    .finally(() => {
+      pending.value = false;
+    });
+}
 </script>

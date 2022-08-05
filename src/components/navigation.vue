@@ -110,7 +110,7 @@
   </Disclosure>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref, defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
@@ -124,27 +124,8 @@ const siteNavigation = [
 
 const specialNavigation = [{ name: "Contact", href: "/contact" }];
 
-export default defineComponent({
-  name: "AppNavigation",
-  components: {
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
-    MenuIcon,
-    XIcon,
-  },
-  setup() {
-    const currentRoute = computed(() => {
-      return useRouter().currentRoute.value;
-    });
-    const open = ref(false);
-
-    return {
-      currentRoute,
-      siteNavigation,
-      specialNavigation,
-      open,
-    };
-  },
+const currentRoute = computed(() => {
+  return useRouter().currentRoute.value;
 });
+const open = ref(false);
 </script>

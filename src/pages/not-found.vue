@@ -7,17 +7,8 @@
   </Content>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import { ExclamationIcon } from "@heroicons/vue/outline";
 
-import Content from "./content.vue";
-
-export default defineComponent({
-  name: "NotFound",
-  components: {
-    Content,
-    ExclamationIcon,
-  },
-});
+import Content from "../components/content.vue";
 </script>

@@ -83,14 +83,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "vue";
+<script setup lang="ts">
+import { ref, watch } from "vue";
 
 import GithubIcon from "../assets/github.svg?component";
 import TwitterIcon from "../assets/twitter.svg?component";
-import Content from "./content.vue";
+import Content from "../components/content.vue";
 
-const loadScript = () => {
+function loadScript() {
   if (document.getElementById("retro-script")) return;
 
   const script = document.createElement("script");
@@ -101,7 +101,7 @@ const loadScript = () => {
   script.setAttribute("src", "https://alexfriesen.github.io/retro/index.js");
 
   document.head.appendChild(script);
-};
+}
 
 // get reduced motion media query
 const motionMediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -112,27 +112,13 @@ motionMediaQuery.addEventListener("change", (event) => {
   motionReduced.value = event.matches;
 });
 
-export default defineComponent({
-  name: "AppHome",
-  components: {
-    GithubIcon,
-    TwitterIcon,
-    Content,
+watch(
+  motionReduced,
+  (value) => {
+    if (!value) loadScript();
   },
-  setup() {
-    return {
-      motionReduced,
-    };
-  },
-  watch: {
-    motionReduced: {
-      immediate: true,
-      handler(value) {
-        if (!value) loadScript();
-      },
-    },
-  },
-});
+  { immediate: true }
+);
 </script>
 
 <style scoped>

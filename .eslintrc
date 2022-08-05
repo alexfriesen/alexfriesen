@@ -1,21 +1,18 @@
 {
-    "root": true,
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-recommended",
-      "eslint:recommended",
-      "@vue/typescript/recommended"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 2021
-    },
-    "plugins": [
-    ],
-    "rules": {
-    }
-  }
-  
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript/recommended"
+  ],
+  "plugins": [],
+  "rules": {}
+}

@@ -1,10 +1,10 @@
 import { createWebHashHistory, createRouter, RouteRecordRaw } from "vue-router";
 
-import Home from "./components/home.vue";
-import Blog from "./components/blog.vue";
-import Projects from "./components/projects.vue";
-import Contact from "./components/contact.vue";
-import NotFound from "./components/not-found.vue";
+import Home from "./pages/home.vue";
+import Blog from "./pages/blog.vue";
+import Projects from "./pages/projects.vue";
+import Contact from "./pages/contact.vue";
+import NotFound from "./pages/not-found.vue";
 
 const history = createWebHashHistory();
 const routes: RouteRecordRaw[] = [
