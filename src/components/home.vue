@@ -97,7 +97,7 @@ const loadScript = () => {
 
   script.setAttribute("id", "retro-script");
   script.setAttribute("type", "module");
-  script.setAttribute("defer", "true");
+  script.setAttribute("crossorigin", "true");
   script.setAttribute("src", "https://alexfriesen.github.io/retro/index.js");
 
   document.head.appendChild(script);
