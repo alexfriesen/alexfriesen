@@ -136,7 +136,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { CheckCircleIcon, ExclamationCircleIcon } from "@heroicons/vue/outline";
+import { CheckCircleIcon, ExclamationCircleIcon } from "@heroicons/vue/24/outline";
 
 import Content from "../components/content.vue";
 

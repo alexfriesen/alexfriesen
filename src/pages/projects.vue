@@ -49,7 +49,7 @@
           :href="item.url"
         >
           <span>Open</span>
-          <ExternalLinkIcon class="inline w-6 h-6" />
+          <ArrowTopRightOnSquareIcon class="inline w-6 h-6" />
         </LinkButton>
       </footer>
     </article>
@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import { ExternalLinkIcon } from "@heroicons/vue/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/vue/24/outline";
 import Content from "../components/content.vue";
 import Tag from "../components/tag.vue";
 import LinkButton from "../components/link-button.vue";
