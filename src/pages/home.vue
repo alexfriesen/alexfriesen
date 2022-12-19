@@ -49,31 +49,6 @@
                   <GithubIcon class="w-6 h-6" />
                   Github
                 </a>
-
-                <a
-                  class="
-                    inline-flex
-                    gap-1
-                    items-center
-                    justify-center
-                    px-5
-                    py-3
-                    border border-transparent
-                    text-base
-                    font-medium
-                    rounded-md
-                    text-gray-300
-                    bg-gray-200
-                    hover:bg-gray-700
-                    text-gray-800
-                    hover:text-gray-200
-                  "
-                  href="https://twitter.com/alexfreezor/"
-                  target="_blank"
-                >
-                  <TwitterIcon class="w-6 h-6" />
-                  Twitter
-                </a>
               </div>
             </div>
           </figcaption>
