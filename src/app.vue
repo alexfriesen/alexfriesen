@@ -3,7 +3,7 @@
     <Navigation />
   </header>
   <main>
-    <router-view />
+    <NuxtPage />
   </main>
   <footer>
     <Content class="text-center">

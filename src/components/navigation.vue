@@ -35,7 +35,7 @@
           </div>
           <div class="hidden sm:flex sm:ml-6 flex-1 justify-between gap-4">
             <div class="flex gap-4">
-              <router-link
+              <NuxtLink
                 v-for="item in siteNavigation"
                 :key="item.name"
                 :to="item.href"
@@ -50,10 +50,10 @@
                 "
               >
                 {{ item.name }}
-              </router-link>
+              </NuxtLink>
             </div>
             <div class="flex gap-4">
-              <router-link
+              <NuxtLink
                 v-for="item in specialNavigation"
                 :key="item.name"
                 :to="item.href"
@@ -68,7 +68,7 @@
                 "
               >
                 {{ item.name }}
-              </router-link>
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@
 
     <DisclosurePanel class="sm:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <router-link
+        <NuxtLink
           v-for="item in siteNavigation"
           :key="item.name"
           :to="item.href"
@@ -90,8 +90,8 @@
           :aria-current="item.href === currentRoute.path ? 'page' : undefined"
         >
           {{ item.name }}
-        </router-link>
-        <router-link
+        </NuxtLink>
+        <NuxtLink
           v-for="item in specialNavigation"
           :key="item.name"
           :to="item.href"
@@ -104,7 +104,7 @@
           :aria-current="item.href === currentRoute.path ? 'page' : undefined"
         >
           {{ item.name }}
-        </router-link>
+        </NuxtLink>
       </div>
     </DisclosurePanel>
   </Disclosure>
