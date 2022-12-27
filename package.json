@@ -10,8 +10,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "copy:cname": "cp ./CNAME ./.output/public/CNAME"
+    "postinstall": "nuxt prepare"
   },
   "repository": {
     "type": "git",
