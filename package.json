@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "copy:cname": "cp ./CNAME ./dist/CNAME"
+    "copy:cname": "cp ./CNAME ./.output/public/CNAME"
   },
   "repository": {
     "type": "git",
