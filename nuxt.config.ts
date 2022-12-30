@@ -3,6 +3,11 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'nuxt-icon'],
 	css: ['@/index.css'],
 	srcDir: 'src/',
+	tailwindcss: {
+		config: {
+			plugins: [require('@tailwindcss/typography')],
+		},
+	},
 	content: {
 		highlight: {
 			// Theme used in all color schemes.
