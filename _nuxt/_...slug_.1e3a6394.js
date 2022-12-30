@@ -1,1 +1,0 @@
-import{e,o as s,c as t,Q as a,Y as o,Z as c,u as r,K as n}from"./entry.65ca1126.js";import{r as l}from"./ExclamationTriangleIcon.124b8876.js";const _=n("h2",{class:"text-5xl"}," NOT FOUND ",-1),i=e({__name:"[...slug]",setup(f){return(m,p)=>(s(),t(o,{class:"flex flex-col items-center"},{default:a(()=>[c(r(l),{class:"block h-32 w-32"}),_]),_:1}))}});export{i as default};
