@@ -48,9 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
-
-import Content from "../components/content.vue";
+// import { ref, watch } from "vue";
 
 const motionReduced = true;
 
