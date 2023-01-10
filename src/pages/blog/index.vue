@@ -9,11 +9,11 @@
 				<NuxtLink v-if="article.image" :to="article._path || undefined">
 					<img
 						v-if="article.image"
-						class="block h-auto w-full object-cover"
 						loading="lazy"
+						class="block h-auto w-full object-cover aspect-video"
 						:alt="article.title"
 						:src="article.image"
-					/>
+					>
 				</NuxtLink>
 
 				<header class="leading-tight p-2 md:p-4">

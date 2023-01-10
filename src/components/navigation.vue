@@ -39,15 +39,8 @@
                 v-for="item in siteNavigation"
                 :key="item.name"
                 :to="item.href"
-                :class="[
-                  item.href === currentRoute.path
-                    ? 'bg-gray-900 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                  'px-3 py-2 rounded-md text-sm font-medium',
-                ]"
-                :aria-current="
-                  item.href === currentRoute.path ? 'page' : undefined
-                "
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+								active-class="bg-gray-900 text-white"
               >
                 {{ item.name }}
               </NuxtLink>
@@ -57,15 +50,8 @@
                 v-for="item in specialNavigation"
                 :key="item.name"
                 :to="item.href"
-                :class="[
-                  item.href === currentRoute.path
-                    ? 'bg-gray-900 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                  'px-3 py-2 rounded-md text-sm font-medium',
-                ]"
-                :aria-current="
-                  item.href === currentRoute.path ? 'page' : undefined
-                "
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+								active-class="bg-gray-900 text-white"
               >
                 {{ item.name }}
               </NuxtLink>
@@ -81,13 +67,8 @@
           v-for="item in siteNavigation"
           :key="item.name"
           :to="item.href"
-          :class="[
-            item.href === currentRoute.path
-              ? 'bg-gray-900 text-white'
-              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-            'block px-3 py-2 rounded-md text-base font-medium',
-          ]"
-          :aria-current="item.href === currentRoute.path ? 'page' : undefined"
+					active-class="bg-gray-900 text-white"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
         >
           {{ item.name }}
         </NuxtLink>
@@ -95,13 +76,8 @@
           v-for="item in specialNavigation"
           :key="item.name"
           :to="item.href"
-          :class="[
-            item.href === currentRoute.path
-              ? 'bg-gray-900 text-white'
-              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-            'block px-3 py-2 rounded-md text-base font-medium',
-          ]"
-          :aria-current="item.href === currentRoute.path ? 'page' : undefined"
+					active-class="bg-gray-900 text-white"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
         >
           {{ item.name }}
         </NuxtLink>
@@ -111,21 +87,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { useRouter } from "vue-router";
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
 const siteNavigation = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Blog", href: "/blog" },
+  { name: 'Home', href: '/' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Blog', href: '/blog' },
 ];
 
-const specialNavigation = [{ name: "Contact", href: "/contact" }];
-
-const currentRoute = computed(() => {
-  return useRouter().currentRoute.value;
-});
-const open = ref(false);
+const specialNavigation = [{ name: 'Contact', href: '/contact' }];
 </script>

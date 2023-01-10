@@ -13,7 +13,7 @@
       "
 		>
 			<a :href="item.url">
-				<img class="block h-auto w-full object-cover" loading="lazy" :alt="item.title" :src="item.img">
+				<img class="block h-auto w-full object-cover aspect-video" loading="lazy" :alt="item.title" :src="item.img">
 			</a>
 
 			<header class="leading-tight p-2 md:p-4">
