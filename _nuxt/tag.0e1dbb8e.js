@@ -1,1 +1,0 @@
-import{O as t,o as n,J as o,P as s}from"./entry.d5eaa76d.js";const r={},a={class:"text-xs inline-flex items-center font-bold leading-sm px-3 py-1 bg-gray-600 text-gray-300 rounded-full"};function c(e,l){return n(),o("span",a,[s(e.$slots,"default")])}const d=t(r,[["render",c]]);export{d as default};
