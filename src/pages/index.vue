@@ -18,7 +18,8 @@
             <div class="py-2">
               <p class="text-gray-400">You can follow me on:</p>
               <div class="font-normal flex justify-evenly p-4">
-                <a class="
+                <NuxtLink
+								class="
                     inline-flex
                     gap-1
                     items-center
@@ -34,10 +35,13 @@
                     hover:bg-gray-700
                     text-gray-800
                     hover:text-gray-200
-                  " href="https://github.com/alexfriesen/" target="_blank">
+                  "
+									to="https://github.com/alexfriesen/"
+									target="_blank"
+								>
                   <Icon name="uil:github" class="w-6 h-6" />
                   Github
-                </a>
+                </NuxtLink>
               </div>
             </div>
           </figcaption>

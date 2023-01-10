@@ -35,7 +35,7 @@
 				</div>
 				<LinkButton target="_blank" :href="item.url">
 					<span>Open</span>
-					<ArrowTopRightOnSquareIcon class="inline w-6 h-6" />
+					<Icon name="heroicons:arrow-top-right-on-square-20-solid" class="inline w-6 h-6" />
 				</LinkButton>
 			</footer>
 		</article>
@@ -43,7 +43,6 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline';
 
 const projects = [
 	{

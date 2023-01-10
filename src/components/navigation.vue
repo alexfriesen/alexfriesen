@@ -17,8 +17,8 @@
             "
           >
             <span class="sr-only">Open main menu</span>
-            <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-            <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
+            <Icon name="heroicons:bars-3" v-if="!open" class="block h-6 w-6" aria-hidden="true" />
+            <Icon name="heroicons:x-mark" v-else class="block h-6 w-6" aria-hidden="true" />
           </DisclosureButton>
         </div>
         <div
@@ -88,7 +88,6 @@
 
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
 const siteNavigation = [
   { name: 'Home', href: '/' },

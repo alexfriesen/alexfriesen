@@ -1,14 +1,14 @@
 <template>
 	<Content class="relative flex flex-col items-center">
 		<div v-if="success" class="flex flex-col rounded-xl p-8 shadow bg-green-800">
-			<CheckCircleIcon class="w-32 h-32 m-auto" />
+			<Icon name="heroicons:check-circle" class="w-32 h-32 m-auto" />
 			<p>
 				Thank you for your message, I will get back to you as soon as possible.
 			</p>
 		</div>
 
 		<div v-if="error" class="flex flex-col rounded-xl p-8 shadow bg-red-800">
-			<ExclamationCircleIcon class="w-32 h-32 m-auto" />
+			<Icon name="heroicons:exclamation-circle" class="w-32 h-32 m-auto" />
 			<p>Sorry! Something went wrong. Please try again later.</p>
 		</div>
 
@@ -59,7 +59,7 @@
               "
 							type="email"
 							name="email"
-						/>
+						>
 					</label>
 				</div>
 			</div>
@@ -133,7 +133,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { CheckCircleIcon, ExclamationCircleIcon } from '@heroicons/vue/24/outline';
 
 const contactmeHost = 'https://contactme-fplu4j3puq-ey.a.run.app';
 
