@@ -1,6 +1,6 @@
 <template>
 	<Content class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
-		<ContentList v-slot="{ list }" path="/blog">
+		<ContentList v-slot="{ list }" path="/projects">
 			<article
 				v-for="article in list.slice().reverse()"
 				:key="article._path"
@@ -26,11 +26,13 @@
 				</header>
 
 				<footer class="flex items-center justify-between leading-none p-2 md:p-4">
-					<time class="text-gray-500" :datetime="article.date">
-						{{ new Date(article.date).toLocaleDateString() }}
-					</time>
+					<div class="flex flex-wrap gap-1">
+						<Tag v-for="tag in article.tags" :key="tag">
+							{{ tag }}
+						</Tag>
+					</div>
 					<LinkButton :url="article._path">
-						<span>Read</span>
+						<span>More</span>
 					</LinkButton>
 				</footer>
 			</article>
