@@ -1,1 +1,0 @@
-import{m as o,c,w as n,R as s,o as _,S as a,U as r,x as l}from"./entry.07f8fdd5.js";const x={},m=r("h2",{class:"text-5xl"}," NOT FOUND ",-1);function f(i,p){const e=l,t=s;return _(),c(t,{class:"flex flex-col items-center"},{default:n(()=>[a(e,{name:"heroicons:exclamation-triangle",class:"block h-32 w-32"}),m]),_:1})}const u=o(x,[["render",f]]);export{u as default};
