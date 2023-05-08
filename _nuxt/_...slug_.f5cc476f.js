@@ -1,0 +1,1 @@
+import{m as o,c,w as n,U as s,o as _,V as a,s as r,y as l}from"./entry.ad54df5a.js";const m={},x=r("h2",{class:"text-5xl"}," NOT FOUND ",-1);function f(i,p){const e=l,t=s;return _(),c(t,{class:"flex flex-col items-center"},{default:n(()=>[a(e,{name:"heroicons:exclamation-triangle",class:"block h-32 w-32"}),x]),_:1})}const u=o(m,[["render",f]]);export{u as default};
