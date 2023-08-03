@@ -1,4 +1,8 @@
 <template>
+	<Head>
+		<Title>Porjects</Title>
+	</Head>
+
 	<Content class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
 		<ContentList v-slot="{ list }" path="/projects">
 			<article

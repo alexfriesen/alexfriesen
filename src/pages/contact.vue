@@ -1,4 +1,8 @@
 <template>
+	<Head>
+		<Title>Contact</Title>
+	</Head>
+
 	<Content class="relative flex flex-col items-center">
 		<div v-if="success" class="flex flex-col rounded-xl p-8 shadow bg-green-800">
 			<Icon name="heroicons:check-circle" class="w-32 h-32 m-auto" />

@@ -25,7 +25,8 @@ export default defineNuxtConfig({
 			},
 			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1.0',
-			title: 'Alex Friesen - Homepage',
+			titleTemplate: '%s - Alex Friesen',
+			title: 'Home',
 			meta: [
 				{ name: 'theme-color', content: '#4c7f7f' },
 				{

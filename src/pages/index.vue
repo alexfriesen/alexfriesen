@@ -1,4 +1,7 @@
 <template>
+	<Head>
+		<Title>Home</Title>
+	</Head>
   <!-- <retro-scene v-if="!motionReduced" class="h-96 w-full" /> -->
   <div :class="!motionReduced ? 'retro-gradient' : ''">
     <Content class="relative">
