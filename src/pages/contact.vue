@@ -1,19 +1,19 @@
 <template>
 	<Head>
-		<Title>Contact</Title>
+		<Title>{{ $t('navigation.contact') }}</Title>
 	</Head>
 
 	<Content class="relative flex flex-col items-center">
 		<div v-if="success" class="flex flex-col rounded-xl p-8 shadow bg-green-800">
 			<Icon name="heroicons:check-circle" class="w-32 h-32 m-auto" />
 			<p>
-				Thank you for your message, I will get back to you as soon as possible.
+				{{ $t('contact.success') }}
 			</p>
 		</div>
 
 		<div v-if="error" class="flex flex-col rounded-xl p-8 shadow bg-red-800">
 			<Icon name="heroicons:exclamation-circle" class="w-32 h-32 m-auto" />
-			<p>Sorry! Something went wrong. Please try again later.</p>
+			<p>{{ $t('contact.error') }}</p>
 		</div>
 
 		<form
@@ -43,7 +43,7 @@
                 mb-2
               "
 						>
-							E-Mail
+							{{ $t('contact.email') }}
 						</span>
 						<input
 							v-model.trim="email"
@@ -80,7 +80,7 @@
                 mb-2
               "
 						>
-							Message
+						{{ $t('contact.message') }}
 						</span>
 						<textarea
 							v-model.trim="message"
@@ -128,8 +128,8 @@
         "
 				:disabled="isSubmitted"
 			>
-				<span v-if="pending">Sending...</span>
-				<span v-else>Send</span>
+				<span v-if="pending">{{ $t('contact.sending') }}</span>
+				<span v-else>{{ $t('contact.send') }}</span>
 			</button>
 		</form>
 	</Content>
@@ -138,10 +138,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const contactmeHost = 'https://contactme-fplu4j3puq-ey.a.run.app';
+const contactHost = 'https://contactme-fplu4j3puq-ey.a.run.app';
 
 function sendMessage(email: string, message: string) {
-	return fetch(`${contactmeHost}/contact`, {
+	return fetch(`${contactHost}/contact`, {
 		method: 'post',
 		headers: {
 			'content-type': 'application/json',

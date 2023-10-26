@@ -1,6 +1,6 @@
 <template>
 	<Head>
-		<Title>Home</Title>
+		<Title>{{ $t('navigation.home') }}</Title>
 	</Head>
   <!-- <retro-scene v-if="!motionReduced" class="h-96 w-full" /> -->
   <div :class="!motionReduced ? 'retro-gradient' : ''">
@@ -15,11 +15,10 @@
           <figcaption class="font-medium">
             <!-- <p class="text-cyan-600">Alexander Friesen</p> -->
             <p class="text-gray-300">
-              Hi there! 👋<br />
-              I'm Alex a Software Developer specializing in web technologies.
+							{{ $t('home.welcome') }}<br />
+              {{ $t('home.intro') }}
             </p>
             <div class="py-2">
-              <p class="text-gray-400">You can follow me on:</p>
               <div class="font-normal flex justify-evenly p-4">
                 <NuxtLink
 								class="
@@ -39,11 +38,10 @@
                     text-gray-800
                     hover:text-gray-200
                   "
-									to="https://github.com/alexfriesen/"
-									target="_blank"
+									:to="localePath('/contact')"
 								>
-                  <Icon name="uil:github" class="w-6 h-6" />
-                  Github
+                  <Icon name="uil:envelope" class="w-6 h-6" />
+                  {{ $t('navigation.contact') }}
                 </NuxtLink>
               </div>
             </div>
@@ -57,6 +55,7 @@
 <script setup lang="ts">
 // import { ref, watch } from "vue";
 
+const localePath = useLocalePath();
 const motionReduced = true;
 
 // function loadScript() {

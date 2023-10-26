@@ -1,6 +1,6 @@
 <template>
 	<Head>
-		<Title>Porjects</Title>
+		<Title>{{ $t('navigation.project') }}</Title>
 	</Head>
 
 	<Content class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -36,7 +36,7 @@
 						</Tag>
 					</div>
 					<LinkButton :url="article._path">
-						<span>More</span>
+						<span>{{ $t('projects.more') }}</span>
 					</LinkButton>
 				</footer>
 			</article>

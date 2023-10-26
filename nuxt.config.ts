@@ -1,12 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'nuxt-icon'],
+	modules: [
+		'@nuxtjs/i18n',
+		'@nuxt/content',
+		'@nuxtjs/tailwindcss',
+		'nuxt-icon',
+	],
 	css: ['@/index.css'],
 	srcDir: 'src/',
 	tailwindcss: {
 		config: {
 			plugins: [require('@tailwindcss/typography')],
 		},
+	},
+	i18n: {
+		locales: ['en', 'de'],
+		defaultLocale: 'en',
 	},
 	content: {
 		highlight: {
