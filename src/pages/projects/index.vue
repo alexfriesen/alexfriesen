@@ -1,6 +1,6 @@
 <template>
 	<Head>
-		<Title>{{ $t('navigation.project') }}</Title>
+		<Title>{{ $t('navigation.projects') }}</Title>
 	</Head>
 
 	<Content class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
