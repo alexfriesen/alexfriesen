@@ -1,4 +1,7 @@
 <template>
+	<Head>
+		<Html :lang="locale" />
+	</Head>
 	<header class="shadow">
 		<Navigation />
 	</header>
@@ -53,4 +56,5 @@
 
 <script setup lang="ts">
 const switchLocalePath = useSwitchLocalePath();
+const { locale } = useI18n();
 </script>
