@@ -7,7 +7,7 @@
 	</main>
 	<footer>
 		<Content class="flex flex-col md:flex-row items-center justify-evenly gap-2">
-			<div class="flex gap-2">
+			<div v-if="!$route.path.startsWith('/projects/')" class="flex gap-2">
 				<NuxtLink :to="switchLocalePath('en')" class="inline-flex gap-1 items-center">
 					<Icon name="circle-flags:en" />
 					English
