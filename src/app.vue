@@ -10,17 +10,7 @@
 	</main>
 	<footer>
 		<Content class="flex flex-col md:flex-row items-center justify-evenly gap-2">
-			<div v-if="!$route.path.startsWith('/projects/')" class="flex gap-2">
-				<NuxtLink :to="switchLocalePath('en')" class="inline-flex gap-1 items-center">
-					<Icon name="circle-flags:en" />
-					English
-				</NuxtLink>
-				|
-				<NuxtLink :to="switchLocalePath('de')" class="inline-flex gap-1 items-center">
-					<Icon name="circle-flags:de" />
-					Deutsch
-				</NuxtLink>
-			</div>
+			<LangSelect />
 			<div>
 				<NuxtLink
 					class="
@@ -55,6 +45,5 @@
 </template>
 
 <script setup lang="ts">
-const switchLocalePath = useSwitchLocalePath();
 const { locale } = useI18n();
 </script>
