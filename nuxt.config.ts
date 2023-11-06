@@ -18,6 +18,8 @@ export default defineNuxtConfig({
 		defaultLocale: 'en',
 	},
 	content: {
+		locales: ['en', 'de'],
+		defaultLocale: 'en',
 		highlight: {
 			// Theme used in all color schemes.
 			theme: 'github-dark',
