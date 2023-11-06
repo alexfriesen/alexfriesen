@@ -10,7 +10,7 @@
 	</main>
 	<footer>
 		<Content class="flex flex-col md:flex-row items-center justify-evenly gap-2">
-			<LangSelect />
+			<LangToggle />
 			<div>
 				<NuxtLink
 					class="
