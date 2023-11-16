@@ -1,0 +1,1 @@
+import{_ as o,g as c,w as n,h as _,o as s,b as a,a as r,i as l}from"./entry.dd70001b.js";const x={},i=r("h2",{class:"text-5xl"}," NOT FOUND ",-1);function m(f,p){const e=l,t=_;return s(),c(t,{class:"flex flex-col items-center"},{default:n(()=>[a(e,{name:"heroicons:exclamation-triangle",class:"block h-32 w-32"}),i]),_:1})}const h=o(x,[["render",m]]);export{h as default};
