@@ -10,6 +10,7 @@ export default defineI18nConfig(() => ({
 			},
 			home: {
 				welcome: 'Hi there! 👋',
+				picture: 'Picture of Alex',
 				intro: 'I am Alex, a software developer from Paderborn, Germany.',
 				follow: 'Follow me on',
 			},
@@ -34,6 +35,7 @@ export default defineI18nConfig(() => ({
 			},
 			home: {
 				welcome: 'Hallo! 👋',
+				picture: 'Bild von Alex',
 				intro:
 					'Ich bin Alex, ein Softwareentwickler aus Paderborn, Deutschland.',
 				follow: 'Folge mir auf',

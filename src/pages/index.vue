@@ -2,20 +2,37 @@
 	<Head>
 		<Title>{{ $t('navigation.home') }}</Title>
 	</Head>
-  <!-- <retro-scene v-if="!motionReduced" class="h-96 w-full" /> -->
-  <div :class="!motionReduced ? 'retro-gradient' : ''">
+  <div>
     <Content class="relative">
-      <figure :class="[
-        !motionReduced ? '-mt-24' : '',
-        'flex flex-col md:flex-row rounded-xl p-8 items-center justify-center shadow bg-gray-800',
-      ]">
-        <img class="w-32 h-32 md:w-48 md:h-auto rounded-full" width="300" height="300" src="../assets/square300.jpg"
-          alt="Me" />
+      <figure
+				class="
+					flex
+					flex-col
+					md:flex-row
+					items-center
+					justify-center
+					p-8
+					shadow
+					rounded-xl
+					bg-gray-800
+				"
+			>
+        <NuxtPicture
+					:alt="$t('home.picture')"
+					preload
+					width="300"
+					height="300"
+					densities="x1 x2"
+					sizes="100vw sm:120px md:300px"
+					format="webp,avif"
+					src="images/me600.jpg"
+					class="relative aspect-square rounded-full overflow-hidden border-4 border-gray-200 shadow-lg h-32 md:w-48 md:h-auto"
+				/>
         <div class="pt-6 md:px-8 text-center md:text-left space-y-4">
           <figcaption class="font-medium">
             <!-- <p class="text-cyan-600">Alexander Friesen</p> -->
-            <p class="text-gray-300">
-							{{ $t('home.welcome') }}<br />
+            <p class="text-gray-200">
+							{{ $t('home.welcome') }}<br>
               {{ $t('home.intro') }}
             </p>
             <div class="py-2">
@@ -53,47 +70,5 @@
 </template>
 
 <script setup lang="ts">
-// import { ref, watch } from "vue";
-
 const localePath = useLocalePath();
-const motionReduced = true;
-
-// function loadScript() {
-//   if (document.getElementById("retro-script")) return;
-
-//   const script = document.createElement("script");
-
-//   script.setAttribute("id", "retro-script");
-//   script.setAttribute("type", "module");
-//   script.setAttribute("crossorigin", "true");
-//   script.setAttribute("src", "https://alexfriesen.github.io/retro/index.js");
-
-//   document.head.appendChild(script);
-// }
-
-// // get reduced motion media query
-// const motionMediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-// const motionReduced = ref(motionMediaQuery.matches);
-
-// // listen for media query changes
-// motionMediaQuery.addEventListener("change", (event) => {
-//   motionReduced.value = event.matches;
-// });
-
-// watch(
-//   motionReduced,
-//   (value) => {
-//     if (!value) loadScript();
-//   },
-//   { immediate: true }
-// );
 </script>
-
-<style scoped>
-.retro-gradient {
-  background-image: linear-gradient(to bottom,
-      var(--pink-dark) 0%,
-      var(--pink-dark) 5%,
-      #374151 100%);
-}
-</style>

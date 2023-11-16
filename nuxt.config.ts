@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 		viewTransition: true,
 	},
 	modules: [
+		'@nuxt/image',
 		'@nuxtjs/i18n',
 		'@nuxt/content',
 		'@nuxtjs/tailwindcss',
