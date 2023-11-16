@@ -35,26 +35,22 @@
 					</div>
 					<div class="hidden sm:flex sm:ml-6 flex-1 justify-between gap-4">
 						<div class="flex gap-4">
-							<NuxtLink
+							<NavigationButton
 								v-for="item in siteNavigation"
 								:key="item.name"
-								:to="localePath(item.href)"
-								class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-								active-class="bg-gray-900 text-white"
+								:url="item.href"
 							>
 								{{ $t(item.name) }}
-							</NuxtLink>
+							</NavigationButton>
 						</div>
 						<div class="flex gap-4">
-							<NuxtLink
+							<NavigationButton
 								v-for="item in specialNavigation"
 								:key="item.name"
-								:to="localePath(item.href)"
-								class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-								active-class="bg-gray-900 text-white"
+								:url="item.href"
 							>
 								{{ $t(item.name) }}
-							</NuxtLink>
+							</NavigationButton>
 						</div>
 					</div>
 				</div>
@@ -63,22 +59,22 @@
 
 		<DisclosurePanel class="sm:hidden">
 			<div class="px-2 pt-2 pb-3 space-y-1">
-				<NuxtLink
+				<NavigationButton
 					v-for="item in siteNavigation"
 					:key="item.name"
-					:to="localePath(item.href)"
-					active-class="bg-gray-900 text-white"
-					class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+					:url="item.href"
+					class="flex"
+				>
 					{{ $t(item.name) }}
-				</NuxtLink>
-				<NuxtLink
+				</NavigationButton>
+				<NavigationButton
 					v-for="item in specialNavigation"
 					:key="item.name"
-					:to="localePath(item.href)"
-					active-class="bg-gray-900 text-white"
-					class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+					:url="item.href"
+					class="flex"
+				>
 					{{ $t(item.name) }}
-				</NuxtLink>
+				</NavigationButton>
 			</div>
 		</DisclosurePanel>
 	</Disclosure>
