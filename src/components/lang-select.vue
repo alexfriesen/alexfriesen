@@ -65,7 +65,7 @@ const availableLanguages = [{
 }];
 
 const restrictedPaths = [
-	'/projects',
+	'/projects/',
 ];
 
 const isRestricted = computed(() => {

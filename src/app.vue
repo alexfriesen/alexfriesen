@@ -12,6 +12,9 @@
 		<Content class="flex flex-col md:flex-row items-center justify-evenly gap-2">
 			<LangToggle />
 			<div>
+				&copy; 2023 - Alexander Friesen
+			</div>
+			<div>
 				<NuxtLink
 					class="
 						inline-flex
@@ -20,9 +23,11 @@
 						justify-evenly
 						px-2
 						py-1
-						border border-transparent
+						border
+						border-transparent
 						text-base
 						font-medium
+						leading-none
 						rounded-md
 						text-gray-300
 						bg-gray-200
@@ -36,9 +41,6 @@
 					<Icon name="uil:github" class="w-6 h-6" />
 					Github
 				</NuxtLink>
-			</div>
-			<div>
-				&copy; 2023 - Alexander Friesen
 			</div>
 		</Content>
 	</footer>

@@ -4,8 +4,8 @@
 			flex
 			bg-gray-200
 			text-gray-800
-			overflow-hidden
 			rounded-md
+			overflow-hidden
 		"
 	>
 		<NuxtLink
@@ -14,10 +14,23 @@
 			:to="!isLangRestricted(lang.locale) ? switchLocalePath(lang.locale) : undefined"
 			:title="lang.name"
 			:class="{ disabled: isLangRestricted(lang.locale) }"
-			active-class="bg-gray-800"
-			class="flex p-2 items-center hover:bg-gray-900 disabled:opacity-50"
+			class="
+				inline-flex
+				gap-1
+				items-center
+				justify-evenly
+				px-2
+				py-1.5
+				text-base
+				font-medium
+				leading-none
+				hover:bg-gray-900
+				hover:text-gray-200
+			"
+			active-class="bg-gray-800 text-gray-200"
 		>
-			<Icon :name="lang.icon" size="18" />
+			<Icon :name="lang.icon" size="22" class="rounded-full border-2 border-current" />
+			<span>{{ lang.name }}</span>
 		</NuxtLink>
 	</div>
 </template>
