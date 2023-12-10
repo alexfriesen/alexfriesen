@@ -1,7 +1,9 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.contact') }}</Title>
+		<Link rel="canonical" :href="$route.fullPath" />
 	</Head>
+	<AltLangHead />
 
 	<Content class="relative flex flex-col items-center">
 		<div v-if="success" class="flex flex-col rounded-xl p-8 shadow bg-green-800">

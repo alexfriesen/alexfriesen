@@ -1,8 +1,10 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.home') }}</Title>
+		<Link rel="canonical" :href="$route.fullPath" />
 	</Head>
-  <div>
+	<AltLangHead />
+	<div>
     <Content class="relative">
       <figure
 				class="
