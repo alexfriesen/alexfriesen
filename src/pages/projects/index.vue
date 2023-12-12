@@ -1,7 +1,7 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.projects') }}</Title>
-		<Link rel="canonical" :href="$route.fullPath" />
+		<Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" />
 	</Head>
 	<AltLangHead />
 
@@ -45,3 +45,7 @@
 		</ContentList>
 	</Content>
 </template>
+
+<script setup lang="ts">
+const toAbsoluteUrl = useAbsoluteUrl();
+</script>

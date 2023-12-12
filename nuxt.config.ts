@@ -29,9 +29,15 @@ export default defineNuxtConfig({
 			theme: 'github-dark',
 		},
 	},
+	imports: {
+		dirs: ['composables', 'composables/**'],
+	},
 	components: {
 		global: true,
 		dirs: ['~/components'],
+	},
+	appConfig: {
+		urlBase: 'https://alexfriesen.net',
 	},
 	app: {
 		head: {

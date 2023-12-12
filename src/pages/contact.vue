@@ -1,7 +1,7 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.contact') }}</Title>
-		<Link rel="canonical" :href="$route.fullPath" />
+		<Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" />
 	</Head>
 	<AltLangHead />
 
@@ -175,4 +175,6 @@ function handleSubmit() {
 			pending.value = false;
 		});
 }
+
+const toAbsoluteUrl = useAbsoluteUrl();
 </script>

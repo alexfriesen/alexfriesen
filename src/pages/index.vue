@@ -1,7 +1,7 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.home') }}</Title>
-		<Link rel="canonical" :href="$route.fullPath" />
+		<Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" />
 	</Head>
 	<AltLangHead />
 	<div>
@@ -73,4 +73,5 @@
 
 <script setup lang="ts">
 const localePath = useLocalePath();
+const toAbsoluteUrl = useAbsoluteUrl();
 </script>

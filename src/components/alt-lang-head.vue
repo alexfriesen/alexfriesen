@@ -5,16 +5,17 @@
 			:key="lang"
 			rel="alternate"
 			:hreflang="lang"
-			:href="switchLocalePath(lang)"
+			:href="toAbsoluteUrl(switchLocalePath(lang))"
 		/>
 		<Link
 			rel="alternate"
 			hreflang="x-default"
-			:href="switchLocalePath($i18n.defaultLocale)"
+			:href="toAbsoluteUrl(switchLocalePath($i18n.defaultLocale))"
 		/>
 	</Head>
 </template>
 
 <script setup lang="ts">
 const switchLocalePath = useSwitchLocalePath();
+const toAbsoluteUrl = useAbsoluteUrl();
 </script>
