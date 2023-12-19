@@ -65,6 +65,7 @@ const availableLanguages = [{
 }];
 
 const restrictedPaths = [
+	'/blog/',
 	'/projects/',
 ];
 

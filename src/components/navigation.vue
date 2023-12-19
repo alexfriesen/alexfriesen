@@ -17,8 +17,8 @@
             "
 					>
 						<span class="sr-only">Open main menu</span>
-						<Icon name="heroicons:bars-3" v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-						<Icon name="heroicons:x-mark" v-else class="block h-6 w-6" aria-hidden="true" />
+						<Icon v-if="!open" name="heroicons:bars-3" class="block h-6 w-6" aria-hidden="true" />
+						<Icon v-else name="heroicons:x-mark" class="block h-6 w-6" aria-hidden="true" />
 					</DisclosureButton>
 				</div>
 				<div
@@ -85,9 +85,9 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 
 const siteNavigation = [
 	{ name: 'navigation.home', href: '/' },
+	{ name: 'navigation.blog', href: '/blog' },
 	{ name: 'navigation.projects', href: '/projects' },
 ];
 
 const specialNavigation = [{ name: 'navigation.contact', href: '/contact' }];
-const localePath = useLocalePath();
 </script>

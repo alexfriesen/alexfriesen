@@ -5,14 +5,18 @@ export default defineI18nConfig(() => ({
 		en: {
 			navigation: {
 				home: 'Home',
-				contact: 'Contact',
+				blog: 'Blog',
 				projects: 'Projects',
+				contact: 'Contact',
 			},
 			home: {
 				welcome: 'Hi there! 👋',
 				picture: 'Picture of Alex',
 				intro: 'I am Alex, a software developer from Paderborn, Germany.',
 				follow: 'Follow me on',
+			},
+			blog: {
+				read: 'Read',
 			},
 			projects: {
 				more: 'More',
@@ -30,8 +34,9 @@ export default defineI18nConfig(() => ({
 		de: {
 			navigation: {
 				home: 'Startseite',
-				contact: 'Kontakt',
+				blog: 'Blog',
 				projects: 'Projekte',
+				contact: 'Kontakt',
 			},
 			home: {
 				welcome: 'Hallo! 👋',
@@ -39,6 +44,9 @@ export default defineI18nConfig(() => ({
 				intro:
 					'Ich bin Alex, ein Softwareentwickler aus Paderborn, Deutschland.',
 				follow: 'Folge mir auf',
+			},
+			blog: {
+				read: 'Lesen',
 			},
 			projects: {
 				more: 'Mehr',
