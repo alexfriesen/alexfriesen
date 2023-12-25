@@ -1,0 +1,6 @@
+# START nuxt-simple-robots (indexable)
+User-agent: *
+Disallow: /de
+
+Sitemap: https://alexfriesen.net/sitemap_index.xml
+# END nuxt-simple-robots
