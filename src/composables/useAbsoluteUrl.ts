@@ -1,7 +1,7 @@
 export const useAbsoluteUrl = () => {
-	const appConfig = useAppConfig();
+	const config = useSiteConfig();
 
-	const toAbsoluteUrl = (url: string) => `${appConfig.urlBase}${url || '/'}`;
+	const toAbsoluteUrl = (url: string) => `${config.url}${url || '/'}`;
 
 	return toAbsoluteUrl;
 };

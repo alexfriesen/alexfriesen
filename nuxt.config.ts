@@ -8,6 +8,8 @@ export default defineNuxtConfig({
 		'@nuxtjs/i18n',
 		'@nuxt/content',
 		'@nuxtjs/tailwindcss',
+		'nuxt-schema-org',
+		'@nuxtseo/module',
 		'nuxt-icon',
 	],
 	css: ['@/index.css'],
@@ -36,8 +38,8 @@ export default defineNuxtConfig({
 		global: true,
 		dirs: ['~/components'],
 	},
-	appConfig: {
-		urlBase: 'https://alexfriesen.net',
+	site: {
+		url: 'https://alexfriesen.net',
 	},
 	app: {
 		head: {

@@ -53,7 +53,7 @@
 const { locale } = useI18n();
 
 const socialLinks = [
-	{ label: 'Github', icon: 'uil:github', href: "https://github.com/alexfriesen/" },
-	{ label: 'LinkedIn', icon: 'uil:linkedin', href: "https://www.linkedin.com/in/alexander-friesen-420495112" }
-]
+	{ label: 'Github', icon: 'uil:github', href: 'https://github.com/alexfriesen/' },
+	{ label: 'LinkedIn', icon: 'uil:linkedin', href: 'https://www.linkedin.com/in/alexander-friesen-420495112' }
+];
 </script>
