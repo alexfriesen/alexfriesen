@@ -9,7 +9,7 @@
 		<NuxtPage />
 	</main>
 	<footer>
-		<Content class="flex flex-col md:flex-row items-start justify-evenly gap-2">
+		<Content class="flex flex-col md:flex-row items-center md:items-start justify-evenly gap-2">
 			<LangToggle />
 			<div>
 				<p class="text-base py-1">
