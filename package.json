@@ -35,7 +35,7 @@
 		"@tailwindcss/typography": "^0.5.8",
 		"@types/node": "^20.5.1",
 		"eslint": "^8.7.0",
-		"nuxt": "^3.0.0",
+		"nuxt": "^3.9.0",
 		"nuxt-icon": "^0.6.1",
 		"nuxt-schema-org": "^3.3.0"
 	}
