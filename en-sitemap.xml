@@ -36,6 +36,9 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/projects" />
         <image:image>
+            <image:loc>https://alexfriesen.net/images/tripman.png</image:loc>
+        </image:image>
+        <image:image>
             <image:loc>https://alexfriesen.net/images/dnd-dirs.png</image:loc>
         </image:image>
         <image:image>
@@ -57,7 +60,7 @@
     <url>
         <loc>https://alexfriesen.net/projects/cv-builder</loc>
         <image:image>
-            <image:loc>https://alexfriesen.net/images/cv.png</image:loc>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/cv.png</image:loc>
         </image:image>
     </url>
     <url>
@@ -66,13 +69,16 @@
     <url>
         <loc>https://alexfriesen.net/projects/pdf-tools</loc>
         <image:image>
-            <image:loc>https://alexfriesen.net/images/pdf.png</image:loc>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/pdf.png</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://alexfriesen.net/projects/retro-scene</loc>
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/projects/tripmanager</loc>
         <image:image>
-            <image:loc>https://raw.githubusercontent.com/alexfriesen/retro/main/public/preview.gif</image:loc>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/tripman.png</image:loc>
         </image:image>
     </url>
 </urlset>

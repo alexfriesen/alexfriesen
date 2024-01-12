@@ -36,6 +36,9 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/projects" />
         <image:image>
+            <image:loc>https://alexfriesen.net/images/tripman.png</image:loc>
+        </image:image>
+        <image:image>
             <image:loc>https://alexfriesen.net/images/dnd-dirs.png</image:loc>
         </image:image>
         <image:image>
