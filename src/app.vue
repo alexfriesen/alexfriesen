@@ -16,33 +16,30 @@
 					&copy; 2023 - Alexander Friesen
 				</p>
 			</div>
-			<div class="flex flex-col gap-1">
+			<div class="flex gap-4">
 				<NuxtLink
 					v-for="link in socialLinks"
+					:key="link.label"
+					:to="link.href"
+					:title="link.label"
+					target="_blank"
 					class="
-						inline-flex
-						gap-1
 						items-center
-						justify-evenly
-						px-2
-						py-1
+						justify-center
+						p-2
 						border
 						border-transparent
 						text-base
-						font-medium
 						leading-none
-						rounded-md
+						rounded-full
 						text-gray-300
 						bg-gray-200
 						hover:bg-gray-900
 						text-gray-800
 						hover:text-gray-200
 					"
-					:to="link.href"
-					target="_blank"
 				>
 					<Icon :name="link.icon" class="w-6 h-6" />
-					{{ link.label }}
 				</NuxtLink>
 			</div>
 		</Content>
