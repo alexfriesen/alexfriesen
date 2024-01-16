@@ -5,140 +5,56 @@
 	</Head>
 	<AltLangHead />
 
-	<Content class="relative flex flex-col items-center">
-		<div v-if="success" class="flex flex-col rounded-xl p-8 shadow bg-green-800">
+	<Content class="relative flex flex-col items-center gap-4">
+		<div class="prose dark:prose-invert">
+			<h2 class="text-3xl sm:text-4xl tracking-tight">
+				{{ $t('navigation.contact') }}
+			</h2>
+		</div>
+
+		<div v-if="success" class="flex flex-col rounded-xl p-8 shadow text-white bg-green-800">
 			<Icon name="heroicons:check-circle" class="w-32 h-32 m-auto" />
 			<p>
 				{{ $t('contact.success') }}
 			</p>
 		</div>
 
-		<div v-if="error" class="flex flex-col rounded-xl p-8 shadow bg-red-800">
+		<div v-if="error" class="flex flex-col rounded-xl p-8 shadow text-white bg-red-800">
 			<Icon name="heroicons:exclamation-circle" class="w-32 h-32 m-auto" />
 			<p>{{ $t('contact.error') }}</p>
 		</div>
 
-		<form
-			v-if="!success"
-			class="
-        flex flex-col
-        w-full
-        max-w-lg
-        rounded-xl
-        p-8
-        shadow
-        bg-gray-800
-        gap-4
-      "
-			@submit.prevent="handleSubmit"
-		>
-			<div class="flex flex-wrap">
-				<div class="w-full">
-					<label>
-						<span
-							class="
-                block
-                uppercase
-                tracking-wide
-                text-gray-400 text-xs
-                font-bold
-                mb-2
-              "
-						>
-							{{ $t('contact.email') }}
-						</span>
-						<input
-							v-model.trim="email"
-							class="
-                appearance-none
-                block
-                w-full
-                bg-gray-200
-                text-gray-700
-                border border-gray-200
-                rounded
-                py-3
-                px-4
-                mb-3
-                leading-tight
-                focus:outline-none focus:bg-white focus:border-gray-500
-              "
-							type="email"
-							name="email"
-						>
-					</label>
-				</div>
-			</div>
-			<div class="flex flex-wrap">
-				<div class="w-full">
-					<label>
-						<span
-							class="
-                block
-                uppercase
-                tracking-wide
-                text-gray-400 text-xs
-                font-bold
-                mb-2
-              "
-						>
-						{{ $t('contact.message') }}
-						</span>
-						<textarea
-							v-model.trim="message"
-							class="
-                no-resize
-                appearance-none
-                block
-                w-full
-                bg-gray-200
-                text-gray-700
-                border border-gray-200
-                rounded
-                py-3
-                px-4
-                mb-3
-                leading-tight
-                focus:outline-none focus:bg-white focus:border-gray-500
-                h-48
-                resize-none
-              "
-							name="message"
-						/>
-					</label>
-				</div>
-			</div>
+		<UForm :schema="schema" :state="state" @submit="handleSubmit">
+			<UCard v-if="!success" class="max-w-lg w-full">
+				<UFormGroup :label="$t('contact.email')" required size="xl">
+					<UInput v-model="state.email" placeholder="you@example.com" icon="i-heroicons-envelope" />
+				</UFormGroup>
 
-			<button
-				class="
-          inline-flex
-          gap-1
-          items-center
-          justify-evenly
-          px-5
-          py-3
-          border border-transparent
-          text-base
-          font-medium
-          rounded-md
-          text-gray-300
-          bg-gray-200
-          hover:bg-gray-700
-          text-gray-800
-          hover:text-gray-200
-          disabled:opacity-50
-        "
-				:disabled="isSubmitted"
-			>
-				<span v-if="pending">{{ $t('contact.sending') }}</span>
-				<span v-else>{{ $t('contact.send') }}</span>
-			</button>
-		</form>
+				<UFormGroup :label="$t('contact.message')" required size="xl">
+					<UTextarea v-model="state.message" placeholder="you@example.com" icon="i-heroicons-envelope" />
+				</UFormGroup>
+
+				<template #footer>
+					<UButton :loading="pending" :disabled="pending" type="sumbit" size="xl" color="primary" variant="solid" block>
+						<span v-if="pending">{{ $t('contact.sending') }}</span>
+						<span v-else>{{ $t('contact.send') }}</span>
+					</UButton>
+				</template>
+			</UCard>
+		</UForm>
 	</Content>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { string, objectAsync, email, minLength, toTrimmed, type Input } from 'valibot';
+import type { FormSubmitEvent } from '#ui/types';
+
+const schema = objectAsync({
+	email: string([toTrimmed(), email('Invalid email')]),
+	message: string([toTrimmed(), minLength(3, 'Must be at least 8 characters')])
+})
+
+type Schema = Input<typeof schema>
 
 const contactHost = 'https://contactme-fplu4j3puq-ey.a.run.app';
 
@@ -152,18 +68,25 @@ function sendMessage(email: string, message: string) {
 	});
 }
 
-const email = ref('');
-const message = ref('');
 const isSubmitted = ref(false);
 const pending = ref(false);
 const error = ref(false);
 const success = ref(false);
 
-function handleSubmit() {
-	isSubmitted.value = true;
-	pending.value = true;
+const state = reactive({
+	email: undefined,
+	message: undefined
+})
 
-	sendMessage(email.value, message.value)
+function handleSubmit(event: FormSubmitEvent<Schema>) {
+	const { email, message } = event.data;
+
+	success.value = false;
+	error.value = false;
+	pending.value = true;
+	isSubmitted.value = true;
+
+	sendMessage(email, message)
 		.then(() => {
 			success.value = true;
 		})

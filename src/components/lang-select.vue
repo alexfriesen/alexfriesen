@@ -1,65 +1,40 @@
 <template>
-	<div
-		v-if="currentLanguage"
-		class="
-			inline-flex
-			gap-1
-			items-center
-			justify-evenly
-			px-2
-			py-1
-			border
-			border-transparent
-			text-base
-			font-medium
-			rounded-md
-			text-gray-300
-			bg-gray-200
-			text-gray-800
-			cursor-pointer
-			relative
-		"
-		@click="open = !open"
-		@mouseleave="open = false"
+	<USelectMenu
+		class="min-w-36"
+		:disabled="isRestricted"
+		:model-value="locale"
+		:options="availableLanguages"
+		value-attribute="value"
+		color="gray"
 	>
-		<Icon :name="currentLanguage.icon" />
-		{{ currentLanguage.name }}
-		<Icon v-if="!isRestricted" name="uil:angle-down" />
+		<template #label>
+			<Icon :name="selected.icon" class="w-6 h-6" />
+			<span>{{ selected.name }}</span>
+		</template>
 
-		<div
-			v-if="open && !isRestricted"
-			class="
-				absolute
-				top-8
-				right-0
-				bg-gray-200
-				text-gray-800
-				rounded-md
-				overflow-hidden
-			"
-		>
-			<div class="flex flex-col">
-				<NuxtLink
-					v-for="lang in availableLanguages"
-					:key="lang.locale"
-					:to="switchLocalePath(lang.locale)"
-					class="inline-flex gap-2 px-4 py-1 items-center hover:bg-gray-900 hover:text-gray-200"
-				>
-					<Icon :name="lang.icon" />
-					{{ lang.name }}
-				</NuxtLink>
-			</div>
-		</div>
-	</div>
+		<template #option="{ option: lang }">
+			<NuxtLink :to="switchLocalePath(lang.value)" class="inline-flex items-center gap-x-1.5">
+				<Icon :name="lang.icon" class="w-6 h-6" />
+				<span>{{ lang.name }}</span>
+			</NuxtLink>
+		</template>
+	</USelectMenu>
 </template>
 
 <script setup lang="ts">
+const locale = useI18n().locale;
+const selected = computed(() => {
+	const currentLocale = locale.value;
+	const lang = availableLanguages.find(lang => lang.value === currentLocale);
+	return lang || availableLanguages[0];
+});
+
 const availableLanguages = [{
-	locale: 'en',
+	value: 'en',
 	name: 'English',
 	icon: 'circle-flags:en',
 }, {
-	locale: 'de',
+	value: 'de',
 	name: 'Deutsch',
 	icon: 'circle-flags:de',
 }];
@@ -74,13 +49,5 @@ const isRestricted = computed(() => {
 	return restrictedPaths.some(path => currentPath.startsWith(path));
 });
 
-const currentLanguage = computed(() => {
-	const locale = useI18n().locale.value;
-	const current = availableLanguages.find(lang => lang.locale === locale);
-	return current;
-});
-
 const switchLocalePath = useSwitchLocalePath();
-
-const open = ref(false);
 </script>

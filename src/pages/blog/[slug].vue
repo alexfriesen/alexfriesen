@@ -1,5 +1,5 @@
 <template>
 	<Content>
-		<ContentDoc tag="article" class="prose prose-invert max-w-none" />
+		<ContentDoc tag="article" class="prose dark:prose-invert max-w-none" />
 	</Content>
 </template>

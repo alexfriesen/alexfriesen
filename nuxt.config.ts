@@ -4,24 +4,22 @@ export default defineNuxtConfig({
 		viewTransition: true,
 	},
 	modules: [
-		'@nuxt/image',
-		'@nuxtjs/i18n',
-		'@nuxt/content',
-		'@nuxtjs/tailwindcss',
-		'nuxt-schema-org',
-		'@nuxtseo/module',
 		'nuxt-icon',
+		'@nuxtjs/i18n',
+		'@nuxtseo/module',
+		'nuxt-schema-org',
+		'@nuxt/content',
+		'@nuxt/image',
+		'@nuxt/ui',
 	],
-	css: ['@/index.css'],
 	srcDir: 'src/',
-	tailwindcss: {
-		config: {
-			plugins: [require('@tailwindcss/typography')],
-		},
-	},
 	i18n: {
 		locales: ['en', 'de'],
 		defaultLocale: 'en',
+	},
+	components: {
+		global: true,
+		dirs: ['~/components'],
 	},
 	content: {
 		locales: ['en', 'de'],
@@ -32,11 +30,7 @@ export default defineNuxtConfig({
 		},
 	},
 	imports: {
-		dirs: ['composables', 'composables/**'],
-	},
-	components: {
-		global: true,
-		dirs: ['~/components'],
+		dirs: ['~/composables'],
 	},
 	site: {
 		url: 'https://alexfriesen.net',
@@ -68,5 +62,8 @@ export default defineNuxtConfig({
 				},
 			],
 		},
+	},
+	ui: {
+		icons: ['heroicons', 'ri'],
 	},
 });

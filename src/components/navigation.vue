@@ -1,5 +1,5 @@
 <template>
-	<Disclosure v-slot="{ open }" as="nav" class="bg-gray-800">
+	<Disclosure v-slot="{ open }" as="nav" class="bg-slate-200 dark:bg-slate-600">
 		<div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
 			<div class="relative flex items-center justify-between h-16">
 				<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -31,7 +31,7 @@
 				>
 					<div class="flex-shrink-0 flex items-center">
 						<!--<img class="h-8 w-auto" src="./assets/logo.png" alt="Logo" />-->
-						<h1 class="text-white">Alexander Friesen</h1>
+						<h1 class="dark:text-white">Alexander Friesen</h1>
 					</div>
 					<div class="hidden sm:flex sm:ml-6 flex-1 justify-between gap-4">
 						<div class="flex gap-4">
