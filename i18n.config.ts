@@ -19,6 +19,7 @@ export default defineI18nConfig(() => ({
 				read: 'Read',
 			},
 			projects: {
+				intro: 'Here are some of my fun and side projects.',
 				more: 'More',
 			},
 			contact: {
@@ -49,6 +50,7 @@ export default defineI18nConfig(() => ({
 				read: 'Lesen',
 			},
 			projects: {
+				intro: 'Hier sind einige meiner Spaß- und Nebenprojekt.',
 				more: 'Mehr',
 			},
 			contact: {
