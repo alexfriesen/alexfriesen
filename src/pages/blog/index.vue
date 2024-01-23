@@ -43,7 +43,7 @@
 								{{ new Date(article.date).toLocaleDateString() }}
 							</time>
 						</div>
-						<UButton :to="article._path" size="lg" variant="ghost" color="primary">
+						<UButton :to="article._path" :aria-label="article.title" size="lg" variant="ghost" color="primary">
 							<span>{{ $t('blog.read') }}</span>
 						</UButton>
 					</footer>

@@ -40,11 +40,11 @@
 
 					<footer class="flex items-center justify-between leading-none p-2 md:p-4">
 						<div class="flex flex-wrap gap-1">
-							<UBadge v-for="tag in article.tags" :key="tag" color="amber">
+							<UBadge v-for="tag in article.tags" :key="tag" color="gray" variant="subtle">
 								{{ tag }}
 							</UBadge>
 						</div>
-						<UButton :to="article._path" size="lg" variant="ghost" color="primary">
+						<UButton :to="article._path" :aria-label="article.title" size="lg" variant="ghost" color="primary">
 							<span>{{ $t('projects.more') }}</span>
 						</UButton>
 					</footer>
