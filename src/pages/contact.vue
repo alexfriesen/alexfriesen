@@ -27,15 +27,23 @@
 		<UForm :schema="schema" :state="state" class="max-w-lg w-full" @submit="handleSubmit">
 			<UCard v-if="!success" class="w-full">
 				<UFormGroup :label="$t('contact.email')" required size="xl">
-					<UInput v-model="state.email" placeholder="you@example.com" icon="i-heroicons-envelope" />
+					<UInput v-model="state.email" placeholder="you@example.com" icon="i-heroicons-envelope" trailing />
 				</UFormGroup>
 
 				<UFormGroup :label="$t('contact.message')" required size="xl">
-					<UTextarea v-model="state.message" placeholder="you@example.com" icon="i-heroicons-envelope" />
+					<UTextarea v-model="state.message" placeholder="Your Message" />
 				</UFormGroup>
 
 				<template #footer>
-					<UButton :loading="pending" :disabled="pending" type="sumbit" size="xl" color="primary" variant="solid" block>
+					<UButton
+						:loading="pending"
+						:disabled="pending"
+						type="sumbit"
+						size="xl"
+						color="primary"
+						variant="solid"
+						block
+					>
 						<span v-if="pending">{{ $t('contact.sending') }}</span>
 						<span v-else>{{ $t('contact.send') }}</span>
 					</UButton>
