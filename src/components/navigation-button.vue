@@ -1,11 +1,13 @@
 <template>
-	<NuxtLink
+	<UButton
 		:to="localePath(props.url)"
-		class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-		active-class="bg-gray-900 text-white"
+		size="lg"
+		variant="ghost"
+		color="primary"
+		active-class="bg-primary-50 dark:bg-primary-950 dark:text-white"
 	>
 		<slot />
-	</NuxtLink>
+	</UButton>
 </template>
 
 <script setup lang="ts">
