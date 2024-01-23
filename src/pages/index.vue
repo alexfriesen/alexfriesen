@@ -7,7 +7,7 @@
 
 	<Content>
 		<UCard>
-			<figure class="flex flex-col md:flex-row justify-center">
+			<figure class="flex flex-col md:flex-row justify-center items-center">
 				<NuxtPicture
 					:alt="$t('home.picture')"
 					preload
@@ -19,25 +19,23 @@
 					src="images/me600.jpg"
 					class="relative aspect-square rounded-full overflow-hidden border-4 border-gray-200 shadow-lg h-32 md:w-48 md:h-auto"
 				/>
-        <div class="pt-6 md:px-8 text-center md:text-left space-y-4">
-          <figcaption class="font-medium ">
-            <p class="dark:text-gray-200">
+        <div class="md:px-8 text-center md:text-left space-y-4">
+          <figcaption class="font-medium">
+            <p class="p-2">
 							{{ $t('home.welcome') }}<br>
               {{ $t('home.intro') }}
             </p>
-            <div class="py-2">
-              <div class="font-normal flex justify-evenly p-4">
-                <UButton
-									:to="localePath('/contact')"
-									size="xl"
-									color="primary"
-									variant="solid"
-								>
-                  <UIcon name="i-ri-mail-send-line" class="w-6 h-6" />
-                  {{ $t('navigation.contact') }}
-                </UButton>
-              </div>
-            </div>
+						<div class="font-normal flex justify-evenly p-2 pt-4">
+							<UButton
+								:to="localePath('/contact')"
+								size="xl"
+								color="primary"
+								variant="solid"
+							>
+								<UIcon name="i-ri-mail-send-line" class="w-6 h-6" />
+								{{ $t('navigation.contact') }}
+							</UButton>
+						</div>
           </figcaption>
 				</div>
       </figure>

@@ -24,8 +24,8 @@
 			<p>{{ $t('contact.error') }}</p>
 		</div>
 
-		<UForm :schema="schema" :state="state" @submit="handleSubmit">
-			<UCard v-if="!success" class="max-w-lg w-full">
+		<UForm :schema="schema" :state="state" class="max-w-lg w-full" @submit="handleSubmit">
+			<UCard v-if="!success" class="w-full">
 				<UFormGroup :label="$t('contact.email')" required size="xl">
 					<UInput v-model="state.email" placeholder="you@example.com" icon="i-heroicons-envelope" />
 				</UFormGroup>
