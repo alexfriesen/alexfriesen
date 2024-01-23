@@ -41,9 +41,6 @@
 		"nuxt-schema-org": "^3.3.0"
 	},
 	"dependencies": {
-		"valibot": "^0.25.0"
-	},
-	"resolutions": {
-		"sharp": "0.32.6"
+		"valibot": "^0.26.0"
 	}
 }
