@@ -62,7 +62,7 @@ export default defineNuxtConfig({
 				{ property: 'og:title', content: 'Alexander Friesen' },
 				{
 					property: 'og:image',
-					content: 'http://alexfriesen.net/images/me600.jpg',
+					content: 'https://alexfriesen.net/images/me600.jpg',
 				},
 			],
 		},
