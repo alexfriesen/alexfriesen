@@ -7,6 +7,7 @@ export default defineNuxtConfig({
 		'nuxt-icon',
 		'@nuxtjs/i18n',
 		'@nuxtseo/module',
+		'nuxt-og-image',
 		'nuxt-schema-org',
 		'@nuxt/content',
 		'@nuxt/image',
@@ -34,6 +35,9 @@ export default defineNuxtConfig({
 	},
 	site: {
 		url: 'https://alexfriesen.net',
+	},
+	devtools: {
+		enabled: true,
 	},
 	app: {
 		head: {
