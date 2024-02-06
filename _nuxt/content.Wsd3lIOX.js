@@ -1,1 +1,0 @@
-import{_ as o,o as t,c as s,z as c}from"./entry.GiVqBzzH.js";const n={},_={class:"max-w-7xl mx-auto px-2 py-6 sm:px-6 lg:px-8"};function a(e,r){return t(),s("section",_,[c(e.$slots,"default")])}const p=o(n,[["render",a]]);export{p as default};
