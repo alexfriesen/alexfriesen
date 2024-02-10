@@ -18,10 +18,6 @@ export default defineNuxtConfig({
 		locales: ['en', 'de'],
 		defaultLocale: 'en',
 	},
-	components: {
-		global: true,
-		dirs: ['~/components'],
-	},
 	content: {
 		locales: ['en', 'de'],
 		defaultLocale: 'en',
@@ -29,9 +25,6 @@ export default defineNuxtConfig({
 			// Theme used in all color schemes.
 			theme: 'github-dark',
 		},
-	},
-	imports: {
-		dirs: ['~/composables'],
 	},
 	site: {
 		url: 'https://alexfriesen.net',
@@ -58,11 +51,6 @@ export default defineNuxtConfig({
 					name: 'keywords',
 					content:
 						'Software Developer, Full-Stack Developer, Full-Stack, Paderborn',
-				},
-				{ property: 'og:title', content: 'Alexander Friesen' },
-				{
-					property: 'og:image',
-					content: 'https://alexfriesen.net/images/me600.jpg',
 				},
 			],
 		},

@@ -1,6 +1,7 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.home') }}</Title>
+		<Meta name="description" :content="$t('home.description')" />
 		<Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" />
 	</Head>
 	<AltLangHead />
@@ -22,8 +23,8 @@
         <div class="md:px-8 text-center md:text-left space-y-4">
           <figcaption class="font-medium">
             <p class="p-2">
-							{{ $t('home.welcome') }}<br>
-              {{ $t('home.intro') }}
+				{{ $t('home.welcome') }}<br>
+				{{ $t('home.intro') }}
             </p>
 						<div class="font-normal flex justify-evenly p-2 pt-4">
 							<UButton

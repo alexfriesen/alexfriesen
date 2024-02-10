@@ -1,6 +1,7 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.projects') }}</Title>
+		<Meta name="description" :content="$t('projects.description')" />
 		<Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" />
 	</Head>
 	<AltLangHead />
@@ -10,7 +11,7 @@
 			<h2 class="text-3xl sm:text-4xl tracking-tight">
 				{{ $t('navigation.projects') }}
 			</h2>
-			<p>{{ $t('projects.intro') }}</p>
+			<p>{{ $t('projects.description') }}</p>
 		</div>
 		<div class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			<ContentList v-slot="{ list }" path="/projects">

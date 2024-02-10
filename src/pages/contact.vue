@@ -1,6 +1,7 @@
 <template>
 	<Head>
 		<Title>{{ $t('navigation.contact') }}</Title>
+		<Meta name="description" :content="$t('contact.description')" />
 		<Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" />
 	</Head>
 	<AltLangHead />

@@ -11,18 +11,21 @@ export default defineI18nConfig(() => ({
 			},
 			home: {
 				welcome: 'Hi there! 👋',
+				description: 'Software developer',
 				picture: 'Picture of Alex',
 				intro: 'I am Alex, a software developer from Paderborn, Germany.',
 				follow: 'Follow me on',
 			},
 			blog: {
+				description: 'Here are some of my thoughts and experiences.',
 				read: 'Read',
 			},
 			projects: {
-				intro: 'Here are some of my fun and side projects.',
+				description: 'Here are some of my fun and side projects.',
 				more: 'More',
 			},
 			contact: {
+				description: 'Feel free to reach out to me.',
 				email: 'Email',
 				message: 'Message',
 				send: 'Send',
@@ -41,19 +44,22 @@ export default defineI18nConfig(() => ({
 			},
 			home: {
 				welcome: 'Hallo! 👋',
+				description: 'Softwareentwickler',
 				picture: 'Bild von Alex',
 				intro:
 					'Ich bin Alex, ein Softwareentwickler aus Paderborn, Deutschland.',
 				follow: 'Folge mir auf',
 			},
 			blog: {
+				description: 'Hier sind einige meiner Gedanken und Erfahrungen.',
 				read: 'Lesen',
 			},
 			projects: {
-				intro: 'Hier sind einige meiner Spaß- und Nebenprojekt.',
+				description: 'Hier sind einige meiner Spaß- und Nebenprojekt.',
 				more: 'Mehr',
 			},
 			contact: {
+				description: 'Fühle dich frei, mich zu kontaktieren.',
 				email: 'Email',
 				message: 'Nachricht',
 				send: 'Senden',
