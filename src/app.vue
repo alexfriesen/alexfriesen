@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-defineOgImageComponent('meta-og-image', {
+defineOgImageComponent('MetaOgImage', {
 	siteName: 'alexfriesen.net',
 	image: 'https://alexfriesen.net/images/me600.jpg',
 	imageRound: true,
