@@ -18,6 +18,10 @@ export default defineNuxtConfig({
 		locales: ['en', 'de'],
 		defaultLocale: 'en',
 	},
+	components: {
+		dirs: ['~/components'],
+		global: true
+	},
 	content: {
 		locales: ['en', 'de'],
 		defaultLocale: 'en',
