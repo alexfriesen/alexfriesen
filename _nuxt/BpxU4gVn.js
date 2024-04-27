@@ -1,0 +1,1 @@
+import{_ as e}from"./DlAUqK2U.js";import{o as t,c as s,z as c}from"./YlH16nxI.js";const n={},r={class:"max-w-7xl mx-auto px-2 py-6 sm:px-6 lg:px-8"};function _(o,a){return t(),s("section",r,[c(o.$slots,"default")])}const p=e(n,[["render",_]]);export{p as default};
