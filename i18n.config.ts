@@ -6,7 +6,7 @@ export default defineI18nConfig(() => ({
 			navigation: {
 				home: 'Home',
 				blog: 'Blog',
-				projects: 'Projects',
+				projects: 'Open Source Projects',
 				contact: 'Contact',
 			},
 			home: {
@@ -39,7 +39,7 @@ export default defineI18nConfig(() => ({
 			navigation: {
 				home: 'Startseite',
 				blog: 'Blog',
-				projects: 'Projekte',
+				projects: 'Open Source Projekte',
 				contact: 'Kontakt',
 			},
 			home: {
