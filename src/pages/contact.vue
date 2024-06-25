@@ -25,13 +25,13 @@
 			<p>{{ $t('contact.error') }}</p>
 		</div>
 
-		<UForm :schema="schema" :state="state" class="max-w-lg w-full" @submit="handleSubmit">
+		<UForm :schema="safeParser(schema)" :state="state" class="max-w-lg w-full" @submit="handleSubmit">
 			<UCard v-if="!success" class="w-full">
-				<UFormGroup :label="$t('contact.email')" required size="xl">
+				<UFormGroup :label="$t('contact.email')" name="email" required size="xl">
 					<UInput v-model="state.email" placeholder="you@example.com" icon="i-heroicons-envelope" trailing />
 				</UFormGroup>
 
-				<UFormGroup :label="$t('contact.message')" required size="xl">
+				<UFormGroup :label="$t('contact.message')" name="message" required size="xl">
 					<UTextarea v-model="state.message" placeholder="Your Message" />
 				</UFormGroup>
 
@@ -55,15 +55,15 @@
 </template>
 
 <script setup lang="ts">
-import { string, objectAsync, email, minLength, toTrimmed, type Input } from 'valibot';
+import { safeParser, pipe, string, object, email, minLength, trim, type InferOutput } from 'valibot';
 import type { FormSubmitEvent } from '#ui/types';
 
-const schema = objectAsync({
-	email: string([toTrimmed(), email('Invalid email')]),
-	message: string([toTrimmed(), minLength(3, 'Must be at least 8 characters')])
+const schema = object({
+	email: pipe(string(), trim(), email('Invalid email')),
+	message: pipe(string(), trim(), minLength(3, 'Must be at least 8 characters'))
 })
 
-type Schema = Input<typeof schema>
+type Schema = InferOutput<typeof schema>
 
 const contactHost = 'https://contactme-fplu4j3puq-ey.a.run.app';
 

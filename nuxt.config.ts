@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 		viewTransition: true,
 	},
 	modules: [
+		'@nuxt/eslint',
 		'nuxt-icon',
 		'@nuxtjs/i18n',
 		'@nuxtseo/module',

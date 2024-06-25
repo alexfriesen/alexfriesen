@@ -26,20 +26,20 @@
 	"devDependencies": {
 		"@headlessui/vue": "^1.4.0",
 		"@nuxt/content": "^2.3.0",
+		"@nuxt/eslint": "^0.3.13",
 		"@nuxt/image": "^1.2.0",
 		"@nuxt/ui": "^2.12.0",
-		"@nuxtjs/eslint-config-typescript": "^12.0.0",
 		"@nuxtjs/i18n": "^8.0.0",
 		"@nuxtjs/tailwindcss": "^6.2.0",
 		"@nuxtseo/module": "^2.0.0-beta.51",
 		"@tailwindcss/typography": "^0.5.8",
 		"@types/node": "^20.5.1",
-		"eslint": "^8.7.0",
+		"eslint": "^9.0.0",
 		"nuxt": "^3.11.2",
 		"nuxt-icon": "^0.6.1",
 		"nuxt-schema-org": "^3.3.0"
 	},
 	"dependencies": {
-		"valibot": "^0.30.0"
+		"valibot": "^0.33.0"
 	}
 }
