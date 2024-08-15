@@ -6,8 +6,8 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxt/eslint',
 		'nuxt-icon',
+		'@nuxtjs/seo',
 		'@nuxtjs/i18n',
-		'@nuxtseo/module',
 		'nuxt-og-image',
 		'nuxt-schema-org',
 		'@nuxt/content',
