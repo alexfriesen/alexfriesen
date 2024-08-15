@@ -1,5 +1,5 @@
-# START nuxt-simple-robots (indexable)
+# START nuxt-robots (indexable)
 User-agent: *
 
 Sitemap: https://alexfriesen.net/sitemap_index.xml
-# END nuxt-simple-robots
+# END nuxt-robots
