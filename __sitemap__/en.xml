@@ -5,17 +5,14 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/" />
         <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/" />
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/f_jpeg&amp;amp;s_600x600/images/me600.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://alexfriesen.net/blog</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/blog" />
         <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/blog" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/blog" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/blog" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/blog" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/blog" />
         <image:image>
             <image:loc>https://alexfriesen.net/images/dnd-dirs.png</image:loc>
@@ -26,26 +23,17 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/contact" />
         <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/contact" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/contact" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/contact" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/contact" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/contact" />
     </url>
     <url>
         <loc>https://alexfriesen.net/not-found</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/not-found" />
         <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/not-found" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/not-found" />
-        <xhtml:link rel="alternate" href="https://alexfriesen.net/not-found" hreflang="x-default" />
-        <xhtml:link rel="alternate" href="https://alexfriesen.net/not-found" hreflang="en" />
-        <xhtml:link rel="alternate" href="https://alexfriesen.net/de/not-found" hreflang="de" />
     </url>
     <url>
         <loc>https://alexfriesen.net/projects</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/projects" />
         <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/projects" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/projects" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/projects" />
         <image:image>
             <image:loc>https://alexfriesen.net/images/tripman.png</image:loc>
@@ -65,11 +53,17 @@
     </url>
     <url>
         <loc>https://alexfriesen.net/blog/dnd-files-and-directories</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/dnd-dirs.png</image:loc>
+        </image:image>
         <xhtml:link rel="alternate" href="https://alexfriesen.net/blog/dnd-files-and-directories" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://alexfriesen.net/blog/dnd-files-and-directories" hreflang="en" />
     </url>
     <url>
         <loc>https://alexfriesen.net/projects/cv-builder</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/cv.png</image:loc>
+        </image:image>
         <xhtml:link rel="alternate" href="https://alexfriesen.net/projects/cv-builder" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://alexfriesen.net/projects/cv-builder" hreflang="en" />
     </url>
@@ -80,6 +74,9 @@
     </url>
     <url>
         <loc>https://alexfriesen.net/projects/pdf-tools</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/pdf.png</image:loc>
+        </image:image>
         <xhtml:link rel="alternate" href="https://alexfriesen.net/projects/pdf-tools" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://alexfriesen.net/projects/pdf-tools" hreflang="en" />
     </url>
@@ -90,8 +87,11 @@
     </url>
     <url>
         <loc>https://alexfriesen.net/projects/tripmanager</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/tripman.png</image:loc>
+        </image:image>
         <xhtml:link rel="alternate" href="https://alexfriesen.net/projects/tripmanager" hreflang="x-default" />
         <xhtml:link rel="alternate" href="https://alexfriesen.net/projects/tripmanager" hreflang="en" />
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v6.0.0-beta.1 at 2024-08-15T08:56:06.928Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v6.0.0 at 2024-09-20T07:20:48.263Z -->
