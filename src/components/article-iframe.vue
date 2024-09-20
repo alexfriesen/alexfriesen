@@ -2,9 +2,9 @@
 	<div class="flex align-center justify-center w-full aspect-video">
 		<figure class="m-0 w-full">
 			<iframe :src="src" class="w-full h-full" />
-			<figcaption v-if="$slots.default">
+			<div v-if="$slots.default">
 				<slot />
-			</figcaption>
+			</div>
 		</figure>
 	</div>
 </template>

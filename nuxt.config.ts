@@ -1,11 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	compatibilityDate: '2024-09-18',
 	experimental: {
 		viewTransition: true,
 	},
 	modules: [
 		'@nuxt/eslint',
-		'nuxt-icon',
+		'@nuxt/icon',
 		'@nuxtjs/seo',
 		'@nuxtjs/i18n',
 		'nuxt-og-image',
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
 	},
 	components: {
 		dirs: ['~/components'],
-		global: true
+		global: true,
 	},
 	content: {
 		locales: ['en', 'de'],
@@ -29,6 +30,11 @@ export default defineNuxtConfig({
 		highlight: {
 			// Theme used in all color schemes.
 			theme: 'github-dark',
+		},
+	},
+	icon: {
+		clientBundle: {
+			scan: true,
 		},
 	},
 	site: {
@@ -54,13 +60,9 @@ export default defineNuxtConfig({
 				},
 				{
 					name: 'keywords',
-					content:
-						'Software Developer, Full-Stack Developer, Full-Stack, Paderborn',
+					content: 'Software Developer, Full-Stack Developer, Full-Stack',
 				},
 			],
 		},
-	},
-	ui: {
-		icons: ['heroicons', 'ri'],
 	},
 });

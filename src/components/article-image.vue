@@ -2,9 +2,9 @@
 	<div class="flex align-center justify-center">
 		<figure class="m-0">
 			<NuxtPicture :src="src" :alt="alt" />
-			<figcaption v-if="$slots.default">
+			<div v-if="$slots.default">
 				<slot />
-			</figcaption>
+			</div>
 		</figure>
 	</div>
 </template>

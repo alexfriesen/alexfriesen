@@ -13,7 +13,7 @@ export default defineI18nConfig(() => ({
 				welcome: 'Hi there! 👋',
 				description: 'Software developer',
 				picture: 'Picture of Alex',
-				intro: 'I am Alex, a software developer from Paderborn, Germany.',
+				intro: 'I am Alex, a software developer from Germany.',
 				follow: 'Follow me on',
 			},
 			blog: {
@@ -47,7 +47,7 @@ export default defineI18nConfig(() => ({
 				description: 'Softwareentwickler',
 				picture: 'Bild von Alex',
 				intro:
-					'Ich bin Alex, ein Softwareentwickler aus Paderborn, Deutschland.',
+					'Ich bin Alex, ein Softwareentwickler aus Deutschland.',
 				follow: 'Folge mir auf',
 			},
 			blog: {
