@@ -28,6 +28,7 @@ export default defineI18nConfig(() => ({
 				description: 'Feel free to reach out to me.',
 				email: 'Email',
 				message: 'Message',
+				messagePlaceholder: 'Your message...',
 				send: 'Send',
 				sending: 'Sending...',
 				success:
@@ -62,6 +63,7 @@ export default defineI18nConfig(() => ({
 				description: 'Fühle dich frei, mich zu kontaktieren.',
 				email: 'Email',
 				message: 'Nachricht',
+				messagePlaceholder: 'Deine Nachricht...',
 				send: 'Senden',
 				sending: 'Senden...',
 				success:
