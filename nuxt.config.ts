@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2024-09-18',
+	future: {
+		compatibilityVersion: 4,
+	},
 	experimental: {
 		viewTransition: true,
 	},
@@ -15,7 +18,6 @@ export default defineNuxtConfig({
 		'@nuxt/image',
 		'@nuxt/ui',
 	],
-	srcDir: 'src/',
 	i18n: {
 		locales: ['en', 'de'],
 		defaultLocale: 'en',

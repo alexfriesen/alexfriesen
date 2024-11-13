@@ -27,7 +27,7 @@ const siteName = computed(() => {
         />
         <div class="h-full w-full justify-between relative">
             <div class="flex flex-row justify-between items-start">
-                <div class="flex flex-col w-full max-w-[65%]">
+                <div class="flex flex-col w-full max-w-[65%] text-balance">
                     <h1 class="m-0 font-bold mb-[30px] text-[75px]">
                         {{ title }}
                     </h1>

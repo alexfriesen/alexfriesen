@@ -47,8 +47,7 @@ export default defineI18nConfig(() => ({
 				welcome: 'Hallo! 👋',
 				description: 'Softwareentwickler',
 				picture: 'Bild von Alex',
-				intro:
-					'Ich bin Alex, ein Softwareentwickler aus Deutschland.',
+				intro: 'Ich bin Alex, ein Softwareentwickler aus Deutschland.',
 				follow: 'Folge mir auf',
 			},
 			blog: {
