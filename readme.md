@@ -35,7 +35,3 @@ I'm a passionate freelance software developer specializing in web technologies. 
 - **Bluesky** [@alexfriesen.net](https://bsky.app/profile/alexfriesen.net)
 
 Feel free to reach out if you have any questions or just want to connect!
-
----
-
-⭐️ From [alexfriesen](https://github.com/alexfriesen)
