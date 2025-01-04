@@ -35,22 +35,27 @@ export default defineNuxtConfig({
 	},
 	i18n: {
 		baseUrl: baseUrl,
-		strategy: 'prefix',
+		strategy: 'prefix_and_default',
 		detectBrowserLanguage: {
-			redirectOn: "no prefix",
+			redirectOn: 'no prefix',
 			useCookie: false,
 		},
 		locales: [
 			{
 				code: 'en',
-				language: 'en-US'
+				language: 'en-US',
 			},
 			{
 				code: 'de',
-				language: 'de-DE'
+				language: 'de-DE',
 			},
 		],
 		defaultLocale: 'en',
+	},
+	nitro: {
+		prerender: {
+			routes: ['/en', '/de'],
+		},
 	},
 	icon: {
 		clientBundle: {
@@ -80,7 +85,8 @@ export default defineNuxtConfig({
 				},
 				{
 					name: 'keywords',
-					content: 'Webdeveloper, Software Developer, Full-Stack Developer, Full-Stack',
+					content:
+						'Webdeveloper, Software Developer, Full-Stack Developer, Full-Stack',
 				},
 			],
 		},
