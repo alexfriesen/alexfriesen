@@ -20,7 +20,6 @@ export default defineNuxtConfig({
 		'@nuxt/image',
 		'@nuxt/ui',
 	],
-
 	components: {
 		dirs: ['~/components'],
 		global: true,
@@ -35,7 +34,7 @@ export default defineNuxtConfig({
 	},
 	i18n: {
 		baseUrl: baseUrl,
-		strategy: 'prefix_and_default',
+		strategy: 'prefix',
 		detectBrowserLanguage: {
 			redirectOn: 'no prefix',
 			useCookie: false,
@@ -53,9 +52,7 @@ export default defineNuxtConfig({
 		defaultLocale: 'en',
 	},
 	nitro: {
-		prerender: {
-			routes: ['/en', '/de'],
-		},
+		static: true,
 	},
 	icon: {
 		clientBundle: {
