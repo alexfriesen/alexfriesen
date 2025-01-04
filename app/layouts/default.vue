@@ -26,7 +26,7 @@
 					<LangSelect />
 					<div>
 						<p class="text-base p-2">
-							&copy; 2024 - Alexander Friesen
+							&copy; 2025 - Alexander Friesen
 						</p>
 					</div>
 					<div class="flex items-center gap-4">
