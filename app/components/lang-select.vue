@@ -1,7 +1,6 @@
 <template>
 	<USelectMenu
 		class="min-w-36"
-		:disabled="isRestricted"
 		:model-value="locale"
 		:options="availableLanguages"
 		value-attribute="value"
@@ -26,7 +25,7 @@ const locale = useI18n().locale;
 const selected = computed(() => {
 	const currentLocale = locale.value;
 	const lang = availableLanguages.find(lang => lang.value === currentLocale);
-	return lang || availableLanguages[0];
+	return lang || availableLanguages[0]!;
 });
 
 const availableLanguages = [{
@@ -38,16 +37,6 @@ const availableLanguages = [{
 	name: 'Deutsch',
 	icon: 'circle-flags:de',
 }];
-
-const restrictedPaths = [
-	'/blog/',
-	'/projects/',
-];
-
-const isRestricted = computed(() => {
-	const currentPath = useRoute().path;
-	return restrictedPaths.some(path => currentPath.startsWith(path));
-});
 
 const switchLocalePath = useSwitchLocalePath();
 </script>

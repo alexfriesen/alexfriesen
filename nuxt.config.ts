@@ -1,3 +1,5 @@
+const baseUrl = 'https://alexfriesen.net';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2024-09-18',
@@ -18,10 +20,7 @@ export default defineNuxtConfig({
 		'@nuxt/image',
 		'@nuxt/ui',
 	],
-	i18n: {
-		locales: ['en', 'de'],
-		defaultLocale: 'en',
-	},
+
 	components: {
 		dirs: ['~/components'],
 		global: true,
@@ -34,13 +33,32 @@ export default defineNuxtConfig({
 			theme: 'github-dark',
 		},
 	},
+	i18n: {
+		baseUrl: baseUrl,
+		strategy: 'prefix',
+		detectBrowserLanguage: {
+			redirectOn: "no prefix",
+			useCookie: false,
+		},
+		locales: [
+			{
+				code: 'en',
+				language: 'en-US'
+			},
+			{
+				code: 'de',
+				language: 'de-DE'
+			},
+		],
+		defaultLocale: 'en',
+	},
 	icon: {
 		clientBundle: {
 			scan: true,
 		},
 	},
 	site: {
-		url: 'https://alexfriesen.net',
+		url: baseUrl,
 	},
 	devtools: {
 		enabled: true,
@@ -62,7 +80,7 @@ export default defineNuxtConfig({
 				},
 				{
 					name: 'keywords',
-					content: 'Software Developer, Full-Stack Developer, Full-Stack',
+					content: 'Webdeveloper, Software Developer, Full-Stack Developer, Full-Stack',
 				},
 			],
 		},

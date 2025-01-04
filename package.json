@@ -26,7 +26,9 @@
 	"homepage": "https://github.com/alexfriesen/alexfriesen.github.io#readme",
 	"devDependencies": {
 		"@headlessui/vue": "^1.4.0",
+		"@iconify-json/circle-flags": "^1.2.1",
 		"@iconify-json/heroicons": "^1.2.0",
+		"@iconify-json/ri": "^1.2.3",
 		"@nuxt/content": "^2.3.0",
 		"@nuxt/eslint": "^0.7.0",
 		"@nuxt/icon": "^1.5.1",

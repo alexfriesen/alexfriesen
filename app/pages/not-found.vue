@@ -6,3 +6,10 @@
 		</h2>
 	</Content>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+	title: '404.title',
+	description: '404.description',
+})
+</script>
