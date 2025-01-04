@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://alexfriesen.net/en</loc>
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de" />
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/f_jpeg&amp;amp;s_600x600/images/me600.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/blog</loc>
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/blog" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/blog" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/blog" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/blog" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/blog" />
+        <image:image>
+            <image:loc>https://alexfriesen.net/images/dnd-dirs.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/contact" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/contact" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/contact" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/contact" />
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/not-found</loc>
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/not-found" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/not-found" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/not-found" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/not-found" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/not-found" />
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/projects</loc>
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/projects" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/projects" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/projects" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects" />
+        <image:image>
+            <image:loc>https://alexfriesen.net/images/tripman.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://raw.githubusercontent.com/alexfriesen/retro/main/public/preview.gif</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://alexfriesen.net/images/pdf.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://alexfriesen.net/images/dnd-dirs.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://alexfriesen.net/images/cv.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/blog/dnd-files-and-directories</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/dnd-dirs.png</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/blog/dnd-files-and-directories" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/blog/dnd-files-and-directories" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/blog/dnd-files-and-directories" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/blog/dnd-files-and-directories" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/blog/dnd-files-and-directories" />
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/projects/cv-builder</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/cv.png</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/projects/cv-builder" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/projects/cv-builder" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects/cv-builder" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/projects/cv-builder" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/projects/cv-builder" />
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/projects/data-transfer-helper</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/projects/data-transfer-helper" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/projects/data-transfer-helper" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects/data-transfer-helper" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/projects/data-transfer-helper" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/projects/data-transfer-helper" />
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/projects/pdf-tools</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/pdf.png</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/projects/pdf-tools" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/projects/pdf-tools" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects/pdf-tools" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/projects/pdf-tools" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/projects/pdf-tools" />
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/projects/retro-scene</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/projects/retro-scene" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/projects/retro-scene" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects/retro-scene" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/projects/retro-scene" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/projects/retro-scene" />
+    </url>
+    <url>
+        <loc>https://alexfriesen.net/en/projects/tripmanager</loc>
+        <image:image>
+            <image:loc>https://alexfriesen.net/_ipx/w_3072&amp;amp;f_png/images/tripman.png</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alexfriesen.net/en/projects/tripmanager" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://alexfriesen.net/en/projects/tripmanager" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://alexfriesen.net/de/projects/tripmanager" />
+        <xhtml:link rel="alternate" hreflang="de-DE" href="https://alexfriesen.net/de/projects/tripmanager" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alexfriesen.net/en/projects/tripmanager" />
+    </url>
+</urlset>
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.0.1 at 2025-01-04T19:08:42.943Z -->

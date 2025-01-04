@@ -1,1 +1,0 @@
-import{_ as t}from"./DlAUqK2U.js";import{o,c as n,x as s}from"./B4pz-2oQ.js";const c={},_={class:"max-w-7xl mx-auto px-2 py-6 sm:px-6 lg:px-8"};function a(e,r){return o(),n("section",_,[s(e.$slots,"default")])}const p=Object.assign(t(c,[["render",a]]),{__name:"Content"});export{p as default};

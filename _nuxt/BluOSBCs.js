@@ -1,1 +1,0 @@
-import{_ as t}from"./DlAUqK2U.js";import{o as s,c as n,x as o}from"./B4pz-2oQ.js";const a={},r={class:"text-xs inline-flex items-center font-bold leading-sm px-3 py-1 bg-gray-600 text-gray-300 rounded-full"};function c(e,l){return s(),n("span",r,[o(e.$slots,"default")])}const d=Object.assign(t(a,[["render",c]]),{__name:"Tag"});export{d as default};
