@@ -8,7 +8,7 @@
 				<div class="md:px-8 text-center md:text-left space-y-4">
 					<div class="font-medium">
 						<p class="p-2">
-							{{ $t('home.welcome') }}<br>
+							{{ $t('home.welcome') }} <span class="wave">👋</span><br>
 							{{ $t('home.intro') }}
 						</p>
 						<div class="font-normal flex justify-evenly p-2 pt-4">
@@ -32,3 +32,45 @@ definePageMeta({
 	description: 'home.description',
 })
 </script>
+
+<style>
+.wave {
+	display: inline-block;
+	animation-name: wave;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+}
+
+@media (motion) {
+	.wave {
+		animation: none;
+	}
+}
+
+@keyframes wave {
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+
+	10% {
+		transform: rotate(5deg) scale(1.1);
+	}
+
+	20% {
+		transform: rotate(-10deg) scale(1.1);
+	}
+
+	30% {
+		transform: rotate(5deg) scale(1.1);
+	}
+
+	40% {
+		transform: rotate(-5deg) scale(1.1);
+	}
+
+	50% {
+		transform: rotate(0deg) scale(1);
+	}
+}
+</style>

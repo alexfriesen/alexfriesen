@@ -5,7 +5,7 @@ export default defineI18nConfig(() => ({
 		en: {
 			home: {
 				title: 'Home',
-				welcome: 'Hi there! 👋',
+				welcome: 'Hi there!',
 				description: 'Software developer',
 				picture: 'Picture of Alex',
 				intro: 'I am Alex, a software developer from Germany.',
@@ -41,7 +41,7 @@ export default defineI18nConfig(() => ({
 		de: {
 			home: {
 				title: 'Startseite',
-				welcome: 'Hallo! 👋',
+				welcome: 'Hallo!',
 				description: 'Softwareentwickler',
 				picture: 'Bild von Alex',
 				intro: 'Ich bin Alex, ein Softwareentwickler aus Deutschland.',
