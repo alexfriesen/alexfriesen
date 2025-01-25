@@ -48,7 +48,7 @@ import type { QueryBuilderParams } from '@nuxt/content';
 const { locale } = useI18n()
 const localePath = useLocalePath();
 
-const query: QueryBuilderParams = { path: '/blog', where: [{ _locale: locale.value }], limit: 5, sort: [{ _path: -1 }] }
+const query: QueryBuilderParams = { path: '/blog', where: [{ _locale: locale.value }], limit: 10, sort: [{ _path: -1 }] }
 
 definePageMeta({
 	title: 'blog.title',
