@@ -22,7 +22,7 @@ I'm a passionate freelance software developer specializing in web technologies. 
 
 ## 📂 Open Source Projects
 
-- [Zeity](https://github.com/alexfriesen/zeity) - A productivity app focused on time tracking, managing projects and getting things done 
+- [Zeity](https://github.com/alexfriesen/zeity) - Time tracking app with excellent user experience
 - [PDF Tools](https://github.com/alexfriesen/pdf-tools) - A simple tool to merge PDF Files and rearrange its Pages
 - [Data Transfer Helper](https://github.com/alexfriesen/data-transfer-helper) - Helper Function for handling DnD DataTransfer Events
 - [CV Builder](https://github.com/alexfriesen/cv) - A simple CV-Builder made with Angular
