@@ -3,7 +3,7 @@
 		<UCard>
 			<figure class="flex flex-col md:flex-row justify-center items-center">
 				<NuxtPicture :alt="$t('home.picture')" fetchpriority="high" width="300" height="300" densities="x1 x2"
-					sizes="100vw sm:120px md:300px" format="webp,avif" src="images/me600.jpg"
+					sizes="100vw sm:120px md:300px" format="avif,webp" src="/images/me600.jpg"
 					class="relative aspect-square rounded-full overflow-hidden border-4 border-gray-200 shadow-lg h-32 md:w-48 md:h-auto" />
 				<div class="md:px-8 text-center md:text-left space-y-4">
 					<div class="font-medium">
