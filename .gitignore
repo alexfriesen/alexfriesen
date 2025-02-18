@@ -3,6 +3,7 @@ node_modules
 tmp
 *.local
 *.log*
+.data
 .nuxt
 .nitro
 .cache

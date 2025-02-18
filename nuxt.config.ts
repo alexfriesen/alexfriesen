@@ -24,14 +24,7 @@ export default defineNuxtConfig({
 		dirs: ['~/components'],
 		global: true,
 	},
-	content: {
-		locales: ['en', 'de'],
-		defaultLocale: 'en',
-		highlight: {
-			// Theme used in all color schemes.
-			theme: 'github-dark',
-		},
-	},
+	content: {},
 	i18n: {
 		baseUrl: baseUrl,
 		strategy: 'prefix',

@@ -13,6 +13,8 @@
 <script setup lang="ts">
 const route = useRoute()
 const { locale } = useI18n()
-const normalizedRoute = route.path.replace(`/${locale.value}`, '')
-const { data } = await useAsyncData(route.path, () => queryContent(normalizedRoute).where({ _locale: locale.value }).findOne())
+const collection = locale.value === 'en' ? 'projects_en' : 'projects_de'
+const { data } = await useAsyncData(route.path, () => {
+	return queryCollection(collection).path(route.path).first()
+})
 </script>
