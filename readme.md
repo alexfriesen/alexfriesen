@@ -1,4 +1,4 @@
-# Hi there, I'm Alex Friesen 👋
+# Hi there, I'm Alexander Friesen 👋
 
 I'm a passionate freelance software developer specializing in web technologies. I love creating open-source projects and contributing to the developer community.
 
