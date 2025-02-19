@@ -2,13 +2,8 @@
 title: DnD Files and Directories
 description: Dragging and Dropping Files and even Directories in the Browser
 date: '2023-12-19'
-tags: ['angular', 'print layout']
-image:
-  src: '/images/dnd-dirs.png'
-  alt: 'Drag and Drop Files and Directories'
+tags: ['js', 'ts', 'drag-and-drop']
 ---
-
-:article-image{src="/images/dnd-dirs.png" alt="Drag and Drop Files and Directories"}
 
 # Drag and Drop Files and Directories
 

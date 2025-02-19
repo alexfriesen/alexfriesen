@@ -1,5 +1,10 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
 
+const snippetsSchema = z.object({
+	tags: z.array(z.string()),
+	date: z.coerce.date(),
+});
+
 const blogSchema = z.object({
 	image: z.object({
 		src: z.string(),
@@ -16,6 +21,17 @@ const projectSchema = z.object({
 
 export default defineContentConfig({
 	collections: {
+		snippets_en: defineCollection({
+			source: 'en/snippets/*.md',
+			type: 'page',
+			schema: snippetsSchema,
+		}),
+		snippets_de: defineCollection({
+			source: 'de/snippets/*.md',
+			type: 'page',
+			schema: snippetsSchema,
+		}),
+
 		blog_en: defineCollection({
 			source: 'en/blog/*.md',
 			type: 'page',

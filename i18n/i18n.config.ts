@@ -11,9 +11,9 @@ export default defineI18nConfig(() => ({
 				intro: 'I am Alexander, a software developer from Germany.',
 				follow: 'Follow me on',
 			},
-			blog: {
-				title: 'Blog',
-				description: 'Here are some of my thoughts and experiences.',
+			snippets: {
+				title: 'Snippets',
+				description: 'Here are some useful code snippets. Feel free to copy and paste.',
 				read: 'Read',
 			},
 			projects: {
@@ -47,9 +47,9 @@ export default defineI18nConfig(() => ({
 				intro: 'Ich bin Alexander, ein Softwareentwickler aus Deutschland.',
 				follow: 'Folge mir auf',
 			},
-			blog: {
-				title: 'Blog',
-				description: 'Hier sind einige meiner Gedanken und Erfahrungen.',
+			snippets: {
+				title: 'Snippets',
+				description: 'Hier finden Sie einige nützliche Codeschnipsel. Kopieren und einfügen erlaubt!',
 				read: 'Lesen',
 			},
 			projects: {

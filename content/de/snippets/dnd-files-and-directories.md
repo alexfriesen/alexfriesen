@@ -2,13 +2,8 @@
 title: Dateien und Verzeichnisse per Drag & Drop
 description: Dateien und sogar Verzeichnisse im Browser per Drag & Drop verschieben
 date: '2023-12-19'
-tags: ['angular', 'Drucklayout']
-image:
-  src: '/images/dnd-dirs.png'
-  alt: 'Dateien und Verzeichnisse per Drag & Drop'
+tags: ['js', 'ts', 'drag-and-drop']
 ---
-
-:article-image{src="/images/dnd-dirs.png" alt="Dateien und Verzeichnisse per Drag & Drop"}
 
 # Dateien und Verzeichnisse per Drag & Drop
 

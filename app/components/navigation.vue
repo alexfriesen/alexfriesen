@@ -63,7 +63,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 
 const siteNavigation = [
 	{ name: 'home.title', href: '/' },
-	{ name: 'blog.title', href: '/blog' },
+	{ name: 'snippets.title', href: '/snippets' },
 	{ name: 'projects.title', href: '/projects' },
 ];
 
