@@ -13,12 +13,7 @@ I'm a passionate freelance software developer specializing in web technologies. 
 
 - **Languages:** JavaScript, TypeScript, HTML, CSS
 - **Frameworks:** Angular, Vue.js, Nuxt.js, Svelte
-- **Tools:** Git, Docker, Node.js
-
-## 📈 GitHub Stats
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alexfriesen&layout=compact)](https://github.com/alexfriesen/github-readme-stats)
-![Alex's GitHub stats](https://github-readme-stats.vercel.app/api?username=alexfriesen&show_icons=true)
+- **Tools:** Git, Docker, Node.js and more
 
 ## 📂 Open Source Projects
 
