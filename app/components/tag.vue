@@ -8,8 +8,8 @@
       leading-sm
       px-3
       py-1
-      bg-gray-600
-      text-gray-300
+      bg-neutral-600
+      text-neutral-300
       rounded-full
     "
   >

@@ -5,7 +5,7 @@
 		<Head>
 			<Title v-if="title">{{ title }}</Title>
 			<Meta v-if="description" name="description" :content="description" />
-			<Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" />
+			<!-- <Link rel="canonical" :href="toAbsoluteUrl($route.fullPath)" /> -->
 			<template v-for="link in head.link" :key="link.id">
 				<Link :id="link.id" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
 			</template>
@@ -31,8 +31,8 @@
 					</div>
 					<div class="flex items-center gap-4">
 						<UButton v-for="link in socialLinks" :key="link.label" :to="link.href" :title="link.label"
-							:aria-label="link.label" class="rounded-full p-2.5" type="link" target="_blank"
-							variant="solid" color="gray" square>
+							:aria-label="link.label" class="rounded-full p-2.5" target="_blank" variant="outline"
+							color="neutral" square>
 							<UIcon :name="link.icon" class="w-6 h-6" />
 						</UButton>
 					</div>

@@ -11,7 +11,6 @@ export default defineNuxtConfig({
 	},
 	modules: [
 		'@nuxt/eslint',
-		'@nuxt/icon',
 		'@nuxtjs/seo',
 		'@nuxtjs/i18n',
 		'nuxt-og-image',
@@ -20,10 +19,7 @@ export default defineNuxtConfig({
 		'@nuxt/image',
 		'@nuxt/ui',
 	],
-	components: {
-		dirs: ['~/components'],
-		global: true,
-	},
+	css: ['~/assets/css/main.css'],
 	content: {},
 	i18n: {
 		baseUrl: baseUrl,
@@ -54,16 +50,13 @@ export default defineNuxtConfig({
 	},
 	site: {
 		url: baseUrl,
+		name: 'Alexander Friesen',
 	},
 	devtools: {
 		enabled: true,
 	},
 	app: {
 		head: {
-			htmlAttrs: {
-				lang: 'en',
-			},
-			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1.0',
 			titleTemplate: '%s - Alexander Friesen',
 			title: 'Home',

@@ -8,7 +8,7 @@
 		</div>
 		<div class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			<article v-for="article in data" :key="article.path"
-				class="flex flex-col justify-between overflow-hidden rounded-lg divide-y divide-gray-200 dark:divide-gray-800 ring-1 ring-gray-200 dark:ring-gray-800 shadow bg-white dark:bg-gray-900">
+				class="flex flex-col justify-between overflow-hidden rounded-lg divide-y divide-neutral-200 dark:divide-neutral-800 ring-1 ring-neutral-200 dark:ring-neutral-800 shadow bg-white dark:bg-neutral-900">
 				<header class="flex flex-col flex-1 prose dark:prose-invert leading-tight p-2 md:p-4 ">
 					<h3 class="mb-2">
 						<NuxtLink :to="article.path" :aria-label="article.title" class="no-underline">
@@ -22,7 +22,7 @@
 
 				<footer class="flex items-center justify-between leading-none p-2 md:p-4">
 					<div class="flex flex-wrap gap-1">
-						<UBadge v-for="tag in article.tags" :key="tag" color="gray" variant="subtle">
+						<UBadge v-for="tag in article.tags" :key="tag" color="neutral" variant="subtle">
 							{{ tag }}
 						</UBadge>
 					</div>

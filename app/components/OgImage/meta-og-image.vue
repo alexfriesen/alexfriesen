@@ -41,7 +41,7 @@ const siteName = computed(() => {
                         :class="[imageRound ? 'rounded-full' : '']"
                         width="300"
                         height="300"
-                        class="overflow-hidden rounded-4 border-4 border-gray-200"
+                        class="overflow-hidden rounded-4 border-4 border-neutral-200"
                         alt="preview"
                     />
                 </div>

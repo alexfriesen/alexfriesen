@@ -1,5 +1,5 @@
 <template>
-    <UAlert class="not-prose" color="primary" variant="soft" title="Hint" icon="i-heroicons-information-circle">
+    <UAlert class="not-prose" color="primary" variant="soft" title="Hint" icon="i-lucide-circle-alert">
         <template #description>
             <slot />
         </template>

@@ -6,33 +6,35 @@
 			</h2>
 		</div>
 
-		<div v-if="success" class="flex flex-col rounded-xl p-8 shadow text-white bg-green-800">
-			<Icon name="heroicons:check-circle" class="w-32 h-32 m-auto" />
+		<div v-if="success"
+			class="flex flex-col rounded-xl p-8 shadow text-white text-center bg-green-800 max-w-lg w-full">
+			<UIcon name="i-lucide-check-circle" class="w-32 h-32 m-auto" />
 			<p>
 				{{ $t('contact.success') }}
 			</p>
 		</div>
 
-		<div v-if="error" class="flex flex-col rounded-xl p-8 shadow text-white bg-red-800">
-			<Icon name="heroicons:exclamation-circle" class="w-32 h-32 m-auto" />
+		<div v-if="error" class="flex flex-col rounded-xl p-8 shadow text-white text-center bg-red-800 max-w-lg w-full">
+			<Icon name="i-lucide-alert-circle" class="w-32 h-32 m-auto" />
 			<p>{{ $t('contact.error') }}</p>
 		</div>
 
 		<UForm :schema="safeParser(schema)" :state="state" class="max-w-lg w-full" @submit="handleSubmit">
 			<UCard v-if="!success" class="w-full">
 				<div class="space-y-2">
-					<UFormGroup :label="$t('contact.email')" name="email" required size="xl">
-						<UInput v-model="state.email" placeholder="you@example.com" icon="i-heroicons-envelope"
-							trailing />
-					</UFormGroup>
+					<UFormField :label="$t('contact.email')" name="email" required size="xl">
+						<UInput v-model="state.email" placeholder="you@example.com" icon="i-lucide-envelope" trailing
+							class="w-full" />
+					</UFormField>
 
-					<UFormGroup :label="$t('contact.message')" name="message" required size="xl">
-						<UTextarea v-model="state.message" :placeholder="$t('contact.messagePlaceholder')" />
-					</UFormGroup>
+					<UFormField :label="$t('contact.message')" name="message" required size="xl">
+						<UTextarea v-model="state.message" :placeholder="$t('contact.messagePlaceholder')"
+							class="w-full" />
+					</UFormField>
 				</div>
 
 				<template #footer>
-					<UButton :loading="pending" :disabled="pending" type="sumbit" size="xl" color="primary"
+					<UButton :loading="pending" :disabled="pending" type="submit" size="xl" color="primary"
 						variant="solid" block>
 						<span v-if="pending">{{ $t('contact.sending') }}</span>
 						<span v-else>{{ $t('contact.send') }}</span>
@@ -81,7 +83,7 @@ const state = reactive({
 	message: undefined
 })
 
-function handleSubmit(event: FormSubmitEvent<Schema>) {
+async function handleSubmit(event: FormSubmitEvent<Schema>) {
 	const { email, message } = event.data;
 
 	success.value = false;
@@ -89,7 +91,7 @@ function handleSubmit(event: FormSubmitEvent<Schema>) {
 	pending.value = true;
 	isSubmitted.value = true;
 
-	sendMessage(email, message)
+	await sendMessage(email, message)
 		.then(() => {
 			success.value = true;
 		})

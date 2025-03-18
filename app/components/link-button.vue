@@ -3,14 +3,14 @@
 		:to="url"
 		:target="target"
 		variant="solid"
-		color="gray"
+		color="neutral"
 		size="xl"
 		class="no-underline"
 	>
 		<UIcon v-if="icon" :name="icon" class="w-6 h-6" dynamic />
 		<slot />
 		<span v-if="label">{{ label }}</span>
-		<UIcon v-if="external" name="i-heroicons-arrow-top-right-on-square-20-solid" class="w-6 h-6" />
+		<UIcon v-if="external" name="i-lucide-external-link" class="w-6 h-6" />
 	</UButton>
 </template>
 

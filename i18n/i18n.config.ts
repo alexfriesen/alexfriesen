@@ -3,6 +3,9 @@ export default defineI18nConfig(() => ({
 	locale: 'en',
 	messages: {
 		en: {
+			actions: {
+				back: 'Go Back',
+			},
 			home: {
 				title: 'Home',
 				welcome: 'Hi there!',
@@ -37,8 +40,15 @@ export default defineI18nConfig(() => ({
 				title: 'Page not found',
 				description: 'The page could not be found.',
 			},
+			error: {
+				title: 'An error occurred',
+				description: 'An error occurred while processing your request.',
+			},
 		},
 		de: {
+			actions: {
+				back: 'Zurück',
+			},
 			home: {
 				title: 'Startseite',
 				welcome: 'Hallo!',
@@ -72,6 +82,10 @@ export default defineI18nConfig(() => ({
 			'404': {
 				title: 'Seite nicht gefunden',
 				description: 'Die Seite konnte nicht gefunden werden.',
+			},
+			error: {
+				title: 'Ein Fehler ist aufgetreten',
+				description: 'Ein Fehler ist aufgetreten, während deine Anfrage bearbeitet wurde.',
 			},
 		},
 	},

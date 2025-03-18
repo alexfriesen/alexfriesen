@@ -1,42 +1,30 @@
 <template>
-	<USelectMenu
-		class="min-w-36"
-		:model-value="locale"
-		:options="availableLanguages"
-		value-attribute="value"
-		color="gray"
-	>
-		<template #label>
-			<Icon :name="selected.icon" class="w-6 h-6" />
-			<span>{{ selected.name }}</span>
-		</template>
-
-		<template #option="{ option: lang }">
-			<NuxtLink :to="switchLocalePath(lang.value)" class="inline-flex items-center gap-x-1.5">
-				<Icon :name="lang.icon" class="w-6 h-6" />
-				<span>{{ lang.name }}</span>
-			</NuxtLink>
-		</template>
-	</USelectMenu>
+	<UDropdownMenu :items="availableLanguages" size="xl">
+		<UButton :icon="selected.icon" :label="selected.label" color="neutral" variant="outline"
+			trailing-icon="i-lucide-chevron-down" size="xl" />
+	</UDropdownMenu>
 </template>
 
 <script setup lang="ts">
 const locale = useI18n().locale;
+const switchLocalePath = useSwitchLocalePath();
+
 const selected = computed(() => {
 	const currentLocale = locale.value;
-	const lang = availableLanguages.find(lang => lang.value === currentLocale);
-	return lang || availableLanguages[0]!;
+	const lang = availableLanguages.value.find(lang => lang.value === currentLocale);
+	return lang || availableLanguages.value[0]!;
 });
 
-const availableLanguages = [{
+const availableLanguages = computed(() => [{
 	value: 'en',
-	name: 'English',
+	label: 'English',
 	icon: 'circle-flags:en',
+	to: switchLocalePath('en'),
 }, {
 	value: 'de',
-	name: 'Deutsch',
+	label: 'Deutsch',
 	icon: 'circle-flags:de',
-}];
+	to: switchLocalePath('de'),
+}]);
 
-const switchLocalePath = useSwitchLocalePath();
 </script>

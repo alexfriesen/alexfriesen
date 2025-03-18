@@ -8,7 +8,7 @@
 		</div>
 		<div class="grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			<article v-for="article in data" :key="article.path"
-				class="flex flex-col justify-between overflow-hidden rounded-lg divide-y divide-gray-200 dark:divide-gray-800 ring-1 ring-gray-200 dark:ring-gray-800 shadow bg-white dark:bg-gray-900">
+				class="flex flex-col justify-between overflow-hidden rounded-lg divide-y divide-neutral-200 dark:divide-neutral-800 ring-1 ring-neutral-200 dark:ring-neutral-800 shadow bg-white dark:bg-neutral-900">
 				<NuxtLink v-if="article.image" :to="article.path" :aria-label="article.title">
 					<img v-if="article.image" :src="article.image.src" :alt="article.image.alt"
 						class="block h-auto w-full object-cover aspect-video" loading="lazy">
@@ -25,7 +25,7 @@
 
 				<footer class="flex items-center justify-between leading-none p-2 md:p-4">
 					<div>
-						<time v-if="article.date" class="text-gray-400 dark:text-gray-500"
+						<time v-if="article.date" class="text-neutral-400 dark:text-neutral-500"
 							:datetime="new Date(article.date).toISOString()">
 							{{ new Date(article.date).toLocaleDateString() }}
 						</time>
