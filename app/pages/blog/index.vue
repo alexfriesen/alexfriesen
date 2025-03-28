@@ -53,4 +53,7 @@ definePageMeta({
 	title: 'blog.title',
 	description: 'blog.description',
 })
+useSeoMeta({
+	robots: 'noindex',
+})
 </script>

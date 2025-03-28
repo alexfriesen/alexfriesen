@@ -12,4 +12,7 @@ definePageMeta({
 	title: '404.title',
 	description: '404.description',
 })
+useSeoMeta({
+	robots: 'noindex',
+})
 </script>

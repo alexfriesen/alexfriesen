@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
+import { asSitemapCollection } from '@nuxtjs/sitemap/content';
 
 const snippetsSchema = z.object({
 	tags: z.array(z.string()),
@@ -21,16 +22,20 @@ const projectSchema = z.object({
 
 export default defineContentConfig({
 	collections: {
-		snippets_en: defineCollection({
-			source: 'en/snippets/*.md',
-			type: 'page',
-			schema: snippetsSchema,
-		}),
-		snippets_de: defineCollection({
-			source: 'de/snippets/*.md',
-			type: 'page',
-			schema: snippetsSchema,
-		}),
+		snippets_en: defineCollection(
+			asSitemapCollection({
+				source: 'en/snippets/*.md',
+				type: 'page',
+				schema: snippetsSchema,
+			})
+		),
+		snippets_de: defineCollection(
+			asSitemapCollection({
+				source: 'de/snippets/*.md',
+				type: 'page',
+				schema: snippetsSchema,
+			})
+		),
 
 		blog_en: defineCollection({
 			source: 'en/blog/*.md',
@@ -43,15 +48,19 @@ export default defineContentConfig({
 			schema: blogSchema,
 		}),
 
-		projects_en: defineCollection({
-			source: 'en/projects/*.md',
-			type: 'page',
-			schema: projectSchema,
-		}),
-		projects_de: defineCollection({
-			source: 'de/projects/*.md',
-			type: 'page',
-			schema: projectSchema,
-		}),
+		projects_en: defineCollection(
+			asSitemapCollection({
+				source: 'en/projects/*.md',
+				type: 'page',
+				schema: projectSchema,
+			})
+		),
+		projects_de: defineCollection(
+			asSitemapCollection({
+				source: 'de/projects/*.md',
+				type: 'page',
+				schema: projectSchema,
+			})
+		),
 	},
 });

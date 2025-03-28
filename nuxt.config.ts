@@ -40,8 +40,15 @@ export default defineNuxtConfig({
 		],
 		defaultLocale: 'en',
 	},
+	routeRules: {
+		'/blog': { robots: 'noindex, nofollow', sitemap: false },
+		'/not-found': { robots: 'noindex', sitemap: false },
+	},
 	nitro: {
 		static: true,
+		prerender: {
+			routes: ['/', '/robots.txt', '/sitemap.xml'],
+		},
 	},
 	icon: {
 		clientBundle: {
