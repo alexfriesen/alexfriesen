@@ -52,6 +52,10 @@ export default defineNuxtConfig({
 		url: baseUrl,
 		name: 'Alexander Friesen',
 	},
+	robots: {
+		enabled: true,
+		allow: ['*'],
+	},
 	devtools: {
 		enabled: true,
 	},
