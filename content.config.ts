@@ -6,14 +6,14 @@ const snippetsSchema = z.object({
 	date: z.coerce.date(),
 });
 
-const blogSchema = z.object({
-	image: z.object({
-		src: z.string(),
-		alt: z.string(),
-	}),
-	tags: z.array(z.string()),
-	date: z.coerce.date(),
-});
+// const blogSchema = z.object({
+// 	image: z.object({
+// 		src: z.string(),
+// 		alt: z.string(),
+// 	}),
+// 	tags: z.array(z.string()),
+// 	date: z.coerce.date(),
+// });
 
 const projectSchema = z.object({
 	tags: z.array(z.string()),
@@ -37,16 +37,16 @@ export default defineContentConfig({
 			})
 		),
 
-		blog_en: defineCollection({
-			source: 'en/blog/*.md',
-			type: 'page',
-			schema: blogSchema,
-		}),
-		blog_de: defineCollection({
-			source: 'de/blog/*.md',
-			type: 'page',
-			schema: blogSchema,
-		}),
+		// blog_en: defineCollection({
+		// 	source: 'en/blog/*.md',
+		// 	type: 'page',
+		// 	schema: blogSchema,
+		// }),
+		// blog_de: defineCollection({
+		// 	source: 'de/blog/*.md',
+		// 	type: 'page',
+		// 	schema: blogSchema,
+		// }),
 
 		projects_en: defineCollection(
 			asSitemapCollection({
