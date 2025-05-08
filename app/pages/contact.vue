@@ -19,7 +19,7 @@
 			<p>{{ $t('contact.error') }}</p>
 		</div>
 
-		<UForm :schema="safeParser(schema)" :state="state" class="max-w-lg w-full" @submit="handleSubmit">
+		<UForm :schema="schema" :state="state" class="max-w-lg w-full" @submit="handleSubmit">
 			<UCard v-if="!success" class="w-full">
 				<div class="space-y-2">
 					<UFormField :label="$t('contact.email')" name="email" required size="xl">
@@ -46,8 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { safeParser, pipe, string, object, email, minLength, trim, type InferOutput } from 'valibot';
-import type { FormSubmitEvent } from '#ui/types';
+import { pipe, string, object, email, minLength, trim, type InferOutput } from 'valibot';
+import type { FormSubmitEvent } from '@nuxt/ui';
 
 definePageMeta({
 	title: 'contact.title',
@@ -56,7 +56,7 @@ definePageMeta({
 
 const schema = object({
 	email: pipe(string(), trim(), email('Invalid email')),
-	message: pipe(string(), trim(), minLength(3, 'Must be at least 8 characters'))
+	message: pipe(string(), trim(), minLength(3, 'Must be at least 3 characters')),
 })
 
 type Schema = InferOutput<typeof schema>
@@ -64,12 +64,9 @@ type Schema = InferOutput<typeof schema>
 const contactHost = 'https://contactme-fplu4j3puq-ey.a.run.app';
 
 function sendMessage(email: string, message: string) {
-	return fetch(`${contactHost}/contact`, {
-		method: 'post',
-		headers: {
-			'content-type': 'application/json',
-		},
-		body: JSON.stringify({ email, message }),
+	return $fetch(`${contactHost}/contact`, {
+		method: 'POST',
+		body: { email, message },
 	});
 }
 
