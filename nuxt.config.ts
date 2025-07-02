@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 	},
 	i18n: {
 		baseUrl: baseUrl,
-		strategy: 'prefix_and_default',
+		strategy: 'prefix',
 		detectBrowserLanguage: {
 			redirectOn: 'root',
 			useCookie: false,
@@ -54,9 +54,6 @@ export default defineNuxtConfig({
 	},
 	nitro: {
 		static: true,
-		prerender: {
-			routes: ['/'],
-		},
 	},
 	icon: {
 		clientBundle: {

@@ -26,16 +26,16 @@ const { t } = useI18n();
 const localePath = useLocalePath();
 
 
-const menu = [
+const menu = computed(() => ([
 	[
-		{ label: t('home.title'), to: localePath('/'), icon:  'i-lucide-home' },
+		{ label: t('home.title'), to: localePath('/'), icon: 'i-lucide-home' },
 		{ label: t('snippets.title'), to: localePath('/snippets'), icon: 'i-lucide-puzzle' },
 		{ label: t('projects.title'), to: localePath('/projects'), icon: 'i-lucide-zap' },
 	],
 	[
 		{ label: t('contact.title'), to: localePath('/contact'), icon: 'i-lucide-mail' }
 	]
-]
+]));
 
 const openMoreMenu = ref(false);
 
