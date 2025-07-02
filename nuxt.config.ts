@@ -20,12 +20,16 @@ export default defineNuxtConfig({
 		'@nuxt/ui',
 	],
 	css: ['~/assets/css/main.css'],
-	content: {},
+	content: {
+		experimental: {
+			nativeSqlite: true,
+		},
+	},
 	i18n: {
 		baseUrl: baseUrl,
-		strategy: 'prefix',
+		strategy: 'prefix_and_default',
 		detectBrowserLanguage: {
-			redirectOn: 'no prefix',
+			redirectOn: 'root',
 			useCookie: false,
 		},
 		locales: [
@@ -39,15 +43,19 @@ export default defineNuxtConfig({
 			},
 		],
 		defaultLocale: 'en',
+		bundle: {
+			optimizeTranslationDirective: false,
+		},
 	},
 	routeRules: {
+		'**/blog': { redirect: '/' },
 		'/blog': { robots: 'noindex, nofollow', sitemap: false },
 		'/not-found': { robots: 'noindex', sitemap: false },
 	},
 	nitro: {
 		static: true,
 		prerender: {
-			routes: ['/', '/robots.txt', '/sitemap.xml'],
+			routes: ['/'],
 		},
 	},
 	icon: {
