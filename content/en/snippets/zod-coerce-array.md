@@ -2,6 +2,7 @@
 title: zod coerceArray
 description: A function for transforming inputs into an array format.
 tags: [zod, validation, typescript]
+date: '2025-08-27'
 ---
 
 # Zod CoerceArray
