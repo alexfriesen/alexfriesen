@@ -7,7 +7,5 @@
         ":widenPeerDependencies"
     ],
     "rangeStrategy": "bump",
-    "baseBranches": [
-        "main"
-    ]
+    "baseBranchPatterns": ["main"]
 }
