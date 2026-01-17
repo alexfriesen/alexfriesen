@@ -3,9 +3,6 @@ const baseUrl = 'https://alexfriesen.net';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2024-09-18',
-	future: {
-		compatibilityVersion: 4,
-	},
 	experimental: {
 		viewTransition: true,
 	},
@@ -15,9 +12,9 @@ export default defineNuxtConfig({
 		'@nuxtjs/i18n',
 		'nuxt-og-image',
 		'nuxt-schema-org',
-		'@nuxt/content',
-		'@nuxt/image',
 		'@nuxt/ui',
+		'@nuxt/image',
+		'@nuxt/content',
 	],
 	css: ['~/assets/css/main.css'],
 	content: {
@@ -43,17 +40,9 @@ export default defineNuxtConfig({
 			},
 		],
 		defaultLocale: 'en',
-		bundle: {
-			optimizeTranslationDirective: false,
-		},
 	},
 	routeRules: {
-		'**/blog': { redirect: '/' },
-		'/blog': { robots: 'noindex, nofollow', sitemap: false },
 		'/not-found': { robots: 'noindex', sitemap: false },
-	},
-	nitro: {
-		static: true,
 	},
 	icon: {
 		clientBundle: {
