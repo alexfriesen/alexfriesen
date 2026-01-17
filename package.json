@@ -43,9 +43,6 @@
 	"dependencies": {
 		"valibot": "^1.2.0"
 	},
-	"resolutions": {
-		"ipx": "^3.0.3"
-	},
 	"pnpm": {
 		"overrides": {
 			"@netlify/functions": "-",
