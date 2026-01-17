@@ -48,7 +48,6 @@
 const head = useLocaleHead();
 const { t } = useI18n();
 const route = useRoute();
-const toAbsoluteUrl = useAbsoluteUrl();
 const title = computed(() => route?.meta?.title ? t(route?.meta?.title as string) : null);
 const description = computed(() => route?.meta?.description ? t(route?.meta?.description as string) : null);
 
