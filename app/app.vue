@@ -30,7 +30,7 @@ useSeoMeta({
 
 defineOgImageComponent('MetaOgImage', {
 	siteName: 'alexfriesen.net',
-	image: 'https://alexfriesen.net/images/me600.jpg',
+	image: '/images/me600.jpg',
 	imageRound: true,
 });
 </script>
