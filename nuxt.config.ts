@@ -21,6 +21,25 @@ export default defineNuxtConfig({
 		experimental: {
 			nativeSqlite: true,
 		},
+		build: {
+			markdown: {
+				highlight: {
+					langs: [
+						'json',
+						'js',
+						'ts',
+						'html',
+						'css',
+						'vue',
+						'shell',
+						'mdc',
+						'md',
+						'yaml',
+						'terraform',
+					],
+				},
+			},
+		},
 	},
 	i18n: {
 		baseUrl: baseUrl,
