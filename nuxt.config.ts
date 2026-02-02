@@ -1,4 +1,4 @@
-const baseUrl = 'https://alexfriesen.net';
+const baseUrl = 'https://alexfriesen.net/';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -56,6 +56,12 @@ export default defineNuxtConfig({
 	robots: {
 		enabled: true,
 		allow: ['*'],
+	},
+	ogImage: {
+		zeroRuntime: true,
+	},
+	sitemap: {
+		zeroRuntime: true,
 	},
 	devtools: {
 		enabled: true,
