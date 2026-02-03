@@ -1,6 +1,6 @@
 ---
-title: Text kürzen
-description: Kürzen Sie einen Text auf eine bestimmte Länge und fügen Sie einen Ellipsen-String hinzu.
+title: Text kürzen mit CSS - Einzeilig und Mehrzeilig
+description: CSS Snippets zum Kürzen von Texten mit Ellipsis. Einfache und mehrzeilige Text-Truncation mit text-overflow und line-clamp.
 date: '2025-02-19'
 tags: ['css']
 ---

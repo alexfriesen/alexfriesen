@@ -1,6 +1,6 @@
 ---
-title: Patch Drizzle MySQL JSON
-description: Patch Drizzle MySQL JSON behebt nicht geparste JSON-Daten.
+title: Drizzle ORM MySQL JSON Parser Fix - pnpm Patch Anleitung
+description: Behebe JSON-Parsing-Probleme in Drizzle ORM mit MySQL. Vollständige Patch-Anleitung für korrekte JSON-Datentyp-Verarbeitung mit pnpm.
 date: '2025-03-11'
 tags: ['patch', 'drizzle']
 ---

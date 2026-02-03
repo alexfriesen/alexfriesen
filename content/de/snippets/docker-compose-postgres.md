@@ -1,6 +1,6 @@
 ---
-title: Docker Compose PostgreSQL
-description: Docker Compose Datei für eine PostgreSQL-Datenbank
+title: Docker Compose PostgreSQL Setup für lokale Entwicklung
+description: Schnelles PostgreSQL Docker Compose Setup für lokale Entwicklung. Einfache Datenbank-Konfiguration mit Docker für Development-Umgebungen.
 date: '2025-03-02'
 tags: ['docker']
 ---

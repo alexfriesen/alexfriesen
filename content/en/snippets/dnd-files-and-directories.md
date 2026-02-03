@@ -1,6 +1,6 @@
 ---
-title: DnD Files and Directories
-description: Dragging and Dropping Files and even Directories in the Browser
+title: Drag & Drop Files and Folders in Browser - JavaScript Guide
+description: Implement drag & drop for files and complete directories using the File System API. Complete tutorial with TypeScript and fallbacks.
 date: '2023-12-19'
 tags: ['js', 'ts', 'drag-and-drop']
 ---

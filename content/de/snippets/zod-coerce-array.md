@@ -1,6 +1,6 @@
 ---
-title: zod coerceArray
-description: Eine Funktion zur Umwandlung von Eingaben in ein Array-Format.
+title: Zod coerceArray - TypeScript Schema Validierung für Arrays
+description: Zod Hilfsfunktion zur Umwandlung von einzelnen Werten und Arrays in ein einheitliches Array-Format. Perfekt für flexible API-Validierung mit TypeScript.
 tags: [zod, validation, typescript]
 date: '2025-08-27'
 ---

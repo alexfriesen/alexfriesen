@@ -1,6 +1,6 @@
 ---
-title: Dateien und Verzeichnisse per Drag & Drop
-description: Dateien und sogar Verzeichnisse im Browser per Drag & Drop verschieben
+title: Drag & Drop für Dateien und Ordner im Browser - JavaScript Guide
+description: Implementiere Drag & Drop für Dateien und komplette Verzeichnisse mit der File System API. Vollständiges Tutorial mit TypeScript und Fallbacks.
 date: '2023-12-19'
 tags: ['js', 'ts', 'drag-and-drop']
 ---

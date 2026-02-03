@@ -1,6 +1,6 @@
 ---
-title: Patch Drizzle MySQL JSON
-description: Patch Drizzle MySQL JSON fix unparsed JSON data.
+title: Drizzle ORM MySQL JSON Parser Fix - pnpm Patch Guide
+description: Fix JSON parsing issues in Drizzle ORM with MySQL. Complete patch guide for proper JSON data type handling using pnpm.
 date: '2025-03-11'
 tags: ['patch', 'drizzle']
 ---

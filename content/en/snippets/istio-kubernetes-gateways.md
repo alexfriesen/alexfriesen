@@ -1,6 +1,6 @@
 ---
-title: Istio Kubernetes Gateways
-description: Configure Istio Gateways in Kubernetes with the Gateway API.
+title: Istio Gateway API Setup in Kubernetes
+description: Complete guide for Istio Gateways with Kubernetes Gateway API, Cert-Manager and TLS. Terraform setup, HTTPRoutes and Let's Encrypt integration.
 date: '2026-02-02'
 tags: ['kubernetes', 'istio']
 ---

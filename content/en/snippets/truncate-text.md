@@ -1,6 +1,6 @@
 ---
-title: Text Truncating
-description: Truncate a text to a specific length and add an ellipsis string.
+title: Text Truncating with CSS - Single and Multi-line
+description: CSS snippets for truncating text with ellipsis. Simple and multi-line text truncation using text-overflow and line-clamp.
 date: '2025-02-19'
 tags: ['css']
 ---
