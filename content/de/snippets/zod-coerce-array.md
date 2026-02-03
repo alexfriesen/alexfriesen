@@ -9,7 +9,7 @@ date: '2025-08-27'
 
 ## coerceArray Funktion
 
-Bei der Verwendung von Zod zur Schema-Validierung kann es vorkommen, dass sowohl einzelne Werte als auch Arrays akzeptiert werden sollen. Die Funktion `coerceArray` hilft dabei, indem sie die Eingabe in ein Array-Format umwandelt.
+Bei der Verwendung von Zod zur Schema-Validierung stößt man manchmal auf die Herausforderung, dass die API sowohl einzelne Werte als auch Arrays akzeptieren soll. Die Funktion `coerceArray` löst dieses Problem elegant, indem sie jede Eingabe zuverlässig in ein Array-Format umwandelt. Kein manuelles `Array.isArray()`-Checking mehr! 🎉
 
 ```typescript
 import type { ZodType } from 'zod';
@@ -24,7 +24,7 @@ export function coerceArray<T extends ZodType>(schema: T) {
 
 ## Nutzungsbeispiel
 
-Das folgende Beispiel zeigt, wie die Funktion `coerceArray` verwendet wird, um sowohl einzelne Werte als auch Arrays zu validieren und in ein Array umzuwandeln.
+Das folgende Beispiel zeigt, wie `coerceArray` in der Praxis verwendet wird. Egal ob einzelner Wert oder bereits ein Array, das Ergebnis ist immer konsistent:
 
 ```typescript
 import { z } from 'zod';

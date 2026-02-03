@@ -7,6 +7,8 @@ tags: ['css']
 
 # Text kürzen
 
+Weil manchmal weniger einfach mehr ist (und weil dein Design sonst auseinanderbricht). 📏
+
 ## Einfaches Text-Truncating
 
 ```css
@@ -18,6 +20,8 @@ tags: ['css']
 ```
 
 ## Mehrzeiliges Text-Truncating
+
+Für alle, die mehr als eine Zeile erlauben, aber trotzdem Grenzen setzen wollen.
 
 [Can I use `line-clamp`?](https://caniuse.com/css-line-clamp)
 

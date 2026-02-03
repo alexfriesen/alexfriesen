@@ -7,13 +7,13 @@ tags: ['patch', 'drizzle']
 
 # Patch Drizzle MySQL JSON
 
-When using Drizzle with MySQL, the JSON data type is not parsed correctly.
+When using Drizzle with MySQL, the JSON data type isn't parsed correctly, leading to unexpected string values. Not ideal when you're actually expecting objects! 😅
 
-Until [drizzle-orm/PR#4224](https://github.com/drizzle-team/drizzle-orm/pull/4224) is merged, you can apply the following patch to fix the issue.
+Until [drizzle-orm/PR#4224](https://github.com/drizzle-team/drizzle-orm/pull/4224) finally gets merged, this patch will help:
 
 ## Patch file
 
-Create the file `patches/drizzle-orm.patch`:
+Create the file `patches/drizzle-orm.patch` in your project root:
 
 ```diff
 diff --git a/mysql-core/columns/json.cjs b/mysql-core/columns/json.cjs

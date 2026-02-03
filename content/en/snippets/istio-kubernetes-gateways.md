@@ -7,7 +7,7 @@ tags: ['kubernetes', 'istio']
 
 # Istio Kubernetes Gateways
 
-With the [announcement to retire ingress-nginx](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/) (RIP 🪦) and the Kubernetes team's recommendation to use the Gateway API, many users are forced to look for alternatives. One of them is Istio with its Kubernetes Gateways – because a complete gateway migration is exactly what your Monday morning needed! ☕️😅
+With the [announcement to retire ingress-nginx](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/) (RIP 🪦) and the Kubernetes team's recommendation to use the Gateway API, many users are forced to look for alternatives. One of them is Istio with its Kubernetes Gateways. A complete gateway migration is exactly what your Monday morning needed! ☕️😅
 
 In this snippet you'll find:
 
@@ -44,7 +44,7 @@ resource "helm_release" "istio_base" {
   ]
 }
 
-# Step 2: Istiod - the brain of the operation 🧠
+# Step 2: Istiod (the brain of the operation 🧠)
 resource "helm_release" "istiod" {
   name = "istiod-release"
 
@@ -52,7 +52,7 @@ resource "helm_release" "istiod" {
   chart            = "istiod"
   namespace        = "istio-system"
   create_namespace = true
-  version          = "1.28.0"  # Update this version regularly - but not on Fridays! 📅
+  version          = "1.28.0"  # Update this version regularly, but not on Fridays! 📅
 
   set = [
     {
@@ -76,7 +76,7 @@ resource "helm_release" "istiod" {
   depends_on = [helm_release.istio_base]
 }
 
-# Step 3: Cert-Manager - because self-signed certificates are so 2010 🔐
+# Step 3: Cert-Manager (because self-signed certificates are so 2010 🔐)
 resource "helm_release" "cert_manager" {
   name = "cert-manager"
 
@@ -106,12 +106,12 @@ resource "helm_release" "cert_manager" {
 
 ## Cert-Manager Configuration
 
-**Important:** Without this step, your certificates will remain in an eternal "Pending" state - like your to-do list from last year.
+**Important:** Without this step, your certificates will remain in an eternal "Pending" state, just like your to-do list from last year.
 
 **Pro tip:** Create a `letsencrypt-staging` issuer first for testing! Let's Encrypt has rate limits, and you don't want to trigger those (spoiler: it's frustrating. Very frustrating...).
 
 ```yaml
-# issuer.yaml - Your ticket to free, trusted certificates! 🎟️
+# issuer.yaml (Your ticket to free, trusted certificates! 🎟️)
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -136,11 +136,11 @@ spec:
 
 _Now it's getting serious: Time for YAML origami!_ 📜✂️
 
-Here we configure a Gateway with HTTP (port 80, for the nostalgic and automatic HTTPS redirects) and HTTPS (port 443, for the security-conscious among us - hopefully everyone!).
+Here we configure a Gateway with HTTP (port 80, for the nostalgic and automatic HTTPS redirects) and HTTPS (port 443, for the security-conscious among us, hopefully everyone!).
 
 - **HTTP Listener (Port 80):** Catches insecure requests and says: "Nope, head over to HTTPS!"
 - **HTTPS Listeners (Port 443):** Terminates TLS and routes encrypted traffic to your services
-- **Cert-Manager Integration:** Automatically fetches Let's Encrypt certificates - like magic, only with more YAML and fewer wands! 🪄✨
+- **Cert-Manager Integration:** Automatically fetches Let's Encrypt certificates. Like magic, only with more YAML and fewer wands! 🪄✨
 
 ::tip
 The `hostname` fields must match your DNS entries, otherwise Cert-Manager will stand there as confused as a tourist without Google Maps.
@@ -150,7 +150,7 @@ The `hostname` fields must match your DNS entries, otherwise Cert-Manager will s
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: gateway # A separate namespace for gateways - organization is half the battle! 🗂️
+  name: gateway # A separate namespace for gateways. Organization is half the battle! 🗂️
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
@@ -191,7 +191,7 @@ spec:
         certificateRefs:
           - name: www-example-com-tls
 ---
-# HTTP to HTTPS redirect - because it's 2026 and we don't tolerate unencrypted connections anymore! 🔒
+# HTTP to HTTPS redirect (because it's 2026 and we don't tolerate unencrypted connections anymore! 🔒)
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -203,16 +203,16 @@ spec:
       sectionName: http # References the HTTP listener from above
   hostnames:
     - 'example.com'
-    - '*.example.com' # Wildcard for all subdomains - handy!
+    - '*.example.com' # Wildcard for all subdomains, handy!
     - 'www.example.com'
   rules:
     - filters:
         - type: RequestRedirect
           requestRedirect:
-            scheme: https # "Please use HTTPS, thanks!" - polite but firm
-            statusCode: 301 # Permanent redirect - browsers remember this
+            scheme: https # "Please use HTTPS, thanks!" polite but firm
+            statusCode: 301 # Permanent redirect, browsers remember this
 ---
-# Root domain to www redirect - the classic redirect (or vice versa, depending on taste) 🎭
+# Root domain to www redirect (the classic redirect, or vice versa, depending on taste) 🎭
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -237,28 +237,28 @@ spec:
 _Almost there! Now let's connect the dots..._ 🔗
 
 ::note
-HTTPRoutes can live in different namespaces than the Gateway - that's the beauty of the Gateway API. Cross-namespace routing works out-of-the-box! (One of the few things in Kubernetes that just work 🎉)
+HTTPRoutes can live in different namespaces than the Gateway. That's the beauty of the Gateway API. Cross-namespace routing works out-of-the-box! (One of the few things in Kubernetes that just work 🎉)
 ::
 
 ```yaml
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: production # Yes, we're calling it "production" right away - YOLO! 🎲 (Testing in staging first is fine too though)
+  name: production # Yes, we're calling it "production" right away. YOLO! 🎲 (Testing in staging first is fine too though)
 ---
-# The actual service - the target of all our routing acrobatics! 🎯
+# The actual service (the target of all our routing acrobatics! 🎯)
 apiVersion: v1
 kind: Service
 metadata:
   name: my-service
   namespace: production
   labels:
-    app: my-service # Labels are like name tags at conferences - super important!
+    app: my-service # Labels are like name tags at conferences, super important!
 spec:
   type: NodePort # NodePort for gateway connectivity (ClusterIP would work too)
   ports:
-    - name: http-my-service # Names are important - especially when you have multiple ports
-      port: 80 # The classic HTTP port - an evergreen! 🌲
+    - name: http-my-service # Names are important, especially when you have multiple ports
+      port: 80 # The classic HTTP port, an evergreen! 🌲
   selector:
     app: my-service # This selector connects the service to your pods
 ---

@@ -7,6 +7,8 @@ tags: ['css']
 
 # Text Truncating
 
+Because sometimes less is more (and because your design would break otherwise). 📏
+
 ## Simple Text Truncating
 
 ```css
@@ -18,6 +20,8 @@ tags: ['css']
 ```
 
 ## Multi-line Text Truncating
+
+For those who allow more than one line but still want to set boundaries.
 
 [Can I use `line-clamp`?](https://caniuse.com/css-line-clamp)
 

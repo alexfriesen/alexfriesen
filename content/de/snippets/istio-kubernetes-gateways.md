@@ -7,7 +7,7 @@ tags: ['kubernetes', 'istio']
 
 # Istio Kubernetes Gateways
 
-Mit der [Ankündigung, ingress-nginx in den Ruhestand zu schicken](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/) (RIP 🪦) und der Empfehlung vom Kubernetes Team die Gateway API zu verwenden, sind viele Nutzer gezwungen nach Alternativen zu suchen. Eine davon ist Istio mit seinen Kubernetes Gateways – weil ein kompletter Gateway-Wechsel genau das ist, was dein Montagmorgen gebraucht hat! ☕️😅
+Mit der [Ankündigung, ingress-nginx in den Ruhestand zu schicken](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/) (RIP 🪦) und der Empfehlung vom Kubernetes Team die Gateway API zu verwenden, sind viele Nutzer gezwungen nach Alternativen zu suchen. Eine davon ist Istio mit seinen Kubernetes Gateways. Ein kompletter Gateway-Wechsel ist genau das, was dein Montagmorgen gebraucht hat! ☕️😅
 
 In diesem Snippet gibt es:
 
@@ -44,7 +44,7 @@ resource "helm_release" "istio_base" {
   ]
 }
 
-# Step 2: Istiod - das Gehirn der Operation 🧠
+# Step 2: Istiod (das Gehirn der Operation 🧠)
 resource "helm_release" "istiod" {
   name = "istiod-release"
 
@@ -52,7 +52,7 @@ resource "helm_release" "istiod" {
   chart            = "istiod"
   namespace        = "istio-system"
   create_namespace = true
-  version          = "1.28.0"  # Aktualisiere diese Version regelmäßig - aber nicht an Freitagen! 📅
+  version          = "1.28.0"  # Aktualisiere diese Version regelmäßig, aber nicht an Freitagen! 📅
 
   set = [
     {
@@ -76,7 +76,7 @@ resource "helm_release" "istiod" {
   depends_on = [helm_release.istio_base]
 }
 
-# Step 3: Cert-Manager - weil selbstsignierte Zertifikate so 2010 sind 🔐
+# Step 3: Cert-Manager (weil selbstsignierte Zertifikate so 2010 sind 🔐)
 resource "helm_release" "cert_manager" {
   name = "cert-manager"
 
@@ -106,12 +106,12 @@ resource "helm_release" "cert_manager" {
 
 ## Cert-Manager Konfiguration
 
-**Wichtig:** Ohne diesen Schritt bleiben deine Zertifikate in einem ewigen "Pending"-Zustand - wie deine To-Do-Liste von letztem Jahr.
+**Wichtig:** Ohne diesen Schritt bleiben deine Zertifikate in einem ewigen "Pending"-Zustand, genau wie deine To-Do-Liste von letztem Jahr.
 
 **Pro-Tipp:** Erstelle zuerst einen `letsencrypt-staging` Issuer zum Testen! Let's Encrypt hat Rate Limits, und die willst du nicht auslösen (Spoiler: Es ist frustrierend. Sehr frustrierend...).
 
 ```yaml
-# issuer.yaml - Dein Ticket zu kostenlosen, vertrauenswürdigen Zertifikaten! 🎟️
+# issuer.yaml (Dein Ticket zu kostenlosen, vertrauenswürdigen Zertifikaten! 🎟️)
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -136,11 +136,11 @@ spec:
 
 _Jetzt wird's ernst: Zeit für YAML-Origami!_ 📜✂️
 
-Hier konfigurieren wir ein Gateway mit HTTP (Port 80, für die Nostalgiker und automatische HTTPS-Redirects) und HTTPS (Port 443, für die Sicherheitsbewussten unter uns - also hoffentlich alle!).
+Hier konfigurieren wir ein Gateway mit HTTP (Port 80, für die Nostalgiker und automatische HTTPS-Redirects) und HTTPS (Port 443, für die Sicherheitsbewussten unter uns, also hoffentlich alle!).
 
 - **HTTP Listener (Port 80):** Fängt unsichere Anfragen ab und sagt: "Nö, geh mal zu HTTPS rüber!"
 - **HTTPS Listeners (Port 443):** Terminiert TLS und routet verschlüsselten Traffic zu deinen Services
-- **Cert-Manager Integration:** Holt automatisch Let's Encrypt Zertifikate - wie Magie, nur mit mehr YAML und weniger Zauberstäbe! 🪄✨
+- **Cert-Manager Integration:** Holt automatisch Let's Encrypt Zertifikate. Wie Magie, nur mit mehr YAML und weniger Zauberstäbe! 🪄✨
 
 ::tip
 Die `hostname` Felder müssen mit deinen DNS-Einträgen übereinstimmen, sonst steht Cert-Manager ratlos da wie ein Tourist ohne Google Maps.
@@ -150,7 +150,7 @@ Die `hostname` Felder müssen mit deinen DNS-Einträgen übereinstimmen, sonst s
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: gateway # Ein eigener Namespace für Gateways - Ordnung ist das halbe Leben! 🗂️
+  name: gateway # Ein eigener Namespace für Gateways. Ordnung ist das halbe Leben! 🗂️
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
@@ -191,7 +191,7 @@ spec:
         certificateRefs:
           - name: www-example-com-tls
 ---
-# HTTP zu HTTPS Redirect - weil 2026 ist und wir keine unverschlüsselten Verbindungen mehr tolerieren! 🔒
+# HTTP zu HTTPS Redirect (weil 2026 ist und wir keine unverschlüsselten Verbindungen mehr tolerieren! 🔒)
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -203,16 +203,16 @@ spec:
       sectionName: http # Referenziert den HTTP Listener von oben
   hostnames:
     - 'example.com'
-    - '*.example.com' # Wildcard für alle Subdomains - praktisch!
+    - '*.example.com' # Wildcard für alle Subdomains, praktisch!
     - 'www.example.com'
   rules:
     - filters:
         - type: RequestRedirect
           requestRedirect:
-            scheme: https # "Bitte nutze HTTPS, danke!" - höflich, aber bestimmt
-            statusCode: 301 # Permanenter Redirect - Browser merken sich das
+            scheme: https # "Bitte nutze HTTPS, danke!" höflich, aber bestimmt
+            statusCode: 301 # Permanenter Redirect, Browser merken sich das
 ---
-# Root Domain zu www Redirect - die klassische Weiterleitung (oder andersrum, je nach Geschmack) 🎭
+# Root Domain zu www Redirect (die klassische Weiterleitung, oder andersrum, je nach Geschmack) 🎭
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -237,28 +237,28 @@ spec:
 _Fast geschafft! Jetzt verbinden wir noch die Punkte..._ 🔗
 
 ::note
-HTTPRoutes können in verschiedenen Namespaces leben als das Gateway - das ist das Schöne an der Gateway API. Cross-Namespace-Routing funktioniert out-of-the-box! (Eines der wenigen Dinge in Kubernetes, die einfach funktionieren 🎉)
+HTTPRoutes können in verschiedenen Namespaces leben als das Gateway. Das ist das Schöne an der Gateway API. Cross-Namespace-Routing funktioniert out-of-the-box! (Eines der wenigen Dinge in Kubernetes, die einfach funktionieren 🎉)
 ::
 
 ```yaml
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: production # Ja, wir nennen es gleich "production" - YOLO! 🎲 (Falls ihr zuerst in staging testen wollt, ist das auch okay)
+  name: production # Ja, wir nennen es gleich "production". YOLO! 🎲 (Falls ihr zuerst in staging testen wollt, ist das auch okay)
 ---
-# Der eigentliche Service - das Ziel unserer ganzen Routing-Akrobatik! 🎯
+# Der eigentliche Service (das Ziel unserer ganzen Routing-Akrobatik! 🎯)
 apiVersion: v1
 kind: Service
 metadata:
   name: my-service
   namespace: production
   labels:
-    app: my-service # Labels sind wie Namensschilder auf Konferenzen - super wichtig!
+    app: my-service # Labels sind wie Namensschilder auf Konferenzen, super wichtig!
 spec:
   type: NodePort # NodePort für die Gateway-Anbindung (ClusterIP würde auch gehen)
   ports:
-    - name: http-my-service # Namen sind wichtig - besonders wenn du mehrere Ports hast
-      port: 80 # Der klassische HTTP-Port - ein Evergreen! 🌲
+    - name: http-my-service # Namen sind wichtig, besonders wenn du mehrere Ports hast
+      port: 80 # Der klassische HTTP-Port, ein Evergreen! 🌲
   selector:
     app: my-service # Dieser Selector verbindet den Service mit deinen Pods
 ---

@@ -7,12 +7,13 @@ tags: ['patch', 'drizzle']
 
 # Patch Drizzle MySQL JSON
 
-Beim Verwenden von Drizzle mit MySQL wird der JSON-Datentyp nicht korrekt geparst.
-Bis [drizzle-orm/PR#4224](https://github.com/drizzle-team/drizzle-orm/pull/4224) gemergt wird, kann man folgenden Patch anwenden, um das Problem zu beheben.
+Beim Verwenden von Drizzle mit MySQL wird der JSON-Datentyp nicht korrekt geparst, was zu unerwarteten String-Werten führt. Nicht ideal, wenn man eigentlich Objekte erwartet! 😅
+
+Bis [drizzle-orm/PR#4224](https://github.com/drizzle-team/drizzle-orm/pull/4224) endlich gemergt wird, hilft dieser Patch:
 
 ## Patch-Datei
 
-Erstelle die Datei `patches/drizzle-orm.patch`:
+Erstelle die Datei `patches/drizzle-orm.patch` im Projekt-Root:
 
 ```diff
 diff --git a/mysql-core/columns/json.cjs b/mysql-core/columns/json.cjs

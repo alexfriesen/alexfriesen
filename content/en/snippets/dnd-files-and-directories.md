@@ -9,9 +9,9 @@ tags: ['js', 'ts', 'drag-and-drop']
 
 ## Intro
 
-Draging and Dropping Files is a common feature in modern applications. It allows users to drag files from their file system and drop them on a specific area of the web application. But this feature is not limited to files, it can also be used to drag and drop directories.
+Drag & drop is now a standard feature in modern web applications. Users simply expect to be able to drag files from their file system and drop them onto a webpage. But why stop at individual files? With the right APIs, we can also process entire directories!
 
-With the help of the [getAsFileSystemHandle](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsFileSystemHandle) and [File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API) we can easily implement this feature.
+With [getAsFileSystemHandle](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsFileSystemHandle) and the [File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API), this can be implemented surprisingly elegantly.
 
 :article-hint[
 <p>
@@ -20,18 +20,19 @@ But don't worry, we will also cover some fallback solutions.
 </p>
 ]
 
-## TLDR;
+## TL;DR
 
-With a set of helper functions we can easily implement a drag and drop feature for files and directories by using `getAsFileSystemHandle()` and some fallbacks.
+Don't feel like reading the whole article? No problem! With `getAsFileSystemHandle()` and some clever fallbacks, you can implement drag & drop for files and complete directories.
 
-Everything is wrapped in a package so you can use in your project.
-Check out the [npm Package](https://www.npmjs.com/package/data-transfer-helper) or grab the code on [Github](https://github.com/alexfriesen/data-transfer-helper).
+The finished code is available as an npm package:
+- [npm: data-transfer-helper](https://www.npmjs.com/package/data-transfer-helper)
+- [GitHub: data-transfer-helper](https://github.com/alexfriesen/data-transfer-helper)
 
 ## Basic Setup
 
-Befor we start we need a basic setup. We need a dropzone and a function that handles the drop event.
+Let's start with the basics. We need a dropzone and event handlers for the drag & drop events.
 
-First we create a basic HTML file where we add a dropzone and a paragraph that will be used to display the dropped files and directories.
+First, we create a minimalistic HTML structure:
 
 ```html
 <body>
@@ -39,9 +40,9 @@ First we create a basic HTML file where we add a dropzone and a paragraph that w
 </body>
 ```
 
-Now we can add the event listener to an element or in our case the entire document. We add some drag and drop events and call `parseFilesFromEvent` in our `drop` event.
+Now we add the event listeners. In this example we use the entire document as a dropzone, but this works with any other element as well.
 
-Note that we also have to prevent the default behaviour of the `dragover` and `dragleave` events to allow the `drop` event to fire.
+Important: We must call `preventDefault()` on `dragover` and `dragleave`, otherwise the `drop` event won't fire. Browser quirks! 🤷
 
 ```typescript
 document.addEventListener('dragover', function (event) {
@@ -114,11 +115,11 @@ async function parseDataTransferItem(item: DataTransferItem) {
 
 ## `getAsFileSystemHandle()`
 
-`DataTransferItem.getAsFileSystemHandle()` is based on the File System API which allows us to go through deeply nested directories recursively and grab files from those directories.
+`DataTransferItem.getAsFileSystemHandle()` is part of the modern File System API and allows us to navigate recursively through directory structures. Perfect for when someone drops a folder with 1000 files in 50 subdirectories! 📁
 
-As we will `getAsFileSystemHandle()` will give us a `FileSystemHandle` Object we have to figure out if we are dealing with a File or a Directory.
+Since `getAsFileSystemHandle()` returns a `FileSystemHandle` object, we first need to distinguish whether it's a file or a directory.
 
-Also we need to tell Typescript what Type we are dealing with by adding some helper function:
+With a few type guard functions, we help TypeScript (and ourselves) with type narrowing:
 
 ```typescript
 function isFileSystemDirectoryHandle(handle?: FileSystemHandle | null): handle is FileSystemDirectoryHandle {
@@ -163,9 +164,9 @@ async function readFileSystemEntryAsync(entry: FileSystemEntry) {
 
 ## `webkitGetAsEntry`
 
-`DataTransferItem.webkitGetAsEntry` is based on the [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) and works in a similar to the File System API but has some weird parts.
-With this function we can add a fallback Browsers without `DataTransferItem.getAsFileSystemHandle()`.
-Despite the `webkit`-prefix this will also work on Firefox.
+`DataTransferItem.webkitGetAsEntry` is our fallback for browsers that don't support the File System API yet. The function is based on the older [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) and has a few... let's call them "quirks". 😅
+
+Despite the `webkit` prefix, this API also works in Firefox. Browser naming has always been creative!
 
 First lets add some helper functions to differentiate between files and directories.
 
@@ -198,7 +199,7 @@ async function readFileSystemEntryRecursively(entry: FileSystemEntry) {
 }
 ```
 
-As you can see this API is more awkward to work with as we have to work with callbacks, create readers and have to wrap things in Promises. But it gets the job done!
+As you can see, this API is noticeably more awkward: callbacks instead of promises, creating reader objects, manual promise wrapping... Welcome to 2015! But hey, it works reliably.
 
 Finally call `readFileSystemEntryRecursively` from `readFileSystemEntryAsync`.
 
@@ -208,10 +209,11 @@ async function readFileSystemEntryAsync(entry: FileSystemEntry) {
 }
 ```
 
-## Optimisation with Generator Functions
+## Optimization with Generator Functions
 
-Lastly we can improve this code and use generator functions to speed things up.
-The yield\* keyword is used to yield each value from the recursive call to the generator.
+If you love performance (and who doesn't?), you can optimize the code with generator functions. Instead of collecting all files in an array and then returning them, we can stream them directly.
+
+The `yield*` keyword elegantly delegates to recursive generator calls:
 
 ```typescript
 async function* readFileSystemHandleRecursively(entry: FileSystemHandle): AsyncGenerator<File> {
@@ -228,8 +230,9 @@ async function* readFileSystemHandleRecursively(entry: FileSystemHandle): AsyncG
 }
 ```
 
-With this change we dont have to store a files array and return them we just yield the files and collect everything when all the work is done.
-We can transform the `AsyncGenerator` output to an array by adding another helper function.
+The advantage: we don't have to keep huge arrays in memory. Files are "spit out" one by one and only collected at the end. For large directories, this makes a noticeable difference!
+
+To convert the `AsyncGenerator` to an array, we need a small helper function:
 
 ```typescript
 async function generatorToArray<T>(generator: AsyncIterable<T>): Promise<T[]> {
@@ -247,7 +250,12 @@ async function readFileSystemEntryAsync(entry: FileSystemEntry) {
 }
 ```
 
-## Outro
+## Conclusion
 
-That's all for this post. I hope you found it useful and informative.
-You can find the code on [Github: data-transfer-helper](https://github.com/alexfriesen/data-transfer-helper) or install it with [NPM: data-transfer-helper](https://www.npmjs.com/package/data-transfer-helper).
+And with that, we have a complete drag & drop solution for files and directories! With modern APIs, sensible fallbacks, and performance optimizations.
+
+You can find the complete code here:
+- [GitHub: data-transfer-helper](https://github.com/alexfriesen/data-transfer-helper)
+- [NPM: data-transfer-helper](https://www.npmjs.com/package/data-transfer-helper)
+
+Have fun implementing! 🚀

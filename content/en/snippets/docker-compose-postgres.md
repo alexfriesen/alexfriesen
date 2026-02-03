@@ -7,7 +7,9 @@ tags: ['docker']
 
 # Docker Compose PostgreSQL
 
-This is a simple Docker Compose example for a PostgreSQL database. The service is exposed on port 5432, and the database is configured as `local` with the user `postgres` and the password `postgres`.
+A straightforward Docker Compose setup for PostgreSQL. Perfect for local development when you need a database quickly without dealing with installation and configuration.
+
+The service runs on port 5432 with the classic default credentials (Warning: for local development only! 🔓).
 
 ```yaml
 services:
