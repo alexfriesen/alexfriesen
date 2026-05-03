@@ -22,7 +22,7 @@ useHead({
 	},
 });
 
-defineOgImageComponent('MetaOgImage', {
+defineOgImage('Default', {
 	siteName: 'alexfriesen.net',
 	image: '/images/me600.jpg',
 	imageRound: true,

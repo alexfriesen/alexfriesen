@@ -1,14 +1,6 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from '@nuxt/ui';
-import {
-	type InferOutput,
-	pipe,
-	string,
-	object,
-	email,
-	minLength,
-	trim,
-} from 'valibot';
+import { type InferOutput, pipe, string, object, email, minLength, trim } from 'valibot';
 
 const { t } = useI18n();
 useSeoMeta({
@@ -16,13 +8,16 @@ useSeoMeta({
 	description: t('contact.description'),
 });
 
+defineOgImage('Default', {
+	title: t('contact.title'),
+	description: t('contact.description'),
+	image: '/images/me600.jpg',
+	imageRound: true,
+});
+
 const schema = object({
 	email: pipe(string(), trim(), email('Invalid email')),
-	message: pipe(
-		string(),
-		trim(),
-		minLength(3, 'Must be at least 3 characters'),
-	),
+	message: pipe(string(), trim(), minLength(3, 'Must be at least 3 characters')),
 });
 
 type Schema = InferOutput<typeof schema>;
@@ -70,10 +65,7 @@ async function handleSubmit(event: FormSubmitEvent<Schema>) {
 
 <template>
 	<UPage>
-		<UPageSection
-			:title="$t('contact.title')"
-			:description="$t('contact.description')"
-		>
+		<UPageSection :title="$t('contact.title')" :description="$t('contact.description')">
 			<div
 				v-if="success"
 				class="flex flex-col rounded-xl p-8 shadow text-white text-center bg-green-800 max-w-lg w-full"
@@ -92,20 +84,10 @@ async function handleSubmit(event: FormSubmitEvent<Schema>) {
 				<p>{{ $t('contact.error') }}</p>
 			</div>
 
-			<UForm
-				:schema="schema"
-				:state="state"
-				class="max-w-lg w-full m-auto"
-				@submit="handleSubmit"
-			>
+			<UForm :schema="schema" :state="state" class="max-w-lg w-full m-auto" @submit="handleSubmit">
 				<UCard v-if="!success" class="w-full">
 					<div class="space-y-2">
-						<UFormField
-							:label="$t('contact.email')"
-							name="email"
-							required
-							size="xl"
-						>
+						<UFormField :label="$t('contact.email')" name="email" required size="xl">
 							<UInput
 								v-model="state.email"
 								placeholder="you@example.com"
@@ -115,12 +97,7 @@ async function handleSubmit(event: FormSubmitEvent<Schema>) {
 							/>
 						</UFormField>
 
-						<UFormField
-							:label="$t('contact.message')"
-							name="message"
-							required
-							size="xl"
-						>
+						<UFormField :label="$t('contact.message')" name="message" required size="xl">
 							<UTextarea
 								v-model="state.message"
 								:placeholder="$t('contact.messagePlaceholder')"

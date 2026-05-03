@@ -7,7 +7,6 @@ export default defineNuxtConfig({
 		viewTransition: true,
 	},
 	modules: [
-		'@nuxt/eslint',
 		'@nuxtjs/seo',
 		'@nuxtjs/i18n',
 		'nuxt-og-image',
@@ -15,6 +14,7 @@ export default defineNuxtConfig({
 		'@nuxt/ui',
 		'@nuxt/image',
 		'@nuxt/content',
+		'@nuxt/fonts',
 	],
 	css: ['~/assets/css/main.css'],
 	content: {

@@ -70,6 +70,13 @@ useSeoMeta({
 	title: t('home.title'),
 	description: t('home.description'),
 });
+
+defineOgImage('Default', {
+	title: t('home.title'),
+	description: t('home.description'),
+	image: '/images/me600.jpg',
+	imageRound: true,
+});
 </script>
 
 <style>
